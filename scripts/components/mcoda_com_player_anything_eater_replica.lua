@@ -1,11 +1,11 @@
-----------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --[[
 
      test 函数挂到 replica
      
      
 ]]--
-----------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 local mcoda_com_player_anything_eater = Class(function(self, inst)
     self.inst = inst
 
@@ -17,7 +17,20 @@ nil,
 
 })
 ----------------------------------------------------------------------------------------------------------------------------------
----- Test
+---- player self Test
+    function mcoda_com_player_anything_eater:SetPlayerSelfTestFn(fn)
+        if type(fn) == "function" then
+            self._player_self_test_fn = fn
+        end
+    end
+    function mcoda_com_player_anything_eater:PlayerSelfTest()
+        if self._player_self_test_fn then
+            return self._player_self_test_fn(self.inst)
+        end
+        return true
+    end
+----------------------------------------------------------------------------------------------------------------------------------
+---- item Test
     function mcoda_com_player_anything_eater:AddItemTestFn(item_prefab,fn,fast_eat)
         if type(item_prefab) == "string" and type(fn) == "function" then
             self._item_test_fns[item_prefab] = fn
@@ -27,6 +40,9 @@ nil,
     function mcoda_com_player_anything_eater:TestItem(item)
         local test_ret_flag = false
         local fast_eat_flag = false
+        if not self:PlayerSelfTest() then
+            return false,false
+        end
         if type(item) == "table" then
 
             if not item.replica.inventoryitem:IsGrandOwner(self.inst) then  --- 强制在背包里
