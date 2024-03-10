@@ -115,13 +115,21 @@ local flg,error_code = pcall(function()
             -- npc.components.health:Kill()
     ----------------------------------------------------------------------------------------------------------------
     ----- sg
-                ThePlayer:ListenForEvent("newstate",function(_,_table)
-                    local statename = _table and _table.statename
-                    if statename then
-                        print("sg",ThePlayer,statename)
-                    end
-                end)
+                -- ThePlayer:ListenForEvent("newstate",function(_,_table)
+                --     local statename = _table and _table.statename
+                --     if statename then
+                --         print("sg",ThePlayer,statename)
+                --     end
+                -- end)
         
+    ----------------------------------------------------------------------------------------------------------------
+    ----- 位面伤害
+                    -- ThePlayer.components.damagetypebonus:AddBonus("shadow_aligned", ThePlayer, 20)
+                    -- print(ThePlayer.components.damagetypebonus:GetDebugString())
+    ----------------------------------------------------------------------------------------------------------------
+    ----- 独立tag系统
+                    -- ThePlayer.components.mcoda_com_tag_sys:AddTag("test_tag")
+                    print(ThePlayer.replica.mcoda_com_tag_sys:HasTag("test_tag"))
     ----------------------------------------------------------------------------------------------------------------
     print("WARNING:PCALL END   +++++++++++++++++++++++++++++++++++++++++++++++++")
 end)

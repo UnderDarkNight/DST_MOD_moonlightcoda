@@ -9,3 +9,5 @@ modimport("key_modules_for_moonlightcoda/04_origin_prefab_upgrade/01_player_com.
 modimport("key_modules_for_moonlightcoda/04_origin_prefab_upgrade/02_moon_island_marker.lua")  --- 月岛标记组件
 
 modimport("key_modules_for_moonlightcoda/04_origin_prefab_upgrade/03_reviver.lua")  --- 告密的心拒绝组件
+
+modimport("key_modules_for_moonlightcoda/04_origin_prefab_upgrade/04_lunar_aligned_animals.lua")  --- 月亮阵营的生物hook

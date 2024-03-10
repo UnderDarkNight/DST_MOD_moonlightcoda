@@ -10,6 +10,9 @@ return function(inst)
         if inst.components.mcoda_com_rpc_event == nil then
             inst:AddComponent("mcoda_com_rpc_event") --- RPC 信道封装
         end
+        if inst.components.mcoda_com_tag_sys == nil then
+            inst:AddComponent("mcoda_com_tag_sys") --- 标签系统
+        end
     end
 
     local modules = {
@@ -18,6 +21,8 @@ return function(inst)
         "prefabs/01_character/character_mcoda_key_modules/03_book_reader",                    ---- 特殊读书组件
         "prefabs/01_character/character_mcoda_key_modules/04_talker_hook",                    ---- 某些特殊的说话文本替换
         "prefabs/01_character/character_mcoda_key_modules/05_equipment_refuser",                    ---- 装备拒绝器
+        "prefabs/01_character/character_mcoda_key_modules/06_combat_and_damage",                    ---- 战斗和伤害组件
+        "prefabs/01_character/character_mcoda_key_modules/07_lunar_aligned_animals",                    ---- 月亮阵营友好组件
 
 
     }

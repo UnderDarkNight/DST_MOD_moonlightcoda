@@ -28,7 +28,8 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
         --------------------------------------------------------------------
         --- 特殊
             ["moonlightcoda_talker_strings_exchange"] = {
-                ["only_used_by_waxwell_and_wicker"] = "今晚将是个美妙的夜晚",
+                ["only_used_by_waxwell_and_wicker"] = "今晚将是个美妙的夜晚",   --- 月之魔典使用后的话语
+                ["only_used_by_winona"] = "下次再说吧",                        --- 被查理打第一下的话语
             },
             ["MOONLIGHTCODA_REFUSE_REVIVER"] = {
                 ["msg"] = "她拒绝了这份心意",
@@ -36,7 +37,7 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
         --------------------------------------------------------------------
         --- 组件动作
             ["mcoda_com_equipment_refuser"] = {
-                ["default_reason"] = "我不喜欢这件装备",
+                ["default_reason"] = "想都别想",
                 ["armor_sanity"] = "这个太黑了",
                 ["nightsword"] = "这个太脏了",
                 ["skeletonhat"] = "这个就该拿去煲汤",

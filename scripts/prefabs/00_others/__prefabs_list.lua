@@ -29,6 +29,7 @@ local prefabs_name_list = {
 
 
     "01_moon_island_marker",                           --- 月岛标记
+    "02_beard_container",                               --- 胡子部位的容器
 
 }
 

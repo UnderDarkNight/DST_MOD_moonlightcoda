@@ -22,7 +22,9 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
         --------------------------------------------------------------------
         --- 特殊
             ["moonlightcoda_talker_strings_exchange"] = {
-                ["only_used_by_waxwell_and_wicker"] = "It's gonna be a great night.",
+                ["only_used_by_waxwell_and_wicker"] = "It's gonna be a great night.",       --- 月之魔典使用后的话语
+                ["only_used_by_winona"] = "Maybe next time",                                --- 被查理打第一下的话语
+
             },
             ["MOONLIGHTCODA_REFUSE_REVIVER"] = {
                 ["msg"] = "She rejected the offer.",

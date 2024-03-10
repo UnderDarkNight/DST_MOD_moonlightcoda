@@ -25,6 +25,8 @@ AddReplicableComponent("mcoda_com_special_book_reader")  --- 特殊读书组件
 
 AddReplicableComponent("mcoda_com_equipment_refuser")  --- 装备拒绝器
 
+AddReplicableComponent("mcoda_com_tag_sys")  --- 独立的tag 系统
+
 
 
 

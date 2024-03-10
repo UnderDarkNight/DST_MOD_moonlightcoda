@@ -9,3 +9,5 @@ modimport("key_modules_for_moonlightcoda/00_others/01_equipment_type.lua")  --- 
 modimport("key_modules_for_moonlightcoda/00_others/02_replica_register.lua")  --- replica 注册
 
 modimport("key_modules_for_moonlightcoda/00_others/03_rpc_register.lua")  --- RPC 信道 注册
+
+modimport("key_modules_for_moonlightcoda/00_others/04_tag_sys_rpc_register.lua")  --- 独立tag 系统 RPC 信道 注册
