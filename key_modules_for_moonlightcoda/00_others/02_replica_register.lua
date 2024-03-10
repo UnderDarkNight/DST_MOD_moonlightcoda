@@ -23,6 +23,8 @@ AddReplicableComponent("mcoda_com_item_use_to")  --- 通用给予组件
 
 AddReplicableComponent("mcoda_com_special_book_reader")  --- 特殊读书组件
 
+AddReplicableComponent("mcoda_com_equipment_refuser")  --- 装备拒绝器
+
 
 
 

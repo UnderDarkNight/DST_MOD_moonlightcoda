@@ -103,11 +103,25 @@ local flg,error_code = pcall(function()
             -- end)
     ----------------------------------------------------------------------------------------------------------------
     ---- 箭头测试
-            ThePlayer.components.mcoda_com_data:Set("moonlightcoda_debuff_moon_island_arrow.timer",10000)
-            if ThePlayer:GetDebuff("moonlightcoda_debuff_moon_island_arrow") == nil then
-                ThePlayer:AddDebuff("moonlightcoda_debuff_moon_island_arrow","moonlightcoda_debuff_moon_island_arrow")
-            end
+            -- ThePlayer.components.mcoda_com_data:Set("moonlightcoda_debuff_moon_island_arrow.timer",10000)
+            -- if ThePlayer:GetDebuff("moonlightcoda_debuff_moon_island_arrow") == nil then
+            --     ThePlayer:AddDebuff("moonlightcoda_debuff_moon_island_arrow","moonlightcoda_debuff_moon_island_arrow")
+            -- end
 
+    ----------------------------------------------------------------------------------------------------------------
+    ------ 测试告密的心
+            -- local npc = SpawnPrefab(ThePlayer.prefab)
+            -- npc.Transform:SetPosition(x, y, z)
+            -- npc.components.health:Kill()
+    ----------------------------------------------------------------------------------------------------------------
+    ----- sg
+                ThePlayer:ListenForEvent("newstate",function(_,_table)
+                    local statename = _table and _table.statename
+                    if statename then
+                        print("sg",ThePlayer,statename)
+                    end
+                end)
+        
     ----------------------------------------------------------------------------------------------------------------
     print("WARNING:PCALL END   +++++++++++++++++++++++++++++++++++++++++++++++++")
 end)

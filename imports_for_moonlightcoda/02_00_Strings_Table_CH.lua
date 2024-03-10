@@ -30,8 +30,23 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
             ["moonlightcoda_talker_strings_exchange"] = {
                 ["only_used_by_waxwell_and_wicker"] = "今晚将是个美妙的夜晚",
             },
+            ["MOONLIGHTCODA_REFUSE_REVIVER"] = {
+                ["msg"] = "她拒绝了这份心意",
+            },
         --------------------------------------------------------------------
         --- 组件动作
+            ["mcoda_com_equipment_refuser"] = {
+                ["default_reason"] = "我不喜欢这件装备",
+                ["armor_sanity"] = "这个太黑了",
+                ["nightsword"] = "这个太脏了",
+                ["skeletonhat"] = "这个就该拿去煲汤",
+                ["armorskeleton"] = "这个就该拿去煲汤",
+                ["armor_voidcloth"] = "太破烂了",
+                ["voidclothhat"] = "这个挡着我漂亮的脸蛋了",
+                ["dreadstonehat"] = "这个顶头上太沉了",
+                ["armordreadstone"] = "这个太硬了",
+                ["purpleamulet"] = "这个不够精致",
+            },
         --------------------------------------------------------------------
         --- 02_items
             ["moonlightcoda_item_moon_island_detector"] = {

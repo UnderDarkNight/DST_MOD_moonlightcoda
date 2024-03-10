@@ -17,6 +17,7 @@ return function(inst)
         "prefabs/01_character/character_mcoda_key_modules/02_anything_eater",                    ---- 吃东西 的组件
         "prefabs/01_character/character_mcoda_key_modules/03_book_reader",                    ---- 特殊读书组件
         "prefabs/01_character/character_mcoda_key_modules/04_talker_hook",                    ---- 某些特殊的说话文本替换
+        "prefabs/01_character/character_mcoda_key_modules/05_equipment_refuser",                    ---- 装备拒绝器
 
 
     }

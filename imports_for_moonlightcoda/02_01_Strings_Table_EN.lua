@@ -24,6 +24,23 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
             ["moonlightcoda_talker_strings_exchange"] = {
                 ["only_used_by_waxwell_and_wicker"] = "It's gonna be a great night.",
             },
+            ["MOONLIGHTCODA_REFUSE_REVIVER"] = {
+                ["msg"] = "She rejected the offer.",
+            },
+        --------------------------------------------------------------------
+        --- 
+            ["mcoda_com_equipment_refuser"] = {
+                ["default_reason"] = "I don't like this equipment",
+                ["armor_sanity"] = "This one is too dark",
+                ["nightsword"] = "This one's too dirty",
+                ["skeletonhat"] = "This one should be taken to the soup",
+                ["armorskeleton"] = "This one should be taken to the soup",
+                ["armor_voidcloth"] = "It's too shabby.",
+                ["voidclothhat"] = "This is in the way of my pretty face",
+                ["dreadstonehat"] = "This one's too heavy in head",
+                ["armordreadstone"] = "This one's too hard",
+                ["purpleamulet"] = "This one's not delicate enough",
+            },
         --------------------------------------------------------------------
             --- 02_items
             ["moonlightcoda_item_moon_island_detector"] = {
