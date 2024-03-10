@@ -129,7 +129,10 @@ local flg,error_code = pcall(function()
     ----------------------------------------------------------------------------------------------------------------
     ----- 独立tag系统
                     -- ThePlayer.components.mcoda_com_tag_sys:AddTag("test_tag")
-                    print(ThePlayer.replica.mcoda_com_tag_sys:HasTag("test_tag"))
+                    -- print(ThePlayer.replica.mcoda_com_tag_sys:HasTag("test_tag"))
+    ----------------------------------------------------------------------------------------------------------------
+    ----- 启蒙状态
+                    print(ThePlayer.components.sanity:IsLunacyMode())
     ----------------------------------------------------------------------------------------------------------------
     print("WARNING:PCALL END   +++++++++++++++++++++++++++++++++++++++++++++++++")
 end)

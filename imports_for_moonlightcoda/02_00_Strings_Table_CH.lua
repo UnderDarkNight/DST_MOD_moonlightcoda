@@ -34,6 +34,9 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
             ["MOONLIGHTCODA_REFUSE_REVIVER"] = {
                 ["msg"] = "她拒绝了这份心意",
             },
+            ["MOONLIGHTCODA_HEAL_REFUSE"] = {
+                ["msg"] = "这东西对我没用",
+            },
         --------------------------------------------------------------------
         --- 组件动作
             ["mcoda_com_equipment_refuser"] = {

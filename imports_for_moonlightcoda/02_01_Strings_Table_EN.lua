@@ -29,6 +29,9 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
             ["MOONLIGHTCODA_REFUSE_REVIVER"] = {
                 ["msg"] = "She rejected the offer.",
             },
+            ["MOONLIGHTCODA_HEAL_REFUSE"] = {
+                ["msg"] = "This stuff doesn't work for me.",
+            },
         --------------------------------------------------------------------
         --- 
             ["mcoda_com_equipment_refuser"] = {

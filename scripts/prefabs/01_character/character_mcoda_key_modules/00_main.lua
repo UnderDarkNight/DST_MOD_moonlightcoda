@@ -23,6 +23,8 @@ return function(inst)
         "prefabs/01_character/character_mcoda_key_modules/05_equipment_refuser",                    ---- 装备拒绝器
         "prefabs/01_character/character_mcoda_key_modules/06_combat_and_damage",                    ---- 战斗和伤害组件
         "prefabs/01_character/character_mcoda_key_modules/07_lunar_aligned_animals",                    ---- 月亮阵营友好组件
+        "prefabs/01_character/character_mcoda_key_modules/08_eater",                    ---- 吃东西相关操作：不能回血等
+        "prefabs/01_character/character_mcoda_key_modules/09_moon_and _island",                    ---- 月岛、夜晚 回血事件
 
 
     }

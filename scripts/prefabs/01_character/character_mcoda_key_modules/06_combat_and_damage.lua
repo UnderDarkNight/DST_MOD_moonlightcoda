@@ -11,6 +11,8 @@
 
     不会被月亮联盟生物主动攻击
 
+    击败任何暗影生物恢复15月能值   attacker:PushEvent("killed", { victim = self.inst, attacker = attacker })
+
 ]]--
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -57,6 +59,18 @@ return function(inst)
         inst:ListenForEvent("equip", beard_slot_item_check)
         inst:ListenForEvent("ms_respawnedfromghost", beard_slot_item_check)
         inst:DoTaskInTime(0,beard_slot_item_check)
+    ---------------------------------------------------------------------------------------------
+    ---- 击败任何暗影生物恢复15月能值
+        inst:ListenForEvent("killed", function(_,_table)
+            local monster = _table and _table.victim
+            if not monster then
+                return
+            end
+            if monster:HasOneOfTags({"shadow_aligned","shadow"}) then
+                inst.components.health:DoDelta(15)
+            end
+        end)
+        
     ---------------------------------------------------------------------------------------------
 
 
