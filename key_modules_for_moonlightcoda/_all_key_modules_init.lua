@@ -17,3 +17,11 @@ modimport("key_modules_for_moonlightcoda/03_origin_components_upgrade/__all_com_
 -- 官方的 component 修改
 
 
+modimport("key_modules_for_moonlightcoda/04_origin_prefab_upgrade/__all_origin_prefabs_init.lua") 
+-- 官方的 prefab 修改
+
+
+modimport("key_modules_for_moonlightcoda/05_recipes/__all_recipes_init.lua") 
+-- 制作栏配方
+
+

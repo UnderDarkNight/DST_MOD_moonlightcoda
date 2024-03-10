@@ -12,12 +12,10 @@ local files_name = {
 
 	---------------------------------------------------------------------------------------
 
-		-- "moonlightcoda_weapon_scythe",											--- 冥界之镰
-		-- "moonlightcoda_weapon_scythe_overcome_confinement",						--- 冲破禁锢
 
-
-		-- "moonlightcoda_item_faded_memory",										--- 褪色的记忆
-		-- "moonlightcoda_item_blissful_memory",										--- 幸福的记忆
+	---------------------------------------------------------------------------------------
+	--- 02_items
+		"moonlightcoda_item_moon_island_detector",									--- 月岛探测器
 	---------------------------------------------------------------------------------------
 
 }

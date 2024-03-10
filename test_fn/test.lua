@@ -22,22 +22,22 @@ local flg,error_code = pcall(function()
         --     print(k,v,type(v))
         -- end
         -- ThePlayer.HUD.controls.status:Show()
-        ThePlayer.HUD.controls.status.heart:Show()
+        -- ThePlayer.HUD.controls.status.heart:Show()
 
-        local HealthBadge = ThePlayer.HUD.controls.status.heart
+        -- local HealthBadge = ThePlayer.HUD.controls.status.heart
 
-        local temp = {}
-        for k, v in pairs(HealthBadge) do
-            -- print(k,v,type(v))
-            if tostring(v) == "UIAnim" then
-                temp[k] = v
-            end
-        end
+        -- local temp = {}
+        -- for k, v in pairs(HealthBadge) do
+        --     -- print(k,v,type(v))
+        --     if tostring(v) == "UIAnim" then
+        --         temp[k] = v
+        --     end
+        -- end
 
-        for k, v in pairs(temp) do
-            v:Show()
-            -- print(k,v)
-        end 
+        -- for k, v in pairs(temp) do
+        --     v:Show()
+        --     -- print(k,v)
+        -- end 
 
                                                             -- ---- status_mater:  topperanim  circleframe2  backing  anim circleframe
 
@@ -101,6 +101,13 @@ local flg,error_code = pcall(function()
             --     item:Remove()
             --     return true
             -- end)
+    ----------------------------------------------------------------------------------------------------------------
+    ---- 箭头测试
+            ThePlayer.components.mcoda_com_data:Set("moonlightcoda_debuff_moon_island_arrow.timer",10000)
+            if ThePlayer:GetDebuff("moonlightcoda_debuff_moon_island_arrow") == nil then
+                ThePlayer:AddDebuff("moonlightcoda_debuff_moon_island_arrow","moonlightcoda_debuff_moon_island_arrow")
+            end
+
     ----------------------------------------------------------------------------------------------------------------
     print("WARNING:PCALL END   +++++++++++++++++++++++++++++++++++++++++++++++++")
 end)

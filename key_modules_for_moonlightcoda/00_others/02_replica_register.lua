@@ -17,6 +17,13 @@ AddReplicableComponent("mcoda_com_rpc_event")  --- RPC 组件注册
 AddReplicableComponent("mcoda_com_player_anything_eater")  --- 任意东西可吃组件
 
 
+AddReplicableComponent("mcoda_com_workable")  --- 通用交互组件
+AddReplicableComponent("mcoda_com_acceptable")  --- 通用接受组件
+AddReplicableComponent("mcoda_com_item_use_to")  --- 通用给予组件
+
+AddReplicableComponent("mcoda_com_special_book_reader")  --- 特殊读书组件
+
+
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------

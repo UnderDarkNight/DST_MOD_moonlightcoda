@@ -26,8 +26,32 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
                 ["recipe_desc"] = "测试描述666",
             },
         --------------------------------------------------------------------
+        --- 特殊
+            ["moonlightcoda_talker_strings_exchange"] = {
+                ["only_used_by_waxwell_and_wicker"] = "今晚将是个美妙的夜晚",
+            },
+        --------------------------------------------------------------------
         --- 组件动作
-           
+        --------------------------------------------------------------------
+        --- 02_items
+            ["moonlightcoda_item_moon_island_detector"] = {
+                ["name"] = "月岛探测仪",
+                ["inspect_str"] = "通往重要之地",
+                ["recipe_desc"] = "通往重要之地",
+                ["action"] = "启动探测",
+            },
+        --------------------------------------------------------------------
+        --- 05_spells
+            ["moonlightcoda_spell_dock_kit_maker"] = {
+                ["name"] = STRINGS.NAMES.DOCK_KIT,
+                ["inspect_str"] = STRINGS.RECIPE_DESC.DOCK_KIT,
+                ["recipe_desc"] = STRINGS.RECIPE_DESC.DOCK_KIT,
+            },
+            ["moonlightcoda_spell_book_moon_maker"] = {
+                ["name"] = STRINGS.NAMES.BOOK_MOON,
+                ["inspect_str"] = STRINGS.RECIPE_DESC.BOOK_MOON,
+                ["recipe_desc"] = STRINGS.RECIPE_DESC.BOOK_MOON,
+            },
         --------------------------------------------------------------------
 }
 
