@@ -132,7 +132,23 @@ local flg,error_code = pcall(function()
                     -- print(ThePlayer.replica.mcoda_com_tag_sys:HasTag("test_tag"))
     ----------------------------------------------------------------------------------------------------------------
     ----- 启蒙状态
-                    print(ThePlayer.components.sanity:IsLunacyMode())
+                    -- print(ThePlayer.components.sanity:IsLunacyMode())
+    ----------------------------------------------------------------------------------------------------------------
+    ----- 影怪交互测试
+            -- ThePlayer.components.sanity:SetInducedInsanity(ThePlayer,false)
+            -- ThePlayer.components.sanity.inducedinsanity = true
+            -- ThePlayer:PushEvent("inducedinsanity", true)
+            -- print(ThePlayer.components.sanity:IsInsanityMode())
+            -- print(TheWorld.components.shadowcreaturespawner:GetDebugString())
+            ThePlayer.temp_table = ThePlayer.temp_table or {
+                ents = {}
+            }
+            TheWorld.components.shadowcreaturespawner:SpawnShadowCreature(ThePlayer,ThePlayer.temp_table)
+            TheWorld.components.shadowcreaturespawner:SpawnShadowCreature(ThePlayer,ThePlayer.temp_table)
+            TheWorld.components.shadowcreaturespawner:SpawnShadowCreature(ThePlayer,ThePlayer.temp_table)
+            for k, v in pairs(ThePlayer.temp_table.ents) do
+                print(k,v)
+            end
     ----------------------------------------------------------------------------------------------------------------
     print("WARNING:PCALL END   +++++++++++++++++++++++++++++++++++++++++++++++++")
 end)

@@ -16,15 +16,17 @@ return function(inst)
     end
 
     local modules = {
-        "prefabs/01_character/character_mcoda_key_modules/01_hud_change",                    ---- 修改官方的HUD
-        "prefabs/01_character/character_mcoda_key_modules/02_anything_eater",                    ---- 吃东西 的组件
-        "prefabs/01_character/character_mcoda_key_modules/03_book_reader",                    ---- 特殊读书组件
-        "prefabs/01_character/character_mcoda_key_modules/04_talker_hook",                    ---- 某些特殊的说话文本替换
+        "prefabs/01_character/character_mcoda_key_modules/01_hud_change",                           ---- 修改官方的HUD
+        "prefabs/01_character/character_mcoda_key_modules/02_anything_eater",                       ---- 吃东西 的组件
+        "prefabs/01_character/character_mcoda_key_modules/03_book_reader",                          ---- 特殊读书组件
+        "prefabs/01_character/character_mcoda_key_modules/04_talker_hook",                          ---- 某些特殊的说话文本替换
         "prefabs/01_character/character_mcoda_key_modules/05_equipment_refuser",                    ---- 装备拒绝器
         "prefabs/01_character/character_mcoda_key_modules/06_combat_and_damage",                    ---- 战斗和伤害组件
-        "prefabs/01_character/character_mcoda_key_modules/07_lunar_aligned_animals",                    ---- 月亮阵营友好组件
-        "prefabs/01_character/character_mcoda_key_modules/08_eater",                    ---- 吃东西相关操作：不能回血等
-        "prefabs/01_character/character_mcoda_key_modules/09_moon_and _island",                    ---- 月岛、夜晚 回血事件
+        "prefabs/01_character/character_mcoda_key_modules/07_lunar_aligned_animals",                ---- 月亮阵营友好组件
+        "prefabs/01_character/character_mcoda_key_modules/08_eater",                                ---- 吃东西相关操作：不能回血等
+        "prefabs/01_character/character_mcoda_key_modules/09_moon_and_island",                      ---- 月岛、夜晚 回血事件
+        "prefabs/01_character/character_mcoda_key_modules/10_sanity_and_shadow_creatures",          ---- 影怪 和 san
+        "prefabs/01_character/character_mcoda_key_modules/11_shadow_creatures_spawner",             ---- 自制影怪刷新器
 
 
     }

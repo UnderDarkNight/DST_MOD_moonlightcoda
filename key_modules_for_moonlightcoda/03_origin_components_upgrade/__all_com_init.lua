@@ -7,3 +7,7 @@
 modimport("key_modules_for_moonlightcoda/03_origin_components_upgrade/01_inventoryitem.lua")  --- 给所有物品上交互
 
 modimport("key_modules_for_moonlightcoda/03_origin_components_upgrade/02_healer.lua")  --- 所有官方治疗物 hook
+
+modimport("key_modules_for_moonlightcoda/03_origin_components_upgrade/03_transparentonsanity.lua")  --- 影怪可见组件（client side only)
+
+modimport("key_modules_for_moonlightcoda/03_origin_components_upgrade/04_sanity.lua")  --- sanity 组件修改

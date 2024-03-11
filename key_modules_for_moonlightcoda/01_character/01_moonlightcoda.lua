@@ -27,10 +27,10 @@ end
 ---- 角色选择时候都文本
     if Language_check() == "ch" then
         -- The character select screen lines  --人物选人界面的描述
-        STRINGS.CHARACTER_TITLES["moonlightcoda"] = "月光终曲"
-        STRINGS.CHARACTER_NAMES["moonlightcoda"] = "月光终曲"
-        STRINGS.CHARACTER_DESCRIPTIONS["moonlightcoda"] = "我和月光相当亲近"
-        STRINGS.CHARACTER_QUOTES["moonlightcoda"] = "月亮代表我的心"
+        STRINGS.CHARACTER_TITLES["moonlightcoda"] = "月光终曲AAAA"
+        STRINGS.CHARACTER_NAMES["moonlightcoda"] = "月光终曲BBBB"
+        STRINGS.CHARACTER_DESCRIPTIONS["moonlightcoda"] = "我和月光相当亲近CCCCC"
+        STRINGS.CHARACTER_QUOTES["moonlightcoda"] = "月亮代表我的心DDDDDD"
 
         -- Custom speech strings  ----人物语言文件  可以进去自定义
         -- STRINGS.CHARACTERS[string.upper("moonlightcoda")] = require "speech_moonlightcoda"

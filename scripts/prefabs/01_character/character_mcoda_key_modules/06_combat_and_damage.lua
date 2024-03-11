@@ -35,10 +35,7 @@ return function(inst)
             inst.components.damagetyperesist:AddResist("shadow_aligned", inst, TUNING.MOONLIGHTCODA_DEBUGGING_MODE and 0.01 or 0.8)
         end)
     ---------------------------------------------------------------------------------------------
-    ----- 免疫BOSS的掉San 光环
-        inst:ListenForEvent("moonlightcoda_master_postinit", function()
-            inst.components.sanity:AddSanityAuraImmunity("epic")
-        end)
+
 
     ---------------------------------------------------------------------------------------------
     ----- 免疫查理第一次攻击

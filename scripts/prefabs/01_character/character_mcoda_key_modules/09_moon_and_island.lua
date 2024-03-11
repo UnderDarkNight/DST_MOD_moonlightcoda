@@ -35,6 +35,10 @@ return function(inst)
             end
 
             local function task_start_check()
+                if inst:HasTag("playerghost") then
+                    cancel_task()
+                    return
+                end
                 if need_2_turn_off_by_world_state and need_2_turn_off_by_outside_island then
                     cancel_task()
                     -- if TUNING.MOONLIGHTCODA_DEBUGGING_MODE then
@@ -117,6 +121,8 @@ return function(inst)
                 inst:WatchWorldState("isnewmoon",event_check_fn)
                 inst:WatchWorldState("moonphase",event_check_fn)
                 inst:DoTaskInTime(1,event_check_fn)
+                inst:ListenForEvent("ms_becameghost",event_check_fn)
+                inst:ListenForEvent("ms_respawnedfromghost",event_check_fn)
         ------------------------------------------------------------------------------
         --- 启蒙状态监听
                 inst:ListenForEvent("sanitymodechanged",function()

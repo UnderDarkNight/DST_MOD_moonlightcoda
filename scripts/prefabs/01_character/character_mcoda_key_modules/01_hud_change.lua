@@ -38,8 +38,9 @@
             HealthBadge.special_icon = HealthBadge:AddChild(UIAnim())
             HealthBadge.special_icon:GetAnimState():SetBank("moonlightcoda_hud_health")
             HealthBadge.special_icon:GetAnimState():SetBuild("moonlightcoda_hud_health")
-            HealthBadge.special_icon:GetAnimState():PlayAnimation("icon",true)
-            HealthBadge.special_icon:SetScale(0.5,0.5,0.5)
+            HealthBadge.special_icon:GetAnimState():PlayAnimation("icon_fx",true)
+            local icon_scale = 1
+            HealthBadge.special_icon:SetScale(icon_scale,icon_scale,icon_scale)
 
             HealthBadge.special_icon:MoveToFront()
             HealthBadge.sanityarrow:MoveToFront()
