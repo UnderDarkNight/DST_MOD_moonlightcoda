@@ -1,9 +1,10 @@
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --[[
 
-    修改玩家的sanity 组件，实现一些装备、机制
+    修改玩家的 health 组件，实现一些装备、机制
 
-                        function Sanity:DoDelta(delta, overtime)
+                        function Health:DoDelta(amount, overtime, cause, ignore_invincible, afflicter, ignore_absorb)
+
     API :
         mcoda_Add_DoDelta_Modifer_fn(inst,function(sanity,delta,overtime)
             
@@ -12,7 +13,7 @@
 
 ]]--
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-AddComponentPostInit("sanity", function(self)
+AddComponentPostInit("health", function(self)
 
     self.__mcoda_dodelta_modifer_fns = {}
 
@@ -40,11 +41,11 @@ AddComponentPostInit("sanity", function(self)
     end
 
     local old_DoDelta = self.DoDelta
-    self.DoDelta = function(self,delta,overtime,...)
+    self.DoDelta = function(self,delta,overtime,cause, ignore_invincible, afflicter, ignore_absorb,...)
         for k, temp_fn in pairs(self.__mcoda_dodelta_modifer_fns) do
-            delta = temp_fn(self,delta,overtime)
+            delta = temp_fn(self,delta,overtime,cause, ignore_invincible, afflicter, ignore_absorb,...)
         end
-        return old_DoDelta(self,delta, overtime, ...)
+        return old_DoDelta(self,delta, overtime,cause,ignore_invincible, afflicter, ignore_absorb, ...)
     end
 
 end)

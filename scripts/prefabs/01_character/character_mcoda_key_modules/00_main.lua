@@ -27,6 +27,8 @@ return function(inst)
         "prefabs/01_character/character_mcoda_key_modules/09_moon_and_island",                      ---- 月岛、夜晚 回血事件
         "prefabs/01_character/character_mcoda_key_modules/10_sanity_and_shadow_creatures",          ---- 影怪 和 san
         "prefabs/01_character/character_mcoda_key_modules/11_shadow_creatures_spawner",             ---- 自制影怪刷新器
+        "prefabs/01_character/character_mcoda_key_modules/12_item_spawner",                         ---- 血量低的时候丢东西出来
+        "prefabs/01_character/character_mcoda_key_modules/13_level_sys",                            ---- 等级系统
 
 
     }

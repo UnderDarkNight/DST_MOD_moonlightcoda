@@ -23,12 +23,16 @@ local function fn3()
     inst.AnimState:SetBuild("swap_krampus_sack")
     inst.AnimState:PlayAnimation("anim")
     
+    inst:AddTag("gestaltprotection")  -- 防止被月岛虚影打。和启迪王冠一样
+
     inst.entity:SetPristine()
     
     if not TheWorld.ismastersim then
         return inst
     end
 
+
+    inst:AddComponent("lootdropper")
 
     inst:AddComponent("inventoryitem")
     inst.components.inventoryitem.cangoincontainer = false

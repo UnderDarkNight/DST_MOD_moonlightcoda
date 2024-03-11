@@ -71,5 +71,5 @@ end
     TUNING[string.upper("moonlightcoda").."_SANITY"] = 160
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -----选人界面初始物品显示，物品相关的prefab
-    TUNING.GAMEMODE_STARTING_ITEMS.DEFAULT[string.upper("moonlightcoda")] = {"log"}
+    TUNING.GAMEMODE_STARTING_ITEMS.DEFAULT[string.upper("moonlightcoda")] = {"moonglass","purebrilliance"}
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -37,8 +37,15 @@
 
 	理智＞50，速度+15%
 	理智＞80，速度+25%
+    理智＞110，攻击自带小虚影，速度+25%
+    理智＞150，自发光(偏蓝色的光，范围和提灯一样)，攻击自带小虚影，速度+25%
 
 ]]--
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---
+    local function GetStringsTable(prefab_name)
+        return TUNING["moonlightcoda.fn"].GetStringsTable(prefab_name) or {}
+    end
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 return function(inst)
@@ -106,10 +113,13 @@ return function(inst)
                 end
             end)
     -------------------------------------------------------------------------------
-    ----- sanity 夜晚损失理智值的速度为正常冒险者的一半，月圆不会损失理智值
+    ----- sanity 夜晚损失理智值的速度为正常冒险者的一半，月圆不会损失理智值。洞里失效
         if TheWorld.ismastersim then
             inst:DoTaskInTime(0,function()
                     inst.components.sanity:mcoda_Add_DoDelta_Modifer_fn(inst,function(sanity,num,overtime)
+                        if TheWorld:HasTag("cave") then
+                            return num,overtime
+                        end
                         if overtime and TheWorld.state.isnight and num < 0 then
                             if TheWorld.state.isfullmoon then
                                 num = 0
@@ -117,7 +127,7 @@ return function(inst)
                                 num = num / 2
                             end
                         end
-                        return num,overtime
+                        return num
                     end)
             end)
         end
@@ -131,7 +141,9 @@ return function(inst)
         if TheWorld.ismastersim then
             inst:DoTaskInTime(0,function()
                     local temp_speed_by_sanity_inst = CreateEntity()
-
+                    inst:ListenForEvent("onremove",function()
+                        temp_speed_by_sanity_inst:Remove()
+                    end)
                     inst:ListenForEvent("sanitydelta",function()
                         local current_sanity = inst.components.sanity.current
                         local speed_mult = 1
@@ -144,6 +156,122 @@ return function(inst)
                     end)
 
             end)
+        end
+    -------------------------------------------------------------------------------
+    ----- 理智＞110，攻击自带小虚影 。 代码来自  启迪之冠
+        if TheWorld.ismastersim then
+                inst:ListenForEvent("onattackother",function(owner,data)
+                    if owner.components.sanity.current < 110 then
+                        return
+                    end
+                    local target = data.target
+                    if target and target ~= owner and target:IsValid() and (target.components.health == nil or not target.components.health:IsDead() and not target:HasTag("structure") and not target:HasTag("wall")) then
+
+                        -- In combat, this is when we're just launching a projectile, so don't spawn a gestalt yet
+                        if data.weapon ~= nil and data.projectile == nil
+                                and (data.weapon.components.projectile ~= nil
+                                    or data.weapon.components.complexprojectile ~= nil
+                                    or data.weapon.components.weapon:CanRangedAttack()) then
+                            return
+                        end
+
+                        local x, y, z = target.Transform:GetWorldPosition()
+
+                        local gestalt = SpawnPrefab("alterguardianhat_projectile")
+                        local r = GetRandomMinMax(3, 5)
+                        local delta_angle = GetRandomMinMax(-90, 90)
+                        local angle = (owner:GetAngleToPoint(x, y, z) + delta_angle) * DEGREES
+                        gestalt.Transform:SetPosition(x + r * math.cos(angle), y, z + r * -math.sin(angle))
+                        gestalt:ForceFacePoint(x, y, z)
+                        gestalt:SetTargetPosition(Vector3(x, y, z))
+                        gestalt.components.follower:SetLeader(owner)
+
+                        if owner.components.sanity ~= nil then
+                            owner.components.sanity:DoDelta(-1, true) -- using overtime so it doesnt make the sanity sfx every time you attack
+                        end
+                    end
+                end)
+        end
+    -------------------------------------------------------------------------------
+    ----- 理智＞150，自发光(偏蓝色的光，范围和提灯一样)  -- minerhatlight
+        if TheWorld.ismastersim then
+                local light_inst = nil  
+                local light_switch_task = nil
+                local function turn_on_light()
+                    if light_inst ~= nil then
+                        return
+                    end
+                    if light_switch_task then
+                        light_switch_task:Cancel()
+                    end
+                    light_switch_task = inst:DoTaskInTime(3,function()
+                        -----------------------------------------------------------------------------
+                        ------- 灯光
+                                light_inst = inst:SpawnChild("minerhatlight")
+                                -- light_inst.Light:SetFalloff(0.4)
+                                -- light_inst.Light:SetIntensity(.7)
+                                -- light_inst.Light:SetRadius(2.5)
+                                light_inst.Light:SetColour(0 / 255, 255 / 255, 255 / 255)
+                        -----------------------------------------------------------------------------
+                        light_switch_task = nil
+                    end)
+                end
+                local function turn_off_light()
+                    if light_inst == nil then
+                        return
+                    end
+                    if light_switch_task then
+                        light_switch_task:Cancel()
+                    end
+                    light_switch_task = inst:DoTaskInTime(3,function()
+                        light_inst:Remove()
+                        light_inst = nil
+                        light_switch_task = nil
+                    end)
+                end
+                inst:DoPeriodicTask(5,function()
+                    if inst.components.sanity.current < 150 then
+                        return
+                    end
+                    if TheWorld.state.isnight or TheWorld:HasTag("cave") then
+                        turn_on_light()
+                    else
+                        turn_off_light()
+                    end
+                end)
+        end
+    -------------------------------------------------------------------------------
+    ----- 理智下降变化一个等级 就说一句话。 等级：  50  80  110  150
+        if TheWorld.ismastersim then
+                local old_sanity_num = 0
+                local info_task = nil -- 做CD阻塞
+                local function message_for_sanity_down(new_sanity_num)
+                        local say_flag = false
+                        local sanity_levels = {50,80,110,150}
+                        for i, line_num in ipairs(sanity_levels) do
+                            if new_sanity_num < line_num and old_sanity_num >= line_num then
+                                say_flag = true
+                                break
+                            end
+                        end
+                        if not say_flag then
+                            return
+                        end
+                        info_task = inst:DoTaskInTime(30,function()
+                            info_task = nil
+                        end)
+                        inst.components.talker:Say(GetStringsTable("MOONLIGHTCODA_SANITY_DOWN")["msg"] or "我感觉不太好")
+                end
+                inst:ListenForEvent("sanitydelta",function(inst)
+                        if info_task ~= nil then
+                            return
+                        end
+                        local new_sanity_num = inst.components.sanity.current
+                        if new_sanity_num < old_sanity_num then
+                            message_for_sanity_down(new_sanity_num)
+                        end
+                        old_sanity_num = new_sanity_num
+                end)
         end
     -------------------------------------------------------------------------------
 

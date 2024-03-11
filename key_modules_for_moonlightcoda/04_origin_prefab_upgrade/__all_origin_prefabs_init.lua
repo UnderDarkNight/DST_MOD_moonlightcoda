@@ -4,6 +4,8 @@
 -- -- 注意文件路径
 
 
+modimport("key_modules_for_moonlightcoda/04_origin_prefab_upgrade/00_world_upgrade.lua")  --- TheWorld 组件
+
 modimport("key_modules_for_moonlightcoda/04_origin_prefab_upgrade/01_player_com.lua")  --- 玩家组件
 
 modimport("key_modules_for_moonlightcoda/04_origin_prefab_upgrade/02_moon_island_marker.lua")  --- 月岛标记组件

@@ -140,15 +140,21 @@ local flg,error_code = pcall(function()
             -- ThePlayer:PushEvent("inducedinsanity", true)
             -- print(ThePlayer.components.sanity:IsInsanityMode())
             -- print(TheWorld.components.shadowcreaturespawner:GetDebugString())
-            ThePlayer.temp_table = ThePlayer.temp_table or {
-                ents = {}
-            }
-            TheWorld.components.shadowcreaturespawner:SpawnShadowCreature(ThePlayer,ThePlayer.temp_table)
-            TheWorld.components.shadowcreaturespawner:SpawnShadowCreature(ThePlayer,ThePlayer.temp_table)
-            TheWorld.components.shadowcreaturespawner:SpawnShadowCreature(ThePlayer,ThePlayer.temp_table)
-            for k, v in pairs(ThePlayer.temp_table.ents) do
-                print(k,v)
-            end
+            -- ThePlayer.temp_table = ThePlayer.temp_table or {
+            --     ents = {}
+            -- }
+            -- TheWorld.components.shadowcreaturespawner:SpawnShadowCreature(ThePlayer,ThePlayer.temp_table)
+            -- TheWorld.components.shadowcreaturespawner:SpawnShadowCreature(ThePlayer,ThePlayer.temp_table)
+            -- TheWorld.components.shadowcreaturespawner:SpawnShadowCreature(ThePlayer,ThePlayer.temp_table)
+            -- for k, v in pairs(ThePlayer.temp_table.ents) do
+            --     print(k,v)
+            -- end
+    ----------------------------------------------------------------------------------------------------------------
+                -- ThePlayer.components.sanity:DoDelta(-10)
+                ThePlayer:PushEvent("mcoda_level_up")
+                for i = 1, 10, 1 do
+                    print("level",i,ThePlayer.components.mcoda_com_tag_sys:HasTag("level_"..tostring(i)))
+                end
     ----------------------------------------------------------------------------------------------------------------
     print("WARNING:PCALL END   +++++++++++++++++++++++++++++++++++++++++++++++++")
 end)

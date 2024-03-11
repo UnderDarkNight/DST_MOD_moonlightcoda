@@ -11,3 +11,4 @@ modimport("key_modules_for_moonlightcoda/03_origin_components_upgrade/02_healer.
 modimport("key_modules_for_moonlightcoda/03_origin_components_upgrade/03_transparentonsanity.lua")  --- 影怪可见组件（client side only)
 
 modimport("key_modules_for_moonlightcoda/03_origin_components_upgrade/04_sanity.lua")  --- sanity 组件修改
+modimport("key_modules_for_moonlightcoda/03_origin_components_upgrade/05_health.lua")  --- health 组件修改

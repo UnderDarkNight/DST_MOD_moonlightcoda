@@ -32,6 +32,9 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
             ["MOONLIGHTCODA_HEAL_REFUSE"] = {
                 ["msg"] = "This stuff doesn't work for me.",
             },
+            ["MOONLIGHTCODA_SANITY_DOWN"] = {
+                ["msg"] = "I don't feel so well.",
+            },
         --------------------------------------------------------------------
         --- 
             ["mcoda_com_equipment_refuser"] = {

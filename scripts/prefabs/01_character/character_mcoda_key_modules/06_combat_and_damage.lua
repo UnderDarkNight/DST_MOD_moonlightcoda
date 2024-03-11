@@ -5,12 +5,8 @@
 
     对暗影生物(包括暗影联盟生物)伤害为1.5
     受到暗影生物(包括暗影联盟生物)伤害为0.8
-    可以抵挡查理的一次攻击，抵挡之后说“下次再说吧。”
 
-    不会被虚影攻击(类似启迪之冠的效果)  target_inventory:EquipHasTag("gestaltprotection")
-
-    不会被月亮联盟生物主动攻击
-
+   
     击败任何暗影生物恢复15月能值   attacker:PushEvent("killed", { victim = self.inst, attacker = attacker })
 
 ]]--
@@ -36,26 +32,6 @@ return function(inst)
         end)
     ---------------------------------------------------------------------------------------------
 
-
-    ---------------------------------------------------------------------------------------------
-    ----- 免疫查理第一次攻击
-        inst:ListenForEvent("moonlightcoda_master_postinit", function()
-            inst.components.grue:SetResistance(1)
-        end)
-    ---------------------------------------------------------------------------------------------
-    ----- 添加胡子装备栏的部件，和对应的事件
-        local function beard_slot_item_check(inst)
-            local beard_item = inst.components.inventory:GetEquippedItem(EQUIPSLOTS.BODY)
-            if beard_item == nil or not beard_item:IsValid() then
-                beard_item = SpawnPrefab("moonlightcoda_other_beard_container")
-                beard_item:AddTag("gestaltprotection")  -- 防止被月岛虚影打。和启迪王冠一样
-                inst.components.inventory:Equip(beard_item)
-            end
-        end
-        inst:ListenForEvent("unequip", beard_slot_item_check)
-        inst:ListenForEvent("equip", beard_slot_item_check)
-        inst:ListenForEvent("ms_respawnedfromghost", beard_slot_item_check)
-        inst:DoTaskInTime(0,beard_slot_item_check)
     ---------------------------------------------------------------------------------------------
     ---- 击败任何暗影生物恢复15月能值
         inst:ListenForEvent("killed", function(_,_table)
