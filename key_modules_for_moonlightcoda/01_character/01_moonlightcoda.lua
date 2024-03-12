@@ -27,33 +27,33 @@ end
 ---- 角色选择时候都文本
     if Language_check() == "ch" then
         -- The character select screen lines  --人物选人界面的描述
-        STRINGS.CHARACTER_TITLES["moonlightcoda"] = "月光终曲AAAA"
-        STRINGS.CHARACTER_NAMES["moonlightcoda"] = "月光终曲BBBB"
-        STRINGS.CHARACTER_DESCRIPTIONS["moonlightcoda"] = "我和月光相当亲近CCCCC"
-        STRINGS.CHARACTER_QUOTES["moonlightcoda"] = "月亮代表我的心DDDDDD"
+        STRINGS.CHARACTER_TITLES["moonlightcoda"] = "月光终曲"
+        STRINGS.CHARACTER_NAMES["moonlightcoda"] = "MOONLIGHTCODA"
+        STRINGS.CHARACTER_DESCRIPTIONS["moonlightcoda"] = "月光永恒 终曲回响"
+        STRINGS.CHARACTER_QUOTES["moonlightcoda"] = "我们只需要扮演好自己的角色。"
 
         -- Custom speech strings  ----人物语言文件  可以进去自定义
-        -- STRINGS.CHARACTERS[string.upper("moonlightcoda")] = require "speech_moonlightcoda"
+        STRINGS.CHARACTERS[string.upper("moonlightcoda")] = require("speech_moonlightcoda_ch")
 
         -- The character's name as appears in-game  --人物在游戏里面的名字
         STRINGS.NAMES[string.upper("moonlightcoda")] = "月光终曲"
         STRINGS.SKIN_NAMES["moonlightcoda_none"] = "月光终曲"  --检查界面显示的名字
 
         --生存几率
-        STRINGS.CHARACTER_SURVIVABILITY["moonlightcoda"] = "特别容易"
+        STRINGS.CHARACTER_SURVIVABILITY["moonlightcoda"] = "简单"
     else
         -- The character select screen lines  --人物选人界面的描述
-        STRINGS.CHARACTER_TITLES["moonlightcoda"] = "GeatsIX"
-        STRINGS.CHARACTER_NAMES["moonlightcoda"] = "GeatsIX"
-        STRINGS.CHARACTER_DESCRIPTIONS["moonlightcoda"] = "XXXXXXXX"
-        STRINGS.CHARACTER_QUOTES["moonlightcoda"] = "XXXXXXXX"
+        STRINGS.CHARACTER_TITLES["moonlightcoda"] = "Coda"
+        STRINGS.CHARACTER_NAMES["moonlightcoda"] = "MOONLIGHTCODA"
+        STRINGS.CHARACTER_DESCRIPTIONS["moonlightcoda"] = "The moonlight is eternal. The final song echoes"
+        STRINGS.CHARACTER_QUOTES["moonlightcoda"] = "We just need to play our part."
 
         -- Custom speech strings  ----人物语言文件  可以进去自定义
         -- STRINGS.CHARACTERS[string.upper("moonlightcoda")] = require "speech_moonlightcoda"
 
         -- The character's name as appears in-game  --人物在游戏里面的名字
-        STRINGS.NAMES[string.upper("moonlightcoda")] = "GeatsIX"
-        STRINGS.SKIN_NAMES["moonlightcoda_none"] = "GeatsIX"  --检查界面显示的名字
+        STRINGS.NAMES[string.upper("moonlightcoda")] = "Coda"
+        STRINGS.SKIN_NAMES["moonlightcoda_none"] = "Coda"  --检查界面显示的名字
 
         --生存几率
         STRINGS.CHARACTER_SURVIVABILITY["moonlightcoda"] = "easy"
@@ -66,10 +66,11 @@ end
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -----选人界面人物三维显示
-    TUNING[string.upper("moonlightcoda").."_HEALTH"] = 120
-    TUNING[string.upper("moonlightcoda").."_HUNGER"] = 185
+    TUNING[string.upper("moonlightcoda").."_HEALTH"] = 185
+    TUNING[string.upper("moonlightcoda").."_HUNGER"] = 120
     TUNING[string.upper("moonlightcoda").."_SANITY"] = 160
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -----选人界面初始物品显示，物品相关的prefab
     TUNING.GAMEMODE_STARTING_ITEMS.DEFAULT[string.upper("moonlightcoda")] = {"moonglass","purebrilliance"}
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------

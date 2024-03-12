@@ -19,7 +19,7 @@
                     doer.components.sanity:DoDelta(35)
                     return true
                 end,
-                fasteat = false,
+                fasteat = true,
             },
         -------------------------------------------------------
         --- 纯粹辉煌
@@ -33,7 +33,7 @@
                     doer.components.sanity:DoDelta(35)
                     return true
                 end,
-                fasteat = false,
+                fasteat = true,
             },
         -------------------------------------------------------
 

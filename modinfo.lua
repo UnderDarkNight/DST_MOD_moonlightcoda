@@ -85,16 +85,17 @@ configuration_options =
         default = "auto",
     },
 
-    -- {
-    --     name = "LEVEL_RETENTION",
-    --     label = "换角色等级保留 Level retention",
-    --     hover = "Saving character levels when changing characters",
-    --     options =  {
-    --       {description = "OFF", data = false},
-    --       {description = "ON", data = true},
-    --     },
-    --     default = true,
-    -- },
+    {
+        name = "LEVEL_RETENTION",
+        label = "换角色等级保留 Reroll Level retention",
+        hover = "Saving character levels when reroll characters",
+        options =  {
+          {description = "OFF", data = false},
+          {description = "ON", data = true},
+        },
+        default = true,
+    },
+
     {
       name = "FFFFFFF",
       label = "", --- 隔断测试

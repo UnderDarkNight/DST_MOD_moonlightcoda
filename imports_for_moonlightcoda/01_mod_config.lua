@@ -4,9 +4,8 @@ TUNING["moonlightcoda.Config"].Language = GetModConfigData("LANGUAGE")
 
 
 
--- TUNING["moonlightcoda.Config"].WHITE_TEMPLATE = GetModConfigData("WHITE_TEMPLATE")     --- 白模板
 
--- -- TUNING["moonlightcoda.Config"].LEVEL_RETENTION = GetModConfigData("LEVEL_RETENTION")     --- 等级保留
+TUNING["moonlightcoda.Config"].LEVEL_RETENTION = GetModConfigData("LEVEL_RETENTION")     --- 等级保留
 
 -- TUNING["moonlightcoda.Config"].FLY_RUN = GetModConfigData("FLY_RUN")     --- 走路动画
 

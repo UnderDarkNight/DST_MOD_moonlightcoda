@@ -187,20 +187,24 @@ return function(inst)
         end)
     ----------------------------------------------------------------------------------------------------------------------
     ----- 换角色保留等级
-        inst:ListenForEvent("ms_playerreroll",function()
-            local current_level = inst.components.mcoda_com_data:Get(level_data_index) or 0
-            TheWorld.components.mcoda_com_data:Set("mcoda_level_of_userid_"..tostring(inst.userid),current_level)
-        end)
-        inst:DoTaskInTime(0,function()
-            local level_form_world = TheWorld.components.mcoda_com_data:Get("mcoda_level_of_userid_"..tostring(inst.userid))
-            if level_form_world == nil or level_form_world <= 0 then
-                return
-            end
-            for i = 1, level_form_world, 1 do
-                inst:PushEvent("mcoda_level_up")
-            end
-            TheWorld.components.mcoda_com_data:Set("mcoda_level_of_userid_"..tostring(inst.userid),nil)
-        end)
+        if TUNING["moonlightcoda.Config"].LEVEL_RETENTION then
+
+            inst:ListenForEvent("ms_playerreroll",function()
+                local current_level = inst.components.mcoda_com_data:Get(level_data_index) or 0
+                TheWorld.components.mcoda_com_data:Set("mcoda_level_of_userid_"..tostring(inst.userid),current_level)
+            end)
+            inst:DoTaskInTime(0,function()
+                local level_form_world = TheWorld.components.mcoda_com_data:Get("mcoda_level_of_userid_"..tostring(inst.userid))
+                if level_form_world == nil or level_form_world <= 0 then
+                    return
+                end
+                for i = 1, level_form_world, 1 do
+                    inst:PushEvent("mcoda_level_up")
+                end
+                TheWorld.components.mcoda_com_data:Set("mcoda_level_of_userid_"..tostring(inst.userid),nil)
+            end)
+            
+        end
     ----------------------------------------------------------------------------------------------------------------------
 
 
