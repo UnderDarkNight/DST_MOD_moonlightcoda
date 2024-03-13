@@ -99,6 +99,11 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
                 ["inspect_str"] = STRINGS.RECIPE_DESC[string.upper("opalpreciousgem")],
                 ["recipe_desc"] = STRINGS.RECIPE_DESC[string.upper("opalpreciousgem")],
             },
+            ["moonlightcoda_spell_opalstaff_maker"] = {
+                ["name"] = STRINGS.NAMES[string.upper("opalstaff")],
+                ["inspect_str"] = STRINGS.RECIPE_DESC[string.upper("opalstaff")],
+                ["recipe_desc"] = STRINGS.RECIPE_DESC[string.upper("opalstaff")],
+            },
         --------------------------------------------------------------------
 
 }

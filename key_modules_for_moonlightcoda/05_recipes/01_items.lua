@@ -181,5 +181,24 @@
         {"CHARACTER","REFINE","MAGIC"}
     )
     RemoveRecipeFromFilter("moonlightcoda_spell_opalpreciousgem_maker_by_value","MODS")                       -- -- 在【模组物品】标签里移除这个。
-
+--------------------------------------------------------------------------------------------------------------------------------------------
+---- 唤月者魔杖
+--------------------------------------------------------------------------------------------------------------------------------------------
+    AddRecipeToFilter("moonlightcoda_spell_opalstaff_maker","CHARACTER")     ---- 添加物品到目标标签
+    AddRecipe2(
+        "moonlightcoda_spell_opalpreciousgem_maker",            --  --  inst.prefab  实体名字
+        { Ingredient("opalpreciousgem", 1),Ingredient("spear", 1), }, 
+        TECH.NONE, 
+        {
+            -- no_deconstruction=true,
+            -- numtogive = 3,
+            -- sg_state="moonlightcoda_sg_form_log",
+            builder_tag = "moonlightcoda",
+            -- atlas = "images/inventoryimages/moonlightcoda_item_moon_island_detector.xml",
+            atlas = GetInventoryItemAtlas("opalstaff.tex"),
+            image = "opalstaff.tex",
+        },
+        {"CHARACTER","WEAPONS","MAGIC"}
+    )
+    RemoveRecipeFromFilter("moonlightcoda_spell_opalpreciousgem_maker","MODS")                       -- -- 在【模组物品】标签里移除这个。
 --------------------------------------------------------------------------------------------------------------------------------------------

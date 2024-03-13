@@ -36,6 +36,7 @@ local prefabs_name_list = {
     "06_moonglass_trans_2_purebrilliance_maker",    --- 玻璃 转 纯粹辉煌
     "07_opalpreciousgem_maker",                     --- 彩虹宝石合成
     "08_opalpreciousgem_maker_by_value",            --- 消耗三维 做彩虹宝石
+    "09_opalstaff_maker",                           --- 唤月者魔杖
 
 }
 
