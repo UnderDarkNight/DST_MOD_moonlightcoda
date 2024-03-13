@@ -16,3 +16,5 @@ modimport("key_modules_for_moonlightcoda/02_actions/07_com_special_book_reader.l
 
 modimport("key_modules_for_moonlightcoda/02_actions/08_com_equipment_refuser.lua") --- 装备拒绝组件
 modimport("key_modules_for_moonlightcoda/02_actions/09_sg_refuse_action.lua") --- 拒绝sg动作
+
+modimport("key_modules_for_moonlightcoda/02_actions/10_sg_from_log.lua") --- 物品制作用的自制动画

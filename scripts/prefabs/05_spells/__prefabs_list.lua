@@ -28,8 +28,14 @@ local Prefabs_addr_base = string.sub(temp_addr,1,temp_str_index2) .. "/"    --- 
 local prefabs_name_list = {
 
 
-    "01_dock_kit",                           --- 码头套装
-    "02_book_moon",                           --- 月之魔典
+    "01_dock_kit",                                  --- 码头套装
+    "02_book_moon",                                 --- 月之魔典
+    "03_moonrocknugget_maker",                      --- 月岩
+    "04_moonglass_maker",                           --- 玻璃
+    "05_purebrilliance_maker",                      --- 纯粹辉煌
+    "06_moonglass_trans_2_purebrilliance_maker",    --- 玻璃 转 纯粹辉煌
+    "07_opalpreciousgem_maker",                     --- 彩虹宝石合成
+    "08_opalpreciousgem_maker_by_value",            --- 消耗三维 做彩虹宝石
 
 }
 

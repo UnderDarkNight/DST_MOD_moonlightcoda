@@ -49,6 +49,7 @@ return function(inst)
 
 
     inst.AnimState:OverrideSymbol("wendy_idle_flower","moonlightcoda_idle_flower","wendy_idle_flower")
+    inst.AnimState:OverrideSymbol("wood_splinter","moonlightcoda_hand_glass","wood_splinter")
 
     if not TheWorld.ismastersim then
         return

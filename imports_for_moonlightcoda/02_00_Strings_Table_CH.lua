@@ -65,14 +65,44 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
         --------------------------------------------------------------------
         --- 05_spells
             ["moonlightcoda_spell_dock_kit_maker"] = {
-                ["name"] = STRINGS.NAMES.DOCK_KIT,
-                ["inspect_str"] = STRINGS.RECIPE_DESC.DOCK_KIT,
-                ["recipe_desc"] = STRINGS.RECIPE_DESC.DOCK_KIT,
+                ["name"] = STRINGS.NAMES[string.upper("dock_kit")],
+                ["inspect_str"] = STRINGS.RECIPE_DESC[string.upper("dock_kit")],
+                ["recipe_desc"] = STRINGS.RECIPE_DESC[string.upper("dock_kit")],
             },
             ["moonlightcoda_spell_book_moon_maker"] = {
-                ["name"] = STRINGS.NAMES.BOOK_MOON,
-                ["inspect_str"] = STRINGS.RECIPE_DESC.BOOK_MOON,
-                ["recipe_desc"] = STRINGS.RECIPE_DESC.BOOK_MOON,
+                ["name"] = STRINGS.NAMES[string.upper("book_moon")],
+                ["inspect_str"] = STRINGS.RECIPE_DESC[string.upper("book_moon")],
+                ["recipe_desc"] = STRINGS.RECIPE_DESC[string.upper("book_moon")],
+            },
+            ["moonlightcoda_spell_moonrocknugget_maker"] = {
+                ["name"] = STRINGS.NAMES[string.upper("moonrocknugget")],
+                ["inspect_str"] = STRINGS.RECIPE_DESC[string.upper("moonrocknugget")],
+                ["recipe_desc"] = STRINGS.RECIPE_DESC[string.upper("moonrocknugget")],
+            },
+            ["moonlightcoda_spell_moonglass_maker"] = {
+                ["name"] = STRINGS.NAMES[string.upper("moonglass")],
+                ["inspect_str"] = STRINGS.RECIPE_DESC[string.upper("moonglass")],
+                ["recipe_desc"] = STRINGS.RECIPE_DESC[string.upper("moonglass")],
+            },
+            ["moonlightcoda_spell_purebrilliance_maker"] = {
+                ["name"] = STRINGS.NAMES[string.upper("purebrilliance")],
+                ["inspect_str"] = STRINGS.RECIPE_DESC[string.upper("purebrilliance")],
+                ["recipe_desc"] = STRINGS.RECIPE_DESC[string.upper("purebrilliance")],
+            },
+            ["moonlightcoda_spell_moonglass_trans_2_purebrilliance_maker"] = {
+                ["name"] = STRINGS.NAMES[string.upper("purebrilliance")],
+                ["inspect_str"] = STRINGS.RECIPE_DESC[string.upper("purebrilliance")],
+                ["recipe_desc"] = STRINGS.RECIPE_DESC[string.upper("purebrilliance")],
+            },
+            ["moonlightcoda_spell_opalpreciousgem_maker"] = {
+                ["name"] = STRINGS.NAMES[string.upper("opalpreciousgem")],
+                ["inspect_str"] = STRINGS.RECIPE_DESC[string.upper("opalpreciousgem")],
+                ["recipe_desc"] = STRINGS.RECIPE_DESC[string.upper("opalpreciousgem")],
+            },
+            ["moonlightcoda_spell_opalpreciousgem_maker_by_value"] = {
+                ["name"] = STRINGS.NAMES[string.upper("opalpreciousgem")],
+                ["inspect_str"] = STRINGS.RECIPE_DESC[string.upper("opalpreciousgem")],
+                ["recipe_desc"] = STRINGS.RECIPE_DESC[string.upper("opalpreciousgem")],
             },
         --------------------------------------------------------------------
 }

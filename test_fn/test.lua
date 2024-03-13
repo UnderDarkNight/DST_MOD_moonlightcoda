@@ -162,11 +162,20 @@ local flg,error_code = pcall(function()
                 -- ThePlayer.components.sanity.current = 20
     ----------------------------------------------------------------------------------------------------------------
     -- 
-        local LUNACY_TINT = { 191 / 255, 232 / 255, 240 / 255, 1 }
-        local SanityBadge = ThePlayer.HUD.controls.status.brain
-        SanityBadge.backing:GetAnimState():OverrideSymbol("bg", "status_sanity", "lunacy_bg")
-        SanityBadge.anim:GetAnimState():SetMultColour(unpack(LUNACY_TINT))
-        SanityBadge.circleframe:GetAnimState():OverrideSymbol("icon", "status_sanity", "lunacy_icon")
+        -- local LUNACY_TINT = { 191 / 255, 232 / 255, 240 / 255, 1 }
+        -- local SanityBadge = ThePlayer.HUD.controls.status.brain
+        -- SanityBadge.backing:GetAnimState():OverrideSymbol("bg", "status_sanity", "lunacy_bg")
+        -- SanityBadge.anim:GetAnimState():SetMultColour(unpack(LUNACY_TINT))
+        -- SanityBadge.circleframe:GetAnimState():OverrideSymbol("icon", "status_sanity", "lunacy_icon")
+    ----------------------------------------------------------------------------------------------------------------
+        -- ThePlayer.AnimState:PlayAnimation("form_log_pre")
+        -- ThePlayer.AnimState:PushAnimation("form_log", false)
+        local inst = ThePlayer
+        -- inst.SoundEmitter:PlaySound("turnoftides/common/together/moon_glass/break")
+        -- inst.SoundEmitter:PlaySound("dontstarve/creatures/together/antlion/sfx/glass_break")    --
+        inst.SoundEmitter:PlaySound("turnoftides/common/together/water/hotspring/glassify")
+        -- inst.SoundEmitter:PlaySound("moonstorm/common/moonstorm/glass_break")
+        -- inst.SoundEmitter:PlaySound("turnoftides/common/together/moon_glass/mine")
     ----------------------------------------------------------------------------------------------------------------
 
     print("WARNING:PCALL END   +++++++++++++++++++++++++++++++++++++++++++++++++")
