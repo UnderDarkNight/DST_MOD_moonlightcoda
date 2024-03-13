@@ -29,6 +29,8 @@ return function(inst)
         "prefabs/01_character/character_mcoda_key_modules/11_shadow_creatures_spawner",             ---- 自制影怪刷新器
         "prefabs/01_character/character_mcoda_key_modules/12_item_spawner",                         ---- 血量低的时候丢东西出来
         "prefabs/01_character/character_mcoda_key_modules/13_level_sys",                            ---- 等级系统
+        "prefabs/01_character/character_mcoda_key_modules/14_new_spawn_gift",                       ---- 角色新入存档，进行礼物赠送
+        "prefabs/01_character/character_mcoda_key_modules/15_animstate_hook",                       ---- 修改动画组件，屏蔽一些动画/装备
 
 
     }
@@ -46,6 +48,7 @@ return function(inst)
     inst.soundsname = "wendy"           -- 角色声音
 
 
+    inst.AnimState:OverrideSymbol("wendy_idle_flower","moonlightcoda_idle_flower","wendy_idle_flower")
 
     if not TheWorld.ismastersim then
         return

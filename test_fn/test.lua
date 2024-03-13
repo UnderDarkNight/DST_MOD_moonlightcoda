@@ -151,11 +151,50 @@ local flg,error_code = pcall(function()
             -- end
     ----------------------------------------------------------------------------------------------------------------
                 -- ThePlayer.components.sanity:DoDelta(-10)
-                ThePlayer:PushEvent("mcoda_level_up")
-                for i = 1, 10, 1 do
-                    print("level",i,ThePlayer.components.mcoda_com_tag_sys:HasTag("level_"..tostring(i)))
-                end
+                -- ThePlayer:PushEvent("mcoda_level_up")
+                -- for i = 1, 10, 1 do
+                --     print("level",i,ThePlayer.components.mcoda_com_tag_sys:HasTag("level_"..tostring(i)))
+                -- end
     ----------------------------------------------------------------------------------------------------------------
+                -- ThePlayer.AnimState:PlayAnimation("idle_wendy")
+                -- ThePlayer.AnimState:PlayAnimation("idle_warly")
+
+                -- ThePlayer.components.sanity.current = 20
+    ----------------------------------------------------------------------------------------------------------------
+    ----- 清除 body layer 测试
+            local inst = ThePlayer
+            local function need_2_clear_body_layer(tar_layer,build,the_layer)
+                if  tar_layer == "swap_body" or tar_layer == "swap_body_tall" or (tar_layer==nil and  build == nil and the_layer == nil) then
+                        -------------------------------------------------------
+
+                        -------------------------------------------------------
+                        ----- 背重物
+                            if inst.replica.inventory:IsHeavyLifting() then
+                                -- print("heavylifting",build)
+                                return false
+                            end
+                        ------------------------------------------------------- 
+                        -------------------------------------------------------
+                        --- 蜗牛壳
+                            if inst.replica.inventory:EquipHasTag("shell") then
+                                return false
+                            end
+                        -------------------------------------------------------
+                        --- 鼓
+                            if inst.replica.inventory:EquipHasTag("band") then
+                                return false
+                            end
+                        -------------------------------------------------------
+                        -------------------------------------------------------
+                        return true
+
+                end
+                return false
+            end
+
+            print(need_2_clear_body_layer())
+    ----------------------------------------------------------------------------------------------------------------
+
     print("WARNING:PCALL END   +++++++++++++++++++++++++++++++++++++++++++++++++")
 end)
 

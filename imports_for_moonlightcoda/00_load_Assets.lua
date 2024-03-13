@@ -21,8 +21,7 @@ local temp_assets = {
 
 
 	---------------------------------------------------------------------------
-	-- Asset("ANIM", "anim/moonlightcoda_mutant_frog.zip"),	--- 变异青蛙贴图包
-	-- Asset("ANIM", "anim/moonlightcoda_animal_frog_hound.zip"),	--- 变异青蛙狗贴图包
+	Asset("ANIM", "anim/moonlightcoda_idle_flower.zip"),	--- wendy 花的图层替代
 
 	---------------------------------------------------------------------------
 	-- Asset("SOUNDPACKAGE", "sound/dontstarve_DLC002.fev"),	--- 单机声音集

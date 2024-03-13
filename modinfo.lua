@@ -85,6 +85,31 @@ configuration_options =
         default = "auto",
     },
 
+    { name = "F",  label = "", hover = "", options = {{description = "", data = 0}},  default = 0, }, ---- 隔断
+
+    {
+        name = "HIDE_HAT",
+        label = "隐藏帽子 hide hat",
+        hover = "hide hat",
+        options =  {
+          {description = "OFF", data = false},
+          {description = "ON", data = true},
+        },
+        default = false,
+    },
+    {
+        name = "HIDE_CLOTHS",
+        label = "隐藏衣服 hide clothes",
+        hover = "hide clothes",
+        options =  {
+          {description = "OFF", data = false},
+          {description = "ON", data = true},
+        },
+        default = false,
+    },
+
+    { name = "FF",  label = "", hover = "", options = {{description = "", data = 0}},  default = 0, }, ---- 隔断
+
     {
         name = "LEVEL_RETENTION",
         label = "换角色等级保留 Reroll Level retention",
@@ -96,13 +121,8 @@ configuration_options =
         default = true,
     },
 
-    {
-      name = "FFFFFFF",
-      label = "", --- 隔断测试
-      hover = "",
-      options = {{description = "", data = 0}},
-      default = 0,
-    },
+    { name = "FFFF",  label = "", hover = "", options = {{description = "", data = 0}},  default = 0, }, ---- 隔断
+
 
     ---------------------------------------------------------------------------
 

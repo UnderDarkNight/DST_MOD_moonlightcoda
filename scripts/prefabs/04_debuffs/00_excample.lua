@@ -57,4 +57,4 @@ local function fn()
     return inst
 end
 
-return Prefab("chemist_yue_ling_buff_reinforcement", fn)
+return Prefab("moonlightcoda_buff_reinforcement", fn)

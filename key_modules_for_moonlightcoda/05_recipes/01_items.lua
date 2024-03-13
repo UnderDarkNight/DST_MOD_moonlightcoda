@@ -14,7 +14,7 @@
             -- numtogive = 3,
             builder_tag = "moonlightcoda",
             atlas = "images/inventoryimages/moonlightcoda_item_moon_island_detector.xml",
-            -- atlas = GetInventoryItemAtlas("chemist_yue_ling_item_blissful_memory.tex"),
+            -- atlas = GetInventoryItemAtlas("moonlightcoda_item_blissful_memory.tex"),
             image = "moonlightcoda_item_moon_island_detector.tex",
         },
         {"CHARACTER","TOOLS"}

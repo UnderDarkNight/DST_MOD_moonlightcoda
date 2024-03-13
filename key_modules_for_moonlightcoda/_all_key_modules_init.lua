@@ -24,4 +24,7 @@ modimport("key_modules_for_moonlightcoda/04_origin_prefab_upgrade/__all_origin_p
 modimport("key_modules_for_moonlightcoda/05_recipes/__all_recipes_init.lua") 
 -- 制作栏配方
 
+modimport("key_modules_for_moonlightcoda/06_AnimState_Hook/_All_Original_AnimState_Upgrade_Init.lua") 
+-- 修改 玩家的animstate 方便 hook
+
 
