@@ -1,6 +1,8 @@
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --[[
 
+    本文件的作用： hook 进animstate 组件， 穿戴衣服/帽子 进行拦截。 玩家低San动画 拦截切换
+
     DoTaskInTime 0  进行了  userdata 转 table
     其他操作 延迟到 0.1
 
@@ -59,7 +61,7 @@ return function(inst)
                         anim_name = ret
                     end
                 end
-                print("PlayAnimation",anim_name)
+                -- print("PlayAnimation",anim_name)
                 old_PlayAnimation(self, anim_name,flag)
             end
 
@@ -74,7 +76,7 @@ return function(inst)
                         anim_name = ret
                     end
                 end
-                print("PushAnimation",anim_name)
+                -- print("PushAnimation",anim_name)
                 old_PushAnimation(self, anim_name,flag)
             end
         -------------------------------------------------------------------------

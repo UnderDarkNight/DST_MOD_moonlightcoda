@@ -161,38 +161,12 @@ local flg,error_code = pcall(function()
 
                 -- ThePlayer.components.sanity.current = 20
     ----------------------------------------------------------------------------------------------------------------
-    ----- 清除 body layer 测试
-            local inst = ThePlayer
-            local function need_2_clear_body_layer(tar_layer,build,the_layer)
-                if  tar_layer == "swap_body" or tar_layer == "swap_body_tall" or (tar_layer==nil and  build == nil and the_layer == nil) then
-                        -------------------------------------------------------
-
-                        -------------------------------------------------------
-                        ----- 背重物
-                            if inst.replica.inventory:IsHeavyLifting() then
-                                -- print("heavylifting",build)
-                                return false
-                            end
-                        ------------------------------------------------------- 
-                        -------------------------------------------------------
-                        --- 蜗牛壳
-                            if inst.replica.inventory:EquipHasTag("shell") then
-                                return false
-                            end
-                        -------------------------------------------------------
-                        --- 鼓
-                            if inst.replica.inventory:EquipHasTag("band") then
-                                return false
-                            end
-                        -------------------------------------------------------
-                        -------------------------------------------------------
-                        return true
-
-                end
-                return false
-            end
-
-            print(need_2_clear_body_layer())
+    -- 
+        local LUNACY_TINT = { 191 / 255, 232 / 255, 240 / 255, 1 }
+        local SanityBadge = ThePlayer.HUD.controls.status.brain
+        SanityBadge.backing:GetAnimState():OverrideSymbol("bg", "status_sanity", "lunacy_bg")
+        SanityBadge.anim:GetAnimState():SetMultColour(unpack(LUNACY_TINT))
+        SanityBadge.circleframe:GetAnimState():OverrideSymbol("icon", "status_sanity", "lunacy_icon")
     ----------------------------------------------------------------------------------------------------------------
 
     print("WARNING:PCALL END   +++++++++++++++++++++++++++++++++++++++++++++++++")

@@ -57,12 +57,33 @@
 
     end
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----- San 修改
+    local function hook_sanity_bage(SanityBadge)
+        local function display_switch()
+            local LUNACY_TINT = { 191 / 255, 232 / 255, 240 / 255, 1 }
+            SanityBadge.backing:GetAnimState():OverrideSymbol("bg", "status_sanity", "lunacy_bg")
+            SanityBadge.anim:GetAnimState():SetMultColour(unpack(LUNACY_TINT))
+            SanityBadge.circleframe:GetAnimState():OverrideSymbol("icon", "status_sanity", "lunacy_icon")
+        end
+
+        display_switch()
+
+        local old_DoTransition = SanityBadge.DoTransition
+        SanityBadge.DoTransition = function(self, ...)
+            old_DoTransition(self, ...)
+            display_switch()
+        end
+
+    end
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 return function(inst)
     inst:DoTaskInTime(0,function()
         if ThePlayer and inst == ThePlayer and ThePlayer.HUD then
             pcall(function()
                 hook_health_bage(ThePlayer.HUD.controls.status.heart)
+                hook_sanity_bage(ThePlayer.HUD.controls.status.brain)
             end)
         end
     end)
