@@ -30,29 +30,35 @@ AddStategraphState("wilson",State{
     timeline =
         {
 
+            TimeEvent(0.2 * 1 , function(inst)
+                inst.SoundEmitter:KillSound("moonlightcoda_sg_form_log")
+                inst.SoundEmitter:PlaySound("turnoftides/common/together/water/hotspring/glassify","moonlightcoda_sg_form_log")
+            end),
+            TimeEvent(0.2 * 2 , function(inst)
+                inst.SoundEmitter:KillSound("moonlightcoda_sg_form_log")
+                inst.SoundEmitter:PlaySound("turnoftides/common/together/water/hotspring/glassify","moonlightcoda_sg_form_log")
+            end),
+            TimeEvent(0.2 * 3 , function(inst)
+                inst.SoundEmitter:KillSound("moonlightcoda_sg_form_log")
+                inst.SoundEmitter:PlaySound("turnoftides/common/together/water/hotspring/glassify","moonlightcoda_sg_form_log")
+            end),
+            TimeEvent(0.2 * 4 , function(inst)
+                inst.SoundEmitter:KillSound("moonlightcoda_sg_form_log")
+                inst.SoundEmitter:PlaySound("turnoftides/common/together/water/hotspring/glassify","moonlightcoda_sg_form_log")
+            end),
+            TimeEvent(0.2 * 5 , function(inst)
+                inst.SoundEmitter:KillSound("moonlightcoda_sg_form_log")
+                -- inst.SoundEmitter:PlaySound("turnoftides/common/together/water/hotspring/glassify","moonlightcoda_sg_form_log")
+            end),
+
 			FrameEvent(0, function(inst)
-
 			end),
-			-- FrameEvent(2, function(inst)
-
-            --     -- inst.SoundEmitter:PlaySound("dontstarve/characters/wormwood/living_log_craft")
-            --     -- inst.SoundEmitter:PlaySound("turnoftides/common/together/water/hotspring/glassify")
-
-			-- end),
 			FrameEvent(2 , function(inst)
-
-                for i = 1, 5, 1 do
-                    inst:DoTaskInTime(0.22*(i-1),function()
-                        inst.SoundEmitter:PlaySound("turnoftides/common/together/water/hotspring/glassify")
-                    end)
-                end
-
 			end),
 
 			FrameEvent(40, function(inst)
-
 			end),
-			FrameEvent(50, function(inst)
+			FrameEvent(50, function(inst)                
                 inst.SoundEmitter:PlaySound("turnoftides/common/together/moon_glass/mine")
 				inst:PerformBufferedAction()
 			end),
@@ -75,6 +81,7 @@ AddStategraphState("wilson",State{
         (not inst.components.playercontroller or
         inst.components.playercontroller.lastheldaction ~= inst.bufferedaction) then
             inst:ClearBufferedAction()
+            inst.SoundEmitter:KillSound("moonlightcoda_sg_form_log")
         end
 
     end,
@@ -100,13 +107,12 @@ AddStategraphState("wilson_client",State{
 
         inst:PerformPreviewBufferedAction()
         inst.sg:SetTimeout(TIMEOUT)
-    end,
+    end,  
 
     onupdate = function(inst)
         if inst.sg:ServerStateMatches() then
             if inst.entity:FlattenMovementPrediction() then
                 inst.sg:GoToState("idle", "noanim")
-
             end
         elseif inst.bufferedaction == nil then
             inst.sg:GoToState("idle")
