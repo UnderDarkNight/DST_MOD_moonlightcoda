@@ -23,6 +23,7 @@ local temp_assets = {
 	---------------------------------------------------------------------------
 	Asset("ANIM", "anim/moonlightcoda_idle_flower.zip"),	--- wendy 花的图层替代
 	Asset("ANIM", "anim/moonlightcoda_hand_glass.zip"),		--- 植物人手部活木替代
+	Asset("ANIM", "anim/moonlightcoda_funny_idle.zip"),		--- 自制idle动作
 
 	---------------------------------------------------------------------------
 	-- Asset("SOUNDPACKAGE", "sound/dontstarve_DLC002.fev"),	--- 单机声音集

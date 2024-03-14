@@ -44,7 +44,8 @@ return function(inst)
 
     inst:AddTag("moonlightcoda")
 
-    inst.customidleanim = "idle_wendy"  -- 闲置站立动画
+    inst.customidleanim = "moonlightcoda_funny_idle"  -- 闲置站立动画
+    -- inst.customidleanim = "idle_wendy"  -- 闲置站立动画
     inst.soundsname = "wendy"           -- 角色声音
 
 
