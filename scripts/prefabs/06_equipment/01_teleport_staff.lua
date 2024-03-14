@@ -3,6 +3,7 @@
     传送法杖
 ]]--
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 local assets =
 {
     Asset("ANIM", "anim/moonlightcoda_equipment_teleport_staff.zip"),
@@ -95,7 +96,7 @@ local function fn()
     --weapon (from weapon component) added to pristine state for optimization
     inst:AddTag("weapon")
 
-    MakeInventoryFloatable(inst, "med", 0.05, {0.85, 0.45, 0.85}, true, 1)
+    MakeInventoryFloatable(inst, "med", 0.05, {0.85, 0.45, 0.85})
 
 
     inst.entity:SetPristine()

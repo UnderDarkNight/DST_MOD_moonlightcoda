@@ -37,6 +37,7 @@ local prefabs_name_list = {
     "07_opalpreciousgem_maker",                     --- 彩虹宝石合成
     "08_opalpreciousgem_maker_by_value",            --- 消耗三维 做彩虹宝石
     "09_opalstaff_maker",                           --- 唤月者魔杖
+    "10_laser",                                     --- 激光
 
 }
 

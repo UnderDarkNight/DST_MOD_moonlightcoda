@@ -30,6 +30,7 @@ local prefabs_name_list = {
 
     "01_teleport_staff",                    --- 传送法杖
     "02_liturgy",                           --- 月光的礼仪
+    "03_laser_staff",                       --- 激光法杖
 
 
 }

@@ -241,5 +241,25 @@
         {"CHARACTER","WEAPONS","MAGIC"}
     )
     RemoveRecipeFromFilter("moonlightcoda_equipment_liturgy","MODS")                       -- -- 在【模组物品】标签里移除这个。
+--------------------------------------------------------------------------------------------------------------------------------------------
+---- 月光的刺痛
+--------------------------------------------------------------------------------------------------------------------------------------------
+    AddRecipeToFilter("moonlightcoda_equipment_laser_staff","CHARACTER")     ---- 添加物品到目标标签
+    AddRecipe2(
+        "moonlightcoda_equipment_laser_staff",            --  --  inst.prefab  实体名字
+        { Ingredient("moonglass", 1),Ingredient(CHARACTER_INGREDIENT.HEALTH, 35), }, 
+        TECH.NONE, 
+        {
+            no_deconstruction=true,
+            -- numtogive = 3,
+            -- sg_state="moonlightcoda_sg_form_log",
+            builder_tag = "moonlightcoda",
+            atlas = "images/inventoryimages/moonlightcoda_equipment_laser_staff.xml",
+            -- atlas = GetInventoryItemAtlas("opalstaff.tex"),
+            image = "moonlightcoda_equipment_laser_staff.tex",
+        },
+        {"CHARACTER","WEAPONS","MAGIC"}
+    )
+    RemoveRecipeFromFilter("moonlightcoda_equipment_laser_staff","MODS")                       -- -- 在【模组物品】标签里移除这个。
 
 --------------------------------------------------------------------------------------------------------------------------------------------

@@ -116,6 +116,11 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
                 ["inspect_str"] = "Please keep your distance.",
                 ["recipe_desc"] = "Please keep your distance.",
             },
+            ["moonlightcoda_equipment_laser_staff"] = {
+                ["name"] = "The Tingle of Moonlight",
+                ["inspect_str"] = "Incision target",
+                ["recipe_desc"] = "Incision target",
+            },
         --------------------------------------------------------------------
 
 }

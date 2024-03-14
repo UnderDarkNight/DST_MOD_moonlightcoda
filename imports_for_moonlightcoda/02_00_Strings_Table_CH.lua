@@ -121,6 +121,11 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
                 ["inspect_str"] = "请保持距离",
                 ["recipe_desc"] = "请保持距离",
             },
+            ["moonlightcoda_equipment_laser_staff"] = {
+                ["name"] = "月光的刺痛",
+                ["inspect_str"] = "切开目标",
+                ["recipe_desc"] = "切开目标",
+            },
         --------------------------------------------------------------------
 }
 

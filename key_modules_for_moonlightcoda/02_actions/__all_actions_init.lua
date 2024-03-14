@@ -18,3 +18,6 @@ modimport("key_modules_for_moonlightcoda/02_actions/08_com_equipment_refuser.lua
 modimport("key_modules_for_moonlightcoda/02_actions/09_sg_refuse_action.lua") --- 拒绝sg动作
 
 modimport("key_modules_for_moonlightcoda/02_actions/10_sg_from_log.lua") --- 物品制作用的自制动画
+
+modimport("key_modules_for_moonlightcoda/02_actions/11_com_point_and_spell_caster.lua") --- 目标/点 施法互动作
+

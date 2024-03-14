@@ -20,6 +20,7 @@ local files_name = {
 	--- 06_equipment
 		"moonlightcoda_equipment_teleport_staff",						--- 传送法杖
 		"moonlightcoda_equipment_liturgy",								--- 月光的礼仪
+		"moonlightcoda_equipment_laser_staff",							--- 月光的刺痛
 	---------------------------------------------------------------------------------------
 
 }
