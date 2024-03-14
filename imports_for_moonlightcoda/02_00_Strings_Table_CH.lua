@@ -126,6 +126,11 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
                 ["inspect_str"] = "切开目标",
                 ["recipe_desc"] = "切开目标",
             },
+            ["moonlightcoda_equipment_debate"] = {
+                ["name"] = "月光的议论",
+                ["inspect_str"] = "演奏吧",
+                ["recipe_desc"] = "演奏吧",
+            },
         --------------------------------------------------------------------
 }
 

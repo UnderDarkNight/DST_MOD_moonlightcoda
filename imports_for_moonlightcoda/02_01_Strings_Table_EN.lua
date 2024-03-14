@@ -121,6 +121,11 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
                 ["inspect_str"] = "Incision target",
                 ["recipe_desc"] = "Incision target",
             },
+            ["moonlightcoda_equipment_debate"] = {
+                ["name"] = "The Debate of Moonlight",
+                ["inspect_str"] = "Let's play it.",
+                ["recipe_desc"] = "Let's play it.",
+            },
         --------------------------------------------------------------------
 
 }

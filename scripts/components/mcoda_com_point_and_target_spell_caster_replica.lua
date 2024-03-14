@@ -21,6 +21,17 @@ nil,
 
 })
 ---------------------------------------------------------------------------------------------------
+----- 设置海洋/虚空可用  allow_action_on_impassable
+    function mcoda_com_point_and_target_spell_caster:SetAllowCanCastOnImpassable(flag)
+        self.inst:DoTaskInTime(0,function()
+            if flag then
+                self.inst:AddTag("allow_action_on_impassable")
+            else
+                self.inst:RemoveTag("allow_action_on_impassable")
+            end
+        end)
+    end
+---------------------------------------------------------------------------------------------------
 ----- 设置distance
     function mcoda_com_point_and_target_spell_caster:SetDistance(num)
         self.distance = num
@@ -59,6 +70,7 @@ nil,
     function mcoda_com_point_and_target_spell_caster:GetSGAction()
         return self.sg
     end
+---------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------
 return mcoda_com_point_and_target_spell_caster
 

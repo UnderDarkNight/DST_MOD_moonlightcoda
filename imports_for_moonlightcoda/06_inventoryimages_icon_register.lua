@@ -21,6 +21,7 @@ local files_name = {
 		"moonlightcoda_equipment_teleport_staff",						--- 传送法杖
 		"moonlightcoda_equipment_liturgy",								--- 月光的礼仪
 		"moonlightcoda_equipment_laser_staff",							--- 月光的刺痛
+		"moonlightcoda_equipment_debate",								--- 月光的议论
 	---------------------------------------------------------------------------------------
 
 }

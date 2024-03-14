@@ -29,6 +29,7 @@ local prefabs_name_list = {
 
 
     "01_moon_arrow",                           --- 月亮箭头
+    "02_waterspout",                           --- 水花
 
 }
 

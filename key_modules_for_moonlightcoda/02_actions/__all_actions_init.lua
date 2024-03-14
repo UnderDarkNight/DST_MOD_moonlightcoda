@@ -21,3 +21,5 @@ modimport("key_modules_for_moonlightcoda/02_actions/10_sg_from_log.lua") --- 物
 
 modimport("key_modules_for_moonlightcoda/02_actions/11_com_point_and_spell_caster.lua") --- 目标/点 施法互动作
 
+modimport("key_modules_for_moonlightcoda/02_actions/12_sg_play_strum.lua") --- 三叉戟的弹奏动作
+
