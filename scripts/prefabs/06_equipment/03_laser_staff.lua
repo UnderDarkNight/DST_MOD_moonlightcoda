@@ -181,6 +181,11 @@ local function fn()
                 if doer == target then
                     return false
                 end
+                ---- 1级的时候就不消耗东西了
+                if doer.replica.mcoda_com_tag_sys and doer.replica.mcoda_com_tag_sys:HasTag("level_1") and right_click then
+                    return true
+                end
+
                 if doer.replica.health:GetCurrent() <= 11 then
                     return false
                 end                    
@@ -211,7 +216,11 @@ local function fn()
 
                 ------------------------------------------------------------------------------------------------------------------------
                     CreateLaser(doer,ret_pt)
-                    doer.components.health:DoDelta(-10,true)
+                    if doer.replica.mcoda_com_tag_sys and doer.replica.mcoda_com_tag_sys:HasTag("level_1") then
+                        ---------
+                    else                            
+                        doer.components.health:DoDelta(-10,true)
+                    end
                     inst.components.finiteuses:Use()
                 ------------------------------------------------------------------------------------------------------------------------
                 ---- 激光声音

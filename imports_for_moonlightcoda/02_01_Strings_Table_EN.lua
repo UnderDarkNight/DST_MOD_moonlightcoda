@@ -141,6 +141,11 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
                 ["inspect_str"] = "The guidance of the moonlight",
                 ["recipe_desc"] = "The guidance of the moonlight",
             },
+            ["moonlightcoda_equipment_moonlightdedication"] = {
+                ["name"] = "Moonlight Dedication",
+                ["inspect_str"] = "Sacrifice yourself to the moonlight",
+                ["recipe_desc"] = "Sacrifice yourself to the moonlight",
+            },
         --------------------------------------------------------------------
 
 }

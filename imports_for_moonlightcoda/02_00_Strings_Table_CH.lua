@@ -146,6 +146,11 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
                 ["inspect_str"] = "月光的指引",
                 ["recipe_desc"] = "月光的指引",
             },
+            ["moonlightcoda_equipment_moonlightdedication"] = {
+                ["name"] = "献身月光",
+                ["inspect_str"] = "把自己献身给月光",
+                ["recipe_desc"] = "把自己献身给月光",
+            },
         --------------------------------------------------------------------
 }
 
