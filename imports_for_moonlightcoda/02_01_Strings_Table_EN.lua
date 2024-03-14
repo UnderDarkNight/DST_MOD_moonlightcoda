@@ -131,6 +131,11 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
                 ["inspect_str"] = "Make or fill a hole.",
                 ["recipe_desc"] = "Make or fill a hole.",
             },
+            ["moonlightcoda_equipment_guard_from_moon"] = {
+                ["name"] = "Guard From Moon",
+                ["inspect_str"] = "Protection by moonlight",
+                ["recipe_desc"] = "Protection by moonlight",
+            },
         --------------------------------------------------------------------
 
 }

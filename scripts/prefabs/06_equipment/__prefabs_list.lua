@@ -33,6 +33,7 @@ local prefabs_name_list = {
     "03_laser_staff",                       --- 激光法杖
     "04_debate",                            --- 月光的议论
     "05_hole_shovel",                       --- 月洞铲铲
+    "06_guard_from_moon",                   --- 月之加护
 
 
 }

@@ -136,6 +136,11 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
                 ["inspect_str"] = "弄出或者填平一个洞洞",
                 ["recipe_desc"] = "弄出或者填平一个洞洞",
             },
+            ["moonlightcoda_equipment_guard_from_moon"] = {
+                ["name"] = "月之加护",
+                ["inspect_str"] = "月光的保护",
+                ["recipe_desc"] = "月光的保护",
+            },
         --------------------------------------------------------------------
 }
 
