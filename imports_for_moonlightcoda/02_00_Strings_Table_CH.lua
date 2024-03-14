@@ -131,6 +131,11 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
                 ["inspect_str"] = "演奏吧",
                 ["recipe_desc"] = "演奏吧",
             },
+            ["moonlightcoda_equipment_hole_shovel"] = {
+                ["name"] = "月洞铲铲",
+                ["inspect_str"] = "弄出或者填平一个洞洞",
+                ["recipe_desc"] = "弄出或者填平一个洞洞",
+            },
         --------------------------------------------------------------------
 }
 

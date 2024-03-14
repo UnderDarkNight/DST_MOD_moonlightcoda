@@ -126,6 +126,11 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
                 ["inspect_str"] = "Let's play it.",
                 ["recipe_desc"] = "Let's play it.",
             },
+            ["moonlightcoda_equipment_hole_shovel"] = {
+                ["name"] = "Hole Shovel",
+                ["inspect_str"] = "Make or fill a hole.",
+                ["recipe_desc"] = "Make or fill a hole.",
+            },
         --------------------------------------------------------------------
 
 }
