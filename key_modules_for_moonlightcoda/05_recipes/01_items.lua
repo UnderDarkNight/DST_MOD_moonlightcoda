@@ -202,3 +202,44 @@
     )
     RemoveRecipeFromFilter("moonlightcoda_spell_opalpreciousgem_maker","MODS")                       -- -- 在【模组物品】标签里移除这个。
 --------------------------------------------------------------------------------------------------------------------------------------------
+---- 传送魔杖
+--------------------------------------------------------------------------------------------------------------------------------------------
+    AddRecipeToFilter("moonlightcoda_equipment_teleport_staff","CHARACTER")     ---- 添加物品到目标标签
+    AddRecipe2(
+        "moonlightcoda_equipment_teleport_staff",            --  --  inst.prefab  实体名字
+        { Ingredient("purebrilliance", 3),Ingredient("moonrocknugget", 1),Ingredient("spear", 1), }, 
+        TECH.NONE, 
+        {
+            no_deconstruction=true,
+            -- numtogive = 3,
+            -- sg_state="moonlightcoda_sg_form_log",
+            builder_tag = "moonlightcoda",
+            atlas = "images/inventoryimages/moonlightcoda_equipment_teleport_staff.xml",
+            -- atlas = GetInventoryItemAtlas("opalstaff.tex"),
+            image = "moonlightcoda_equipment_teleport_staff.tex",
+        },
+        {"CHARACTER","WEAPONS","MAGIC"}
+    )
+    RemoveRecipeFromFilter("moonlightcoda_equipment_teleport_staff","MODS")                       -- -- 在【模组物品】标签里移除这个。
+--------------------------------------------------------------------------------------------------------------------------------------------
+---- 月光的礼仪
+--------------------------------------------------------------------------------------------------------------------------------------------
+    AddRecipeToFilter("moonlightcoda_equipment_liturgy","CHARACTER")     ---- 添加物品到目标标签
+    AddRecipe2(
+        "moonlightcoda_equipment_liturgy",            --  --  inst.prefab  实体名字
+        { Ingredient("purebrilliance", 3),Ingredient("spear", 1), }, 
+        TECH.NONE, 
+        {
+            no_deconstruction=true,
+            -- numtogive = 3,
+            -- sg_state="moonlightcoda_sg_form_log",
+            builder_tag = "moonlightcoda",
+            atlas = "images/inventoryimages/moonlightcoda_equipment_liturgy.xml",
+            -- atlas = GetInventoryItemAtlas("opalstaff.tex"),
+            image = "moonlightcoda_equipment_liturgy.tex",
+        },
+        {"CHARACTER","WEAPONS","MAGIC"}
+    )
+    RemoveRecipeFromFilter("moonlightcoda_equipment_liturgy","MODS")                       -- -- 在【模组物品】标签里移除这个。
+
+--------------------------------------------------------------------------------------------------------------------------------------------

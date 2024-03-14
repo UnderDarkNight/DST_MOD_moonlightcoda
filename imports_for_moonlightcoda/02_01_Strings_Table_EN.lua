@@ -105,5 +105,17 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
                 ["recipe_desc"] = STRINGS.RECIPE_DESC[string.upper("opalstaff")],
             },
         --------------------------------------------------------------------
+        --- 06_equipment
+            ["moonlightcoda_equipment_teleport_staff"] = {
+                ["name"] = "MoonLight Teleport Staff",
+                ["inspect_str"] = "Don't care about the forks in the road.",
+                ["recipe_desc"] = "Don't care about the forks in the road.",
+            },
+            ["moonlightcoda_equipment_liturgy"] = {
+                ["name"] = "The Liturgy of Moonlight",
+                ["inspect_str"] = "Please keep your distance.",
+                ["recipe_desc"] = "Please keep your distance.",
+            },
+        --------------------------------------------------------------------
 
 }

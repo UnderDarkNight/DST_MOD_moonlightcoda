@@ -11,6 +11,7 @@ local file_folders = {
     "03_sfx",               ---- 特效
     "04_debuffs",           ---- debuff
     "05_spells",            ---- 技能prefab
+    "06_equipment",         ---- 装备
 
     
 }

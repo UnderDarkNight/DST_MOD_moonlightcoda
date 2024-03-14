@@ -110,5 +110,17 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
                 ["recipe_desc"] = STRINGS.RECIPE_DESC[string.upper("opalstaff")],
             },
         --------------------------------------------------------------------
+        --- 06_equipment
+            ["moonlightcoda_equipment_teleport_staff"] = {
+                ["name"] = "月能传送法杖",
+                ["inspect_str"] = "不需要在乎这些岔道",
+                ["recipe_desc"] = "不需要在乎这些岔道",
+            },
+            ["moonlightcoda_equipment_liturgy"] = {
+                ["name"] = "月光的礼仪",
+                ["inspect_str"] = "请保持距离",
+                ["recipe_desc"] = "请保持距离",
+            },
+        --------------------------------------------------------------------
 }
 
