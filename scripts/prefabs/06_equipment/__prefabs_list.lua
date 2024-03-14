@@ -34,6 +34,7 @@ local prefabs_name_list = {
     "04_debate",                            --- 月光的议论
     "05_hole_shovel",                       --- 月洞铲铲
     "06_guard_from_moon",                   --- 月之加护
+    "07_guidance_from_moon",                --- 月之指引
 
 
 }

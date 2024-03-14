@@ -180,9 +180,27 @@ local flg,error_code = pcall(function()
     ---     震荡
         -- local inst = ThePlayer
         -- ShakeAllCameras(CAMERASHAKE.FULL, .7, .02, 1, inst, 40)
-        for i = 1, 1000, 1 do
-            print(math.random(0,15))
-        end
+        -- for i = 1, 1000, 1 do
+        --     print(math.random(0,15))
+        -- end
+    ----------------------------------------------------------------------------------------------------------------
+    ----
+            ThePlayer.__test_fn = function(inst,player)
+                -- inst._light_fx = player:SpawnChild("minerhatlight")
+                inst._light_fx = CreateEntity()
+                inst._light_fx.entity:AddTransform()
+                inst._light_fx.entity:AddLight()
+                inst._light_fx.entity:SetParent(player.entity)
+
+                inst._light_fx.Light:SetIntensity(0.9)		-- 强度
+                inst._light_fx.Light:SetRadius(5)			-- 半径 ，矩形的？？ --- SetIntensity 为1 的时候 成矩形
+                inst._light_fx.Light:SetFalloff(0.1)		-- 下降梯度
+                inst._light_fx.Light:SetColour(255 / 255, 255 / 255, 255 / 255)
+
+                inst._light_fx.Light:Enable(true)
+
+                print("66+++++++++++++",inst._light_fx)
+            end
     ----------------------------------------------------------------------------------------------------------------
 
 

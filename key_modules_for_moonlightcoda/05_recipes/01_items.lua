@@ -301,5 +301,25 @@
         {"CHARACTER","MAGIC"}
     )
     RemoveRecipeFromFilter("moonlightcoda_equipment_guard_from_moon","MODS")                       -- -- 在【模组物品】标签里移除这个。
+--------------------------------------------------------------------------------------------------------------------------------------------
+---- 月之指引
+--------------------------------------------------------------------------------------------------------------------------------------------
+    AddRecipeToFilter("moonlightcoda_equipment_guidance_from_moon","CHARACTER")     ---- 添加物品到目标标签
+    AddRecipe2(
+        "moonlightcoda_equipment_guidance_from_moon",            --  --  inst.prefab  实体名字
+        { Ingredient("purebrilliance", 2),Ingredient(CHARACTER_INGREDIENT.HEALTH, 35), }, 
+        TECH.NONE, 
+        {
+            no_deconstruction=true,
+            -- numtogive = 3,
+            -- sg_state="moonlightcoda_sg_form_log",
+            builder_tag = "moonlightcoda",
+            atlas = "images/inventoryimages/moonlightcoda_equipment_guidance_from_moon.xml",
+            -- atlas = GetInventoryItemAtlas("opalstaff.tex"),
+            image = "moonlightcoda_equipment_guidance_from_moon.tex",
+        },
+        {"CHARACTER","MAGIC"}
+    )
+    RemoveRecipeFromFilter("moonlightcoda_equipment_guidance_from_moon","MODS")                       -- -- 在【模组物品】标签里移除这个。
 
 --------------------------------------------------------------------------------------------------------------------------------------------

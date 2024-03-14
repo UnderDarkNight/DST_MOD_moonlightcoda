@@ -23,6 +23,7 @@ local files_name = {
 		"moonlightcoda_equipment_laser_staff",							--- 月光的刺痛
 		"moonlightcoda_equipment_debate",								--- 月光的议论
 		"moonlightcoda_equipment_guard_from_moon",						--- 月之加护
+		"moonlightcoda_equipment_guidance_from_moon",					--- 月之指引
 	---------------------------------------------------------------------------------------
 
 }

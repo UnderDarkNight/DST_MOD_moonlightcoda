@@ -28,7 +28,7 @@ local assets =
     local function amulet_func_setup(inst)
         local function player_attacked_finiteuses()
             inst.components.finiteuses:Use()
-            print("info player_attacked_finiteuses")
+            -- print("info player_attacked_finiteuses")
         end
         inst:ListenForEvent("amult_onequipped",function(inst,owner)
 

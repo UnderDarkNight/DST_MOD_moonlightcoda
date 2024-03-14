@@ -136,6 +136,11 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
                 ["inspect_str"] = "Protection by moonlight",
                 ["recipe_desc"] = "Protection by moonlight",
             },
+            ["moonlightcoda_equipment_guidance_from_moon"] = {
+                ["name"] = "Guidance From Moon",
+                ["inspect_str"] = "The guidance of the moonlight",
+                ["recipe_desc"] = "The guidance of the moonlight",
+            },
         --------------------------------------------------------------------
 
 }
