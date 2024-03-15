@@ -12,6 +12,7 @@ local file_folders = {
     "04_debuffs",           ---- debuff
     "05_spells",            ---- 技能prefab
     "06_equipment",         ---- 装备
+    "07_buildings",         ---- 建筑
 
     
 }

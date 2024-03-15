@@ -147,5 +147,12 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
                 ["recipe_desc"] = "Sacrifice yourself to the moonlight",
             },
         --------------------------------------------------------------------
+        --- 07_buildings        
+            ["moonlightcoda_building_light_the_way"] = {
+                ["name"] = "Light The Way",
+                ["inspect_str"] = "Light The Way",
+                ["recipe_desc"] = "Light The Way",
+            },
+        --------------------------------------------------------------------
 
 }

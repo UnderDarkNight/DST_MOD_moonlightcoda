@@ -40,6 +40,16 @@ nil,
         return self.distance
     end
 ---------------------------------------------------------------------------------------------------
+----- pre action
+    function mcoda_com_point_and_target_spell_caster:SetPreActionFn(fn)
+        self.__pre_action_fn = fn
+    end
+    function mcoda_com_point_and_target_spell_caster:DoPreAction(doer,target,pt)
+        if self.__pre_action_fn then
+            self.__pre_action_fn(self.inst,doer,target,pt)
+        end
+    end
+---------------------------------------------------------------------------------------------------
 ----- test 函数
     function mcoda_com_point_and_target_spell_caster:SetTestFn(fn)
         if type(fn) == "function" then

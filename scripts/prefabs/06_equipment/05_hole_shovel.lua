@@ -71,7 +71,11 @@ local function fn()
             replica_com:SetSGAction("dig_start")
             replica_com:SetText("moonlightcoda_equipment_debate",STRINGS.ACTIONS.DIG)
             -- replica_com:SetAllowCanCastOnImpassable(true)
-
+            replica_com:SetPreActionFn(function(inst,doer,target,pt)
+                if pt then
+                    print(pt.x,pt.y,pt.z)
+                end
+            end)
         end)
         if TheWorld.ismastersim then
             inst:AddComponent("mcoda_com_point_and_target_spell_caster")

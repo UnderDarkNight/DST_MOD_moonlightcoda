@@ -152,5 +152,12 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
                 ["recipe_desc"] = "把自己献身给月光",
             },
         --------------------------------------------------------------------
+        --- 07_buildings        
+            ["moonlightcoda_building_light_the_way"] = {
+                ["name"] = "前路",
+                ["inspect_str"] = "照亮前路",
+                ["recipe_desc"] = "照亮前路",
+            },
+        --------------------------------------------------------------------
 }
 

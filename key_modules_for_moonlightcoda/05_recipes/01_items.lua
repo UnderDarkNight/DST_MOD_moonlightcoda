@@ -341,5 +341,26 @@
         {"CHARACTER","MAGIC"}
     )
     RemoveRecipeFromFilter("moonlightcoda_equipment_moonlightdedication","MODS")                       -- -- 在【模组物品】标签里移除这个。
+--------------------------------------------------------------------------------------------------------------------------------------------
+---- 前路
+--------------------------------------------------------------------------------------------------------------------------------------------
+    AddRecipeToFilter("moonlightcoda_building_light_the_way","CHARACTER")     ---- 添加物品到目标标签
+    AddRecipe2(
+        "moonlightcoda_building_light_the_way",            --  --  inst.prefab  实体名字
+        { Ingredient("purebrilliance", 1),Ingredient("moonrocknugget", 2),Ingredient(CHARACTER_INGREDIENT.HEALTH, 10) }, 
+        TECH.NONE, 
+        {
+            no_deconstruction=true,
+            -- numtogive = 3,
+            -- sg_state="moonlightcoda_sg_form_log",
+            builder_tag = "moonlightcoda",
+            placer = "moonlightcoda_building_light_the_way_placer",
+            atlas = "images/map_icons/moonlightcoda_building_light_the_way.xml",
+            -- atlas = GetInventoryItemAtlas("opalstaff.tex"),
+            image = "moonlightcoda_building_light_the_way.tex",
+        },
+        {"CHARACTER","LIGHT","STRUCTURES","MAGIC"}
+    )
+    RemoveRecipeFromFilter("moonlightcoda_building_light_the_way","MODS")                       -- -- 在【模组物品】标签里移除这个。
 
 --------------------------------------------------------------------------------------------------------------------------------------------

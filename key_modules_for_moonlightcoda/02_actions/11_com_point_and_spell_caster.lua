@@ -79,10 +79,13 @@ end)
 
 local handler_fn = function(player)
     local creash_flag , ret = pcall(function()
-        -- local target = player.bufferedaction.target
+        local target = player.bufferedaction.target
         local item = player.bufferedaction.invobject
+        local pos = player.bufferedaction.pos or {}
+
         local replica_com = item.replica.mcoda_com_point_and_target_spell_caster or item.replica._.mcoda_com_point_and_target_spell_caster
         if replica_com  then
+            replica_com:DoPreAction(player,target,pos.local_pt)
             return replica_com:GetSGAction()
         end
         return "give"

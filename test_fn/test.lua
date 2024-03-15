@@ -185,22 +185,45 @@ local flg,error_code = pcall(function()
         -- end
     ----------------------------------------------------------------------------------------------------------------
     ----
-            ThePlayer.__test_fn = function(inst,player)
-                -- inst._light_fx = player:SpawnChild("minerhatlight")
-                inst._light_fx = CreateEntity()
-                inst._light_fx.entity:AddTransform()
-                inst._light_fx.entity:AddLight()
-                inst._light_fx.entity:SetParent(player.entity)
+            -- ThePlayer.__test_fn = function(inst,player)
+            --     -- inst._light_fx = player:SpawnChild("minerhatlight")
+            --     inst._light_fx = CreateEntity()
+            --     inst._light_fx.entity:AddTransform()
+            --     inst._light_fx.entity:AddLight()
+            --     inst._light_fx.entity:SetParent(player.entity)
 
-                inst._light_fx.Light:SetIntensity(0.9)		-- 强度
-                inst._light_fx.Light:SetRadius(5)			-- 半径 ，矩形的？？ --- SetIntensity 为1 的时候 成矩形
-                inst._light_fx.Light:SetFalloff(0.1)		-- 下降梯度
-                inst._light_fx.Light:SetColour(255 / 255, 255 / 255, 255 / 255)
+            --     inst._light_fx.Light:SetIntensity(0.9)		-- 强度
+            --     inst._light_fx.Light:SetRadius(5)			-- 半径 ，矩形的？？ --- SetIntensity 为1 的时候 成矩形
+            --     inst._light_fx.Light:SetFalloff(0.1)		-- 下降梯度
+            --     inst._light_fx.Light:SetColour(255 / 255, 255 / 255, 255 / 255)
 
-                inst._light_fx.Light:Enable(true)
+            --     inst._light_fx.Light:Enable(true)
 
-                print("66+++++++++++++",inst._light_fx)
-            end
+            --     print("66+++++++++++++",inst._light_fx)
+            -- end
+    ----------------------------------------------------------------------------------------------------------------
+    ---- 火焰
+            local inst = TheSim:FindFirstEntityWithTag("moonlightcoda_building_light_the_way")
+            -- if inst.__light_inst  then
+            --     inst.__light_inst:Remove()
+            -- end
+            -- local light_inst = SpawnPrefab("moonlightcoda_fx_fire")
+            -- light_inst.Ready = true
+            -- inst.__light_inst = light_inst
+            -- light_inst.entity:SetParent(inst.entity)
+            -- light_inst.entity:AddFollower()
+            -- light_inst.Follower:FollowSymbol(inst.GUID, "png",  0, -280, 0)
+            -- print(light_inst)
+
+                -- inst.Light:SetIntensity(0.9)		-- 强度
+                -- inst.Light:SetRadius(5)			-- 半径 ，矩形的？？ --- SetIntensity 为1 的时候 成矩形
+                -- inst.Light:SetFalloff(0.5)		-- 下降梯度
+                -- inst.Light:SetColour(0 / 255, 255 / 255, 255 / 255)
+
+                inst.components.sanityaura.aurafn = function()
+                    return TUNING.SANITYAURA_LARGE
+                    --- 30FPS 16/(60*1000)
+                end
     ----------------------------------------------------------------------------------------------------------------
 
 
