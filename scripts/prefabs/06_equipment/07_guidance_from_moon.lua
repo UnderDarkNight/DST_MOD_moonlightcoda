@@ -132,7 +132,7 @@ local assets =
             end)
             inst:ListenForEvent("amult_unequipped",function(inst,owner)
                 inst.__light_entity_player:set(inst)
-                grue_switch_event_fn(inst,nil,false)
+                grue_switch_event_fn(inst,owner,false)
             end)
             inst:ListenForEvent("onremove",function()
                 grue_switch_event_fn(inst,nil,false)
