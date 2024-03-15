@@ -139,6 +139,7 @@ local function fn()
         inst.components.finiteuses:SetMaxUses(TUNING.ORANGESTAFF_USES)
         inst.components.finiteuses:SetUses(TUNING.ORANGESTAFF_USES)
         inst.components.finiteuses:SetIgnoreCombatDurabilityLoss(true)
+        inst.components.finiteuses:SetOnFinished(inst.Remove)
 
         MakeHauntableLaunch(inst)
     -------------------------------------------------------------------
