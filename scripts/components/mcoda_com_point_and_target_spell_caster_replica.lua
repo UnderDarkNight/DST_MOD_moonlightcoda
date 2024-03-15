@@ -48,6 +48,16 @@ nil,
         return self.priority or 0
     end
 ---------------------------------------------------------------------------------------------------
+---- 自定义所有ACTION 参数
+    function mcoda_com_point_and_target_spell_caster:SetActionParamFn(fn)
+        self.action_param_fn = fn        
+    end
+    function mcoda_com_point_and_target_spell_caster:ActiveActionParam(theAction)
+        if self.action_param_fn then
+            self.action_param_fn(self.inst,theAction)
+        end
+    end
+---------------------------------------------------------------------------------------------------
 ----- 设置str_index
     function mcoda_com_point_and_target_spell_caster:SetStrIndex(str_index)
         self.str_index = str_index

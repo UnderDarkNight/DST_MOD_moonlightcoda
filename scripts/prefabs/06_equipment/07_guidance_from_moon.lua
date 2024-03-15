@@ -106,13 +106,9 @@ local assets =
 
         end
         if TheWorld.ismastersim then
-            local grue_switch_event_fn = function(inst,owner,turn_on_flag)
+            local grue_switch_event_fn = function(inst,turn_on_flag)
                
-                if turn_on_flag then
-                    inst.owner = owner
-                else
-                    inst.owner = nil
-                end
+                local owner = inst.owner
                 if owner == nil then
                     return
                 end
@@ -128,14 +124,16 @@ local assets =
             end
             inst:ListenForEvent("amult_onequipped",function(inst,owner)
                 inst.__light_entity_player:set(owner)
-                grue_switch_event_fn(inst,owner,true)
+                grue_switch_event_fn(inst,true)
+                inst.owner = owner
             end)
             inst:ListenForEvent("amult_unequipped",function(inst,owner)
                 inst.__light_entity_player:set(inst)
-                grue_switch_event_fn(inst,owner,false)
+                grue_switch_event_fn(inst,false)
+                inst.owner = nil
             end)
             inst:ListenForEvent("onremove",function()
-                grue_switch_event_fn(inst,nil,false)
+                grue_switch_event_fn(inst,false)
             end)
         end
     end

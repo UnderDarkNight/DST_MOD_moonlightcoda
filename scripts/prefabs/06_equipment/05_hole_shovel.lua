@@ -6,14 +6,13 @@
 
 local assets =
 {
-    Asset("ANIM", "anim/moonlightcoda_equipment_debate.zip"),
-    Asset("ANIM", "anim/moonlightcoda_equipment_debate_swap.zip"),
+    Asset("ANIM", "anim/moonlightcoda_equipment_hole_shovel.zip"),
 }
 ------------------------------------------------------------------------------------------------------------------------
 ----- 
     local function onequip(inst, owner)
         -- owner.AnimState:OverrideSymbol("swap_object", "moonlightcoda_equipment_debate_swap", "swap_object")
-        owner.AnimState:OverrideSymbol("swap_object", "shovel_lunarplant", "swap_shovel_lunarplant")
+        owner.AnimState:OverrideSymbol("swap_object", "moonlightcoda_equipment_hole_shovel", "swap_shovel")
         owner.AnimState:Show("ARM_carry")
         owner.AnimState:Hide("ARM_normal")
     end
@@ -114,8 +113,8 @@ local function fn()
 
     inst:AddComponent("inventoryitem")
     -- inst.components.inventoryitem:ChangeImageName("cane")
-    inst.components.inventoryitem.imagename = "moonlightcoda_equipment_debate"
-    inst.components.inventoryitem.atlasname = "images/inventoryimages/moonlightcoda_equipment_debate.xml"
+    inst.components.inventoryitem.imagename = "moonlightcoda_equipment_hole_shovel"
+    inst.components.inventoryitem.atlasname = "images/inventoryimages/moonlightcoda_equipment_hole_shovel.xml"
 
     inst:AddComponent("equippable")
 

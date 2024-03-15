@@ -219,7 +219,7 @@ local function fn()
                     if doer.replica.mcoda_com_tag_sys and doer.replica.mcoda_com_tag_sys:HasTag("level_1") then
                         ---------
                     else                            
-                        doer.components.health:DoDelta(-10,true)
+                        doer.components.health:DoDelta(-3,true)
                     end
                     inst.components.finiteuses:Use()
                 ------------------------------------------------------------------------------------------------------------------------

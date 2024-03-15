@@ -24,10 +24,10 @@
     Ingredient.GetAtlas = function(self,...)
         if ThePlayer and ThePlayer:HasTag("moonlightcoda") then
             if self.type == CHARACTER_INGREDIENT.HEALTH then
-                return "images/inventoryimages/moonlightcoda_equipment_debate.xml"
+                return "images/inventoryimages/moonlightcoda_cost_health.xml"
             end
             if self.type == CHARACTER_INGREDIENT.SANITY then
-                return "images/inventoryimages/moonlightcoda_equipment_debate.xml"
+                return "images/inventoryimages/moonlightcoda_cost_sanity.xml"
             end
         end
         return old_GetAtlas(self,...)
@@ -38,10 +38,10 @@
     Ingredient.GetImage = function(self,...)
         if ThePlayer and ThePlayer:HasTag("moonlightcoda") then
             if self.type == CHARACTER_INGREDIENT.HEALTH then
-                return "moonlightcoda_equipment_debate.tex"
+                return "moonlightcoda_cost_health.tex"
             end
             if self.type == CHARACTER_INGREDIENT.SANITY then
-                return "moonlightcoda_equipment_debate.tex"
+                return "moonlightcoda_cost_sanity.tex"
             end
         end
         return old_GetImage(self,...)

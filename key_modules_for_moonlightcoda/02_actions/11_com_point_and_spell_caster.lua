@@ -60,6 +60,7 @@ AddComponentAction("POINT", "mcoda_com_point_and_target_spell_caster",function(i
             local temp_action = ACTIONS.MCODA_COM_POINT_AND_TARGET_SPELL_CASTER
             temp_action.distance = replica_com:GetDistance()
             temp_action.priority = replica_com:GetPriority()
+            replica_com:ActiveActionParam(temp_action)
             table.insert(actions, temp_action)
         end
     end

@@ -262,6 +262,26 @@
     )
     RemoveRecipeFromFilter("moonlightcoda_equipment_laser_staff","MODS")                       -- -- 在【模组物品】标签里移除这个。
 --------------------------------------------------------------------------------------------------------------------------------------------
+---- 月能铲
+--------------------------------------------------------------------------------------------------------------------------------------------
+    AddRecipeToFilter("moonlightcoda_equipment_hole_shovel","CHARACTER")     ---- 添加物品到目标标签
+    AddRecipe2(
+        "moonlightcoda_equipment_hole_shovel",            --  --  inst.prefab  实体名字
+        { Ingredient("shovel", 1),Ingredient("moonglass", 3),Ingredient("moonrocknugget", 3), }, 
+        TECH.NONE, 
+        {
+            no_deconstruction=true,
+            -- numtogive = 3,
+            -- sg_state="moonlightcoda_sg_form_log",
+            builder_tag = "moonlightcoda",
+            atlas = "images/inventoryimages/moonlightcoda_equipment_hole_shovel.xml",
+            -- atlas = GetInventoryItemAtlas("opalstaff.tex"),
+            image = "moonlightcoda_equipment_hole_shovel.tex",
+        },
+        {"CHARACTER","WEAPONS","MAGIC"}
+    )
+    RemoveRecipeFromFilter("moonlightcoda_equipment_hole_shovel","MODS")                       -- -- 在【模组物品】标签里移除这个。
+--------------------------------------------------------------------------------------------------------------------------------------------
 ---- 月光的议论
 --------------------------------------------------------------------------------------------------------------------------------------------
     AddRecipeToFilter("moonlightcoda_equipment_debate","CHARACTER")     ---- 添加物品到目标标签

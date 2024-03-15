@@ -27,19 +27,19 @@ local assets =
 -------------------------------------------------------------------------------------------
 ------
     local function onblink(staff, pos, caster)
-        if caster then
-            if caster.components.staffsanity then
-                caster.components.staffsanity:DoCastingDelta(-TUNING.SANITY_MED)
-            elseif caster.components.sanity ~= nil then
+        -- if caster then
+        --     if caster.components.staffsanity then
+        --         caster.components.staffsanity:DoCastingDelta(-TUNING.SANITY_MED)
+        --     elseif caster.components.sanity ~= nil then
 
-                if caster:HasTag("moonlightcoda") and caster.components.sanity:IsLunacyMode() then
-                    caster.components.sanity:DoDelta(TUNING.SANITY_MED/3)
-                else
-                    caster.components.sanity:DoDelta(-TUNING.SANITY_MED)
-                end
+        --         if caster:HasTag("moonlightcoda") and caster.components.sanity:IsLunacyMode() or (TheWorld.state.isnight and TheWorld.state.isfullmoon) then
+        --             caster.components.sanity:DoDelta(TUNING.SANITY_MED/3)
+        --         else
+        --             caster.components.sanity:DoDelta(-TUNING.SANITY_MED)
+        --         end
 
-            end
-        end
+        --     end
+        -- end
     
         staff.components.finiteuses:Use(1)
 
