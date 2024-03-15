@@ -14,9 +14,13 @@ local MCODA_COM_POINT_AND_TARGET_SPELL_CASTER = Action({priority = 10})   --- �
 MCODA_COM_POINT_AND_TARGET_SPELL_CASTER.id = "MCODA_COM_POINT_AND_TARGET_SPELL_CASTER"
 MCODA_COM_POINT_AND_TARGET_SPELL_CASTER.strfn = function(act) --- 客户端检查是否通过,同时返回显示字段
     local item = act.invobject
+    local target = act.target
+    local doer = act.doer
+    local pos = act.pos or {}
     if item then
         local replica_com = item.replica.mcoda_com_point_and_target_spell_caster or item.replica._.mcoda_com_point_and_target_spell_caster
         if replica_com then
+            replica_com:ActiveTextUpdate(doer,target,pos.local_pt)
             return replica_com:GetTextIndex()
         end
     end

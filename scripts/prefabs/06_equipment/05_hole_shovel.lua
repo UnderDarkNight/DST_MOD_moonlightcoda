@@ -70,10 +70,17 @@ local function fn()
             replica_com:SetSGAction("dig_start")
             replica_com:SetText("moonlightcoda_equipment_debate",STRINGS.ACTIONS.DIG)
             -- replica_com:SetAllowCanCastOnImpassable(true)
-            replica_com:SetPreActionFn(function(inst,doer,target,pt)
-                if pt then
-                    print(pt.x,pt.y,pt.z)
+            -- replica_com:SetPreActionFn(function(inst,doer,target,pt)
+            --     if pt then
+            --         print(pt.x,pt.y,pt.z)
+            --     end
+            -- end)
+            replica_com:SetTextUpdateFn(function(inst,doer,target,pt)
+                if target == nil and pt then
+                    replica_com:SetText("moonlightcoda_equipment_debate","开挖")
+                    return
                 end
+                replica_com:SetText("moonlightcoda_equipment_debate","挖掉")
             end)
             replica_com:SetPriority(10)
 

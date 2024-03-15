@@ -63,6 +63,18 @@ nil,
         self.str_index = str_index
     end
 ---------------------------------------------------------------------------------------------------
+----- 设置 str_index update fn
+    function mcoda_com_point_and_target_spell_caster:SetTextUpdateFn(fn)
+        if type(fn) == "function" then
+            self.str_update_fn = fn
+        end
+    end
+    function mcoda_com_point_and_target_spell_caster:ActiveTextUpdate(doer,target,pt)
+        if self.str_update_fn then
+            self.str_update_fn(self.inst,doer,target,pt)
+        end
+    end
+---------------------------------------------------------------------------------------------------
 ----- pre action
     function mcoda_com_point_and_target_spell_caster:SetPreActionFn(fn)
         self.__pre_action_fn = fn
