@@ -40,6 +40,19 @@ nil,
         return self.distance
     end
 ---------------------------------------------------------------------------------------------------
+---- 设置优先级 priority
+    function mcoda_com_point_and_target_spell_caster:SetPriority(num)
+        self.priority = num
+    end
+    function mcoda_com_point_and_target_spell_caster:GetPriority()
+        return self.priority or 0
+    end
+---------------------------------------------------------------------------------------------------
+----- 设置str_index
+    function mcoda_com_point_and_target_spell_caster:SetStrIndex(str_index)
+        self.str_index = str_index
+    end
+---------------------------------------------------------------------------------------------------
 ----- pre action
     function mcoda_com_point_and_target_spell_caster:SetPreActionFn(fn)
         self.__pre_action_fn = fn

@@ -63,6 +63,8 @@ local function fn()
         replica_com:SetSGAction("castspell")
         replica_com:SetText("moonlightcoda_equipment_debate",STRINGS.ACTIONS.CASTSPELL.GENERIC)
         replica_com:SetAllowCanCastOnImpassable(true)
+        replica_com:SetPriority(10)
+
 
     end)
     if TheWorld.ismastersim then

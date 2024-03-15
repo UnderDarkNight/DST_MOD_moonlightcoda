@@ -76,6 +76,8 @@ local function fn()
                     print(pt.x,pt.y,pt.z)
                 end
             end)
+            replica_com:SetPriority(10)
+
         end)
         if TheWorld.ismastersim then
             inst:AddComponent("mcoda_com_point_and_target_spell_caster")

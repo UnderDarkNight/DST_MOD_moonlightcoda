@@ -31,3 +31,7 @@ modimport("key_modules_for_moonlightcoda/07_SoundEmitter_Hook/_All_Original_Soun
 -- 修改 玩家的 SoundEmitter 方便 hook
 
 
+modimport("key_modules_for_moonlightcoda/08_widget/__all_widgets_modules_init.lua") 
+-- 修改 hud
+
+

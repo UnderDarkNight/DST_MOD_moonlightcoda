@@ -106,19 +106,20 @@ local assets =
 
         end
         if TheWorld.ismastersim then
-            local grue_switch_event_fn = function(inst,owner)
-                local turn_off_flag = true
-                if owner then
-                    turn_off_flag = false
+            local grue_switch_event_fn = function(inst,owner,turn_on_flag)
+               
+                if turn_on_flag then
+                    inst.owner = owner
+                else
+                    inst.owner = nil
                 end
-
-                inst.owner = inst.owner or owner
-                owner = inst.owner                
+                if owner == nil then
+                    return
+                end
                 if owner.components.grue == nil then
                     return
                 end
-
-                if turn_off_flag then
+                if not turn_on_flag  then
                     owner.components.grue:RemoveImmunity("moonlightcoda_equipment_guidance_from_moon_light")
                 else
                     owner.components.grue:AddImmunity("moonlightcoda_equipment_guidance_from_moon_light")
@@ -127,14 +128,14 @@ local assets =
             end
             inst:ListenForEvent("amult_onequipped",function(inst,owner)
                 inst.__light_entity_player:set(owner)
-                grue_switch_event_fn(inst,owner)
+                grue_switch_event_fn(inst,owner,true)
             end)
             inst:ListenForEvent("amult_unequipped",function(inst,owner)
                 inst.__light_entity_player:set(inst)
-                grue_switch_event_fn(inst)
+                grue_switch_event_fn(inst,nil,false)
             end)
             inst:ListenForEvent("onremove",function()
-                grue_switch_event_fn(inst)
+                grue_switch_event_fn(inst,nil,false)
             end)
         end
     end

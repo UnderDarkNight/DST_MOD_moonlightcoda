@@ -59,6 +59,8 @@ local function fn()
             replica_com:SetSGAction("moonlightcoda_sg_play_strum")
             replica_com:SetText("moonlightcoda_equipment_debate",STRINGS.ACTIONS.CASTSPELL.MUSIC)
             replica_com:SetAllowCanCastOnImpassable(true)
+            replica_com:SetPriority(10)
+
 
         end)
         if TheWorld.ismastersim then
