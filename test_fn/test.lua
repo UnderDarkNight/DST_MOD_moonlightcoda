@@ -203,7 +203,7 @@ local flg,error_code = pcall(function()
             -- end
     ----------------------------------------------------------------------------------------------------------------
     ---- 火焰
-            local inst = TheSim:FindFirstEntityWithTag("moonlightcoda_building_light_the_way")
+            -- local inst = TheSim:FindFirstEntityWithTag("moonlightcoda_building_light_the_way")
             -- if inst.__light_inst  then
             --     inst.__light_inst:Remove()
             -- end
@@ -220,10 +220,13 @@ local flg,error_code = pcall(function()
                 -- inst.Light:SetFalloff(0.5)		-- 下降梯度
                 -- inst.Light:SetColour(0 / 255, 255 / 255, 255 / 255)
 
-                inst.components.sanityaura.aurafn = function()
-                    return TUNING.SANITYAURA_LARGE
-                    --- 30FPS 16/(60*1000)
-                end
+                -- inst.components.sanityaura.aurafn = function()
+                --     return TUNING.SANITYAURA_LARGE
+                --     --- 30FPS 16/(60*1000)
+                -- end
+    ----------------------------------------------------------------------------------------------------------------
+                -- ThePlayer.SoundEmitter:PlaySound("moonlightcoda_sound/moonlightcoda_sound/talk")
+                ThePlayer.SoundEmitter:PlaySound("moonlightcoda_sound/moonlightcoda_sound/attacked")
     ----------------------------------------------------------------------------------------------------------------
 
 

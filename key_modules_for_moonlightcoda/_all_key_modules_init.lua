@@ -27,4 +27,7 @@ modimport("key_modules_for_moonlightcoda/05_recipes/__all_recipes_init.lua")
 modimport("key_modules_for_moonlightcoda/06_AnimState_Hook/_All_Original_AnimState_Upgrade_Init.lua") 
 -- 修改 玩家的animstate 方便 hook
 
+modimport("key_modules_for_moonlightcoda/07_SoundEmitter_Hook/_All_Original_SoundEmitter_Upgrade_Init.lua") 
+-- 修改 玩家的 SoundEmitter 方便 hook
+
 

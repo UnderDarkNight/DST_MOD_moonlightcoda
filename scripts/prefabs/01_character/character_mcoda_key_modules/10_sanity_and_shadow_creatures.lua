@@ -186,9 +186,9 @@ return function(inst)
                         gestalt:SetTargetPosition(Vector3(x, y, z))
                         gestalt.components.follower:SetLeader(owner)
 
-                        if owner.components.sanity ~= nil then
-                            owner.components.sanity:DoDelta(-1, true) -- using overtime so it doesnt make the sanity sfx every time you attack
-                        end
+                        -- if owner.components.sanity ~= nil then
+                        --     owner.components.sanity:DoDelta(-1, true) -- using overtime so it doesnt make the sanity sfx every time you attack
+                        -- end
                     end
                 end)
         end

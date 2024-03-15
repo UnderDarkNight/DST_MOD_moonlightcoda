@@ -6,6 +6,7 @@ local function builder_onbuilt(inst, builder)
 	if builder then
 
         local item = SpawnPrefab("opalstaff")
+        -- print("error",item)
         -- item.components.stackable.stacksize = 4
         builder.components.inventory:GiveItem(item)
 

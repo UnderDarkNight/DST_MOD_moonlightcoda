@@ -186,7 +186,7 @@
 --------------------------------------------------------------------------------------------------------------------------------------------
     AddRecipeToFilter("moonlightcoda_spell_opalstaff_maker","CHARACTER")     ---- 添加物品到目标标签
     AddRecipe2(
-        "moonlightcoda_spell_opalpreciousgem_maker",            --  --  inst.prefab  实体名字
+        "moonlightcoda_spell_opalstaff_maker",            --  --  inst.prefab  实体名字
         { Ingredient("opalpreciousgem", 1),Ingredient("spear", 1), }, 
         TECH.NONE, 
         {
@@ -200,7 +200,7 @@
         },
         {"CHARACTER","WEAPONS","MAGIC"}
     )
-    RemoveRecipeFromFilter("moonlightcoda_spell_opalpreciousgem_maker","MODS")                       -- -- 在【模组物品】标签里移除这个。
+    RemoveRecipeFromFilter("moonlightcoda_spell_opalstaff_maker","MODS")                       -- -- 在【模组物品】标签里移除这个。
 --------------------------------------------------------------------------------------------------------------------------------------------
 ---- 传送魔杖
 --------------------------------------------------------------------------------------------------------------------------------------------

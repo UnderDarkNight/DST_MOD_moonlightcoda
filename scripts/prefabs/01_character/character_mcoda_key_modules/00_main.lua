@@ -31,6 +31,7 @@ return function(inst)
         "prefabs/01_character/character_mcoda_key_modules/13_level_sys",                            ---- 等级系统
         "prefabs/01_character/character_mcoda_key_modules/14_new_spawn_gift",                       ---- 角色新入存档，进行礼物赠送
         "prefabs/01_character/character_mcoda_key_modules/15_animstate_hook",                       ---- 修改动画组件，屏蔽一些动画/装备
+        "prefabs/01_character/character_mcoda_key_modules/16_sound_hook",                           ---- 修改声音播放组件
 
 
     }
@@ -45,6 +46,7 @@ return function(inst)
     inst:AddTag("moonlightcoda")
 
     inst.customidleanim = "moonlightcoda_funny_idle"  -- 闲置站立动画
+    inst.talksoundoverride = "moonlightcoda_sound/moonlightcoda_sound/talk"
     -- inst.customidleanim = "idle_wendy"  -- 闲置站立动画
     inst.soundsname = "wendy"           -- 角色声音
 
