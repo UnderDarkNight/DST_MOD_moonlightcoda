@@ -71,7 +71,7 @@ local function fn()
                     inst.components.finiteuses:Use()
                 ------------------------------------------------------------------------------------------------------------------------
                     local x,y,z = doer.Transform:GetWorldPosition()
-                    local range = 10
+                    local range = 14
                     local musthavetags = { "_combat" }
                     local canthavetags = { "bramble_resistant", "INLIMBO", "notarget", "noattack", "flight", "invisible", "wall", "player", "companion" }
                     local musthaveoneoftags = {}
@@ -79,11 +79,11 @@ local function fn()
                     for k, temp_target in pairs(ents) do
                         if temp_target and temp_target.components.combat 
                             and temp_target.components.health and not temp_target.components.health:IsDead() then
-                                temp_target:DoTaskInTime(math.random(0,15)/10,function()
-                                    SpawnPrefab("moonlightcoda_fx_waterspout"):PushEvent("Set",{
-                                        target = temp_target,
-                                        scale = 1.5,
-                                    })
+                                temp_target:DoTaskInTime(0,function()
+                                    -- SpawnPrefab("moonlightcoda_fx_waterspout"):PushEvent("Set",{
+                                    --     target = temp_target,
+                                    --     scale = 1.5,
+                                    -- })
                                     temp_target.components.combat:GetAttacked(doer,350)
                                 end)
                                 
