@@ -210,7 +210,8 @@ local function fn()
 	inst.components.finiteuses:SetUses(TUNING.STAFF_LUNARPLANT_USES)
 
 	inst:AddComponent("planardamage")
-	inst.components.planardamage:SetBaseDamage(TUNING.STAFF_LUNARPLANT_PLANAR_DAMAGE)
+	-- inst.components.planardamage:SetBaseDamage(TUNING.STAFF_LUNARPLANT_PLANAR_DAMAGE)
+	inst.components.planardamage:SetBaseDamage(30)
 
 	inst:AddComponent("damagetypebonus")
 	inst.components.damagetypebonus:AddBonus("shadow_aligned", inst, TUNING.STAFF_LUNARPLANT_VS_SHADOW_BONUS)
