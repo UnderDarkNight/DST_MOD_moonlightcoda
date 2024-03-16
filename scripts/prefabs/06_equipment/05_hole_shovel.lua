@@ -83,6 +83,15 @@ local function fn()
                 replica_com:SetText("moonlightcoda_equipment_debate","挖掉")
             end)
             replica_com:SetPriority(10)
+            -- replica_com:SetActionParamFn(function(inst,theAction)
+            --     print("+++++++++++++++++++++++++++++++")
+            --     for k, v in pairs(theAction) do
+            --         print(k,v)
+            --     end
+            --     print("+++++++++++++++++++++++++++++++")
+
+            -- end)
+
 
         end)
         if TheWorld.ismastersim then

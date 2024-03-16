@@ -61,7 +61,6 @@ local function fn()
             replica_com:SetAllowCanCastOnImpassable(true)
             replica_com:SetPriority(10)
 
-
         end)
         if TheWorld.ismastersim then
             inst:AddComponent("mcoda_com_point_and_target_spell_caster")

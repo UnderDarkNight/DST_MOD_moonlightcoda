@@ -55,13 +55,41 @@ AddAction(MCODA_COM_POINT_AND_TARGET_SPELL_CASTER)
 -- AddComponentAction("POINT", "complexprojectile", function(inst, doer, pos, actions, right)   ------ 指定坐标位置用。
 
 -- 在后续注册了，这里暂时注释掉。
+---------------------------------------------------------
+---- 为了避免多个inst用同一个动作造成冲突，调用前清除一些额外插入的参数。（没法用deepcopy 只能这样）
+    local base_index = {
+        ["ghost_valid"] = true,
+        ["id"] = true,
+        ["instant"] = true,
+        ["code"] = true,
+        ["ghost_exclusive"] = true,
+        ["mod_name"] = true,
+        ["paused_valid"] = true,
+        ["strfn"] = true,
+        ["fn"] = true,
+        ["encumbered_valid"] = true,
+        ["mount_valid"] = true,
+    }
+    local function GetAction()
+        local temp_action = ACTIONS.MCODA_COM_POINT_AND_TARGET_SPELL_CASTER
+        for index, v in pairs(base_index) do
+            if temp_action[index] then
+
+            else
+                temp_action[index] = nil
+            end
+        end
+        return temp_action
+    end
+---------------------------------------------------------
 
 
 AddComponentAction("POINT", "mcoda_com_point_and_target_spell_caster",function(item, doer, pos, actions, right_click)   ------ 指定坐标位置用。
     if item and doer and pos then
         local replica_com = item.replica.mcoda_com_point_and_target_spell_caster or item.replica._.mcoda_com_point_and_target_spell_caster
         if replica_com and replica_com:Test(doer,nil,pos,right_click) then
-            local temp_action = ACTIONS.MCODA_COM_POINT_AND_TARGET_SPELL_CASTER
+            -- local temp_action = ACTIONS.MCODA_COM_POINT_AND_TARGET_SPELL_CASTER
+            local temp_action = GetAction()
             temp_action.distance = replica_com:GetDistance()
             temp_action.priority = replica_com:GetPriority()
             replica_com:ActiveActionParam(temp_action)
@@ -74,8 +102,11 @@ AddComponentAction("EQUIPPED", "mcoda_com_point_and_target_spell_caster",functio
     if item and doer and target then
         local replica_com = item.replica.mcoda_com_point_and_target_spell_caster or item.replica._.mcoda_com_point_and_target_spell_caster
         if replica_com and replica_com:Test(doer,target,nil,right_click) then
-            local temp_action = ACTIONS.MCODA_COM_POINT_AND_TARGET_SPELL_CASTER
+            -- local temp_action = ACTIONS.MCODA_COM_POINT_AND_TARGET_SPELL_CASTER
+            local temp_action = GetAction()
             temp_action.distance = replica_com:GetDistance()
+            temp_action.priority = replica_com:GetPriority()
+            replica_com:ActiveActionParam(temp_action)
             table.insert(actions, temp_action)
         end
     end
