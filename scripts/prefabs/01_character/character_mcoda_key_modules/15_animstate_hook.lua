@@ -16,6 +16,8 @@
 
     idle_inaction -- 挠头动画
 
+    idle_lunacy_pre -- 启蒙状态的 站立动画
+    idle_lunacy_loop -- 启蒙状态的 站立动画
 
 ]]--
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -46,7 +48,13 @@ return function(inst)
                         return math.random()<0.7 and "idle_loop" or "idle_wendy"
                     end,
                     ["idle_inaction_lunacy"] = function(self,anim_name,push_flag)   --- 月岛上
-                        return "idle_warly"
+                        return "moonlightcoda_funny_idle"
+                    end,
+                    ["idle_lunacy_pre"] = function(self,anim_name,push_flag)   --- 月岛上
+                        return "idle_loop"
+                    end,
+                    ["idle_lunacy_loop"] = function(self,anim_name,push_flag)   --- 月岛上
+                        return "idle_loop"
                     end,
                 }
             --------------------------------------------------------
@@ -76,7 +84,7 @@ return function(inst)
                         anim_name = ret
                     end
                 end
-                -- print("PushAnimation",anim_name)
+                print("PushAnimation",anim_name)
                 old_PushAnimation(self, anim_name,flag)
             end
         -------------------------------------------------------------------------

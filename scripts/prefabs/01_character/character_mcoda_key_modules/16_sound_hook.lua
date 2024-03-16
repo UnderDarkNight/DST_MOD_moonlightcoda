@@ -26,7 +26,7 @@ return function(inst)
         --- API hook
             local old_PlaySound_fn = inst.SoundEmitter.PlaySound
             inst.SoundEmitter.PlaySound = function(self,addr,...)
-                print("sound_addr",addr)
+                -- print("sound_addr",addr)
                 if exchange_sound_addr[addr] then
                     return old_PlaySound_fn(self,exchange_sound_addr[addr],...)
                 end
