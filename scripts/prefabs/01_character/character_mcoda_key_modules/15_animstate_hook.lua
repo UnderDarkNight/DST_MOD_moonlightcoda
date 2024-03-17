@@ -39,16 +39,16 @@ return function(inst)
             --- 动画拦截 。 return true 的时候拦截，其他时候 进行替换
                 local anim_block_with_fn = {
                     ["idle_sanity_pre"] = function(self,anim_name,push_flag)
-                        return "idle_wendy"
+                        return "idle_loop"
                     end,
                     ["idle_sanity_loop"] = function(self,anim_name,push_flag)
                         return true
                     end,
                     ["idle_inaction_sanity"] = function(self,anim_name,push_flag)
-                        return math.random()<0.7 and "idle_loop" or "idle_wendy"
+                        return "idle_loop"
                     end,
                     ["idle_inaction_lunacy"] = function(self,anim_name,push_flag)   --- 月岛上
-                        return "moonlightcoda_funny_idle"
+                        return "idle_loop"
                     end,
                     ["idle_lunacy_pre"] = function(self,anim_name,push_flag)   --- 月岛上
                         return "idle_loop"
