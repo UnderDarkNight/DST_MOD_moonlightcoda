@@ -231,6 +231,7 @@ return function(inst)
                 end
                 inst:DoPeriodicTask(5,function()
                     if inst.components.sanity.current < 150 then
+                        turn_off_light()
                         return
                     end
                     if TheWorld.state.isnight or TheWorld:HasTag("cave") then
