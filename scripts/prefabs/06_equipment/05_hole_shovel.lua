@@ -11,7 +11,7 @@ local assets =
 ------------------------------------------------------------------------------------------------------------------------
 ----- 
     local function onequip(inst, owner)
-        -- owner.AnimState:OverrideSymbol("swap_object", "moonlightcoda_equipment_debate_swap", "swap_object")
+        -- owner.AnimState:OverrideSymbol("swap_object", "moonlightcoda_equipment_hole_shovel_swap", "swap_object")
         owner.AnimState:OverrideSymbol("swap_object", "moonlightcoda_equipment_hole_shovel", "swap_shovel")
         owner.AnimState:Show("ARM_carry")
         owner.AnimState:Hide("ARM_normal")
@@ -34,8 +34,8 @@ local function fn()
 
     MakeInventoryPhysics(inst)
 
-    inst.AnimState:SetBank("moonlightcoda_equipment_debate")
-    inst.AnimState:SetBuild("moonlightcoda_equipment_debate")
+    inst.AnimState:SetBank("moonlightcoda_equipment_hole_shovel")
+    inst.AnimState:SetBuild("moonlightcoda_equipment_hole_shovel")
     inst.AnimState:PlayAnimation("idle")
 
     --weapon (from weapon component) added to pristine state for optimization
@@ -68,7 +68,7 @@ local function fn()
             end)
             replica_com:SetDistance(.5)
             replica_com:SetSGAction("dig_start")
-            replica_com:SetText("moonlightcoda_equipment_debate",STRINGS.ACTIONS.DIG)
+            replica_com:SetText("moonlightcoda_equipment_hole_shovel",STRINGS.ACTIONS.DIG)
             -- replica_com:SetAllowCanCastOnImpassable(true)
             -- replica_com:SetPreActionFn(function(inst,doer,target,pt)
             --     if pt then
@@ -77,10 +77,10 @@ local function fn()
             -- end)
             replica_com:SetTextUpdateFn(function(inst,doer,target,pt)
                 if target == nil and pt then
-                    replica_com:SetText("moonlightcoda_equipment_debate","开挖")
+                    replica_com:SetText("moonlightcoda_equipment_hole_shovel","开挖")
                     return
                 end
-                replica_com:SetText("moonlightcoda_equipment_debate","挖掉")
+                replica_com:SetText("moonlightcoda_equipment_hole_shovel","挖掉")
             end)
             replica_com:SetPriority(10)
             -- replica_com:SetActionParamFn(function(inst,theAction)
