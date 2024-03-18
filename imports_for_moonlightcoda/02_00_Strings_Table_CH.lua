@@ -44,15 +44,15 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
         --- 组件动作
             ["mcoda_com_equipment_refuser"] = {
                 ["default_reason"] = "想都别想",
-                ["armor_sanity"] = "这个太黑了",
-                ["nightsword"] = "这个太脏了",
-                ["skeletonhat"] = "这个就该拿去煲汤",
-                ["armorskeleton"] = "这个就该拿去煲汤",
-                ["armor_voidcloth"] = "太破烂了",
-                ["voidclothhat"] = "这个挡着我漂亮的脸蛋了",
-                ["dreadstonehat"] = "这个顶头上太沉了",
-                ["armordreadstone"] = "这个太硬了",
-                ["purpleamulet"] = "这个不够精致",
+                ["armor_sanity"] = "不行。",
+                ["nightsword"] = "不行。",
+                ["skeletonhat"] = "不行。",
+                ["armorskeleton"] = "不行。",
+                ["armor_voidcloth"] = "不行。",
+                ["voidclothhat"] = "不行。",
+                ["dreadstonehat"] = "不行。",
+                ["armordreadstone"] = "不行。",
+                ["purpleamulet"] = "不行。",
             },
         --------------------------------------------------------------------
         --- 02_items
