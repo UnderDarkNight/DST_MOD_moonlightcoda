@@ -64,21 +64,21 @@ return function(inst)
             -----------------------------------------------------------
             --- 
                 [1] = function(inst)
-                    inst.components.combat.externaldamagetakenmultipliers:SetModifier(level_modifer_inst, 1.55)
+                    inst.components.combat.externaldamagetakenmultipliers:SetModifier(level_modifer_inst, 0.55)
                     inst.components.sanity.max = base_max_sanity + 35
                     inst.components.mcoda_com_tag_sys:AddTag("level_1")
                 end,
             -----------------------------------------------------------
             --- 
                 [2] = function(inst)
-                    inst.components.combat.externaldamagetakenmultipliers:SetModifier(level_modifer_inst, 1.65)
+                    inst.components.combat.externaldamagetakenmultipliers:SetModifier(level_modifer_inst, 0.65)
                     inst.components.sanity.max = base_max_sanity + 45
                     inst.components.mcoda_com_tag_sys:AddTag("level_2")
                 end,
             -----------------------------------------------------------
             --- 
                 [3] = function(inst)
-                    inst.components.combat.externaldamagetakenmultipliers:SetModifier(level_modifer_inst, 1.75)
+                    inst.components.combat.externaldamagetakenmultipliers:SetModifier(level_modifer_inst, 0.75)
                     inst.components.sanity.max = base_max_sanity + 55
                     inst.components.mcoda_com_tag_sys:AddTag("level_3")
                     ---- 增加耐寒
@@ -92,7 +92,7 @@ return function(inst)
             -----------------------------------------------------------
             --- 
                 [4] = function(inst)
-                    inst.components.combat.externaldamagetakenmultipliers:SetModifier(level_modifer_inst, 1.85)
+                    inst.components.combat.externaldamagetakenmultipliers:SetModifier(level_modifer_inst, 0.85)
                     inst.components.sanity.max = base_max_sanity + 65
                     inst.components.mcoda_com_tag_sys:AddTag("level_4")
 
