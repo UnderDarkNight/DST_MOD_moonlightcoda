@@ -106,35 +106,21 @@ local assets =
 
         end
         if TheWorld.ismastersim then
-            local grue_switch_event_fn = function(inst,turn_on_flag)
-               
-                local owner = inst.owner
-                if owner == nil then
-                    return
-                end
-                if owner.components.grue == nil then
-                    return
-                end
-                if not turn_on_flag  then
-                    owner.components.grue:RemoveImmunity("moonlightcoda_equipment_guidance_from_moon_light")
-                else
+                inst:ListenForEvent("amult_onequipped",function(inst,owner)
+                    inst.__light_entity_player:set(owner)
+                    inst.owner = owner
                     owner.components.grue:AddImmunity("moonlightcoda_equipment_guidance_from_moon_light")
-                end
-                
-            end
-            inst:ListenForEvent("amult_onequipped",function(inst,owner)
-                inst.__light_entity_player:set(owner)
-                grue_switch_event_fn(inst,true)
-                inst.owner = owner
-            end)
-            inst:ListenForEvent("amult_unequipped",function(inst,owner)
-                inst.__light_entity_player:set(inst)
-                grue_switch_event_fn(inst,false)
-                inst.owner = nil
-            end)
-            inst:ListenForEvent("onremove",function()
-                grue_switch_event_fn(inst,false)
-            end)
+                end)
+                inst:ListenForEvent("amult_unequipped",function(inst,owner)
+                    inst.__light_entity_player:set(inst)
+                    inst.owner = nil
+                    owner.components.grue:RemoveImmunity("moonlightcoda_equipment_guidance_from_moon_light")
+                end)
+                inst:ListenForEvent("onremove",function()
+                    if inst.owner and inst.owner.components.grue then
+                        inst.owner.components.grue:RemoveImmunity("moonlightcoda_equipment_guidance_from_moon_light")
+                    end
+                end)
         end
     end
 ------------------------------------------------------------------------------------------------------------------------
