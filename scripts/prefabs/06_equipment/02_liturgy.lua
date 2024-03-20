@@ -136,6 +136,15 @@ end
 
 local function OnBroken(inst)
 	if inst.components.equippable ~= nil then
+		if inst.components.equippable:IsEquipped() then
+			local owner = inst.components.inventoryitem.owner
+			if owner ~= nil and owner.components.inventory ~= nil then
+				local item = owner.components.inventory:Unequip(inst.components.equippable.equipslot)
+				if item ~= nil then
+					owner.components.inventory:GiveItem(item, nil, owner:GetPosition())
+				end
+			end
+		end
 		DisableComponents(inst)
 		inst.AnimState:PlayAnimation("broken")
 		SetIsBroken(inst, true)
