@@ -259,7 +259,7 @@ local function fn()
                 ret_damage = 80
             end
         end
-        return ret_damage
+        return ret_damage/2
     end)
 
     inst:AddComponent("inspectable")

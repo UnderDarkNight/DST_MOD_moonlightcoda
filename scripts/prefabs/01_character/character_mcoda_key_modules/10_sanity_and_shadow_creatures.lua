@@ -211,7 +211,7 @@ return function(inst)
                                 -- light_inst.Light:SetFalloff(0.4)
                                 -- light_inst.Light:SetIntensity(.7)
                                 -- light_inst.Light:SetRadius(2.5)
-                                light_inst.Light:SetColour(0 / 255, 255 / 255, 255 / 255)
+                                light_inst.Light:SetColour(150 / 255, 255 / 255, 255 / 255)
                         -----------------------------------------------------------------------------
                         light_switch_task = nil
                     end)

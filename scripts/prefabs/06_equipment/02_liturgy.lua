@@ -191,7 +191,7 @@ local function fn()
 
 	inst.entity:SetPristine()
 	----------------------------------------------------------------------------------------------------------
-	--
+	-- 物品接受
 		inst:ListenForEvent("moonlightcoda.OnEntityReplicated.mcoda_com_acceptable",function(inst,replica_com)
 			replica_com:SetSGAction("dolongaction")
 			replica_com:SetText("moonlightcoda_equipment_liturgy",STRINGS.ACTIONS.OCEAN_TRAWLER_FIX)

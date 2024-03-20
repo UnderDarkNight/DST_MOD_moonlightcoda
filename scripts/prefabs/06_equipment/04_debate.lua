@@ -83,7 +83,7 @@ local function fn()
                                     --     target = temp_target,
                                     --     scale = 1.5,
                                     -- })
-                                    temp_target.components.combat:GetAttacked(doer,350)
+                                    temp_target.components.combat:GetAttacked(doer,300)
                                 end)
                                 
                         end
