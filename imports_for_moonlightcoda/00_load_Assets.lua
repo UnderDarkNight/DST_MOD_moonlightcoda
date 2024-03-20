@@ -26,6 +26,10 @@ local temp_assets = {
 	Asset("ANIM", "anim/moonlightcoda_funny_idle.zip"),		--- 自制idle动作
 
 	---------------------------------------------------------------------------
+	--- 等级相关界面素材
+		Asset("IMAGE", "images/widgets/moonlightcoda_level_widget.tex"),
+		Asset("ATLAS", "images/widgets/moonlightcoda_level_widget.xml"),
+	---------------------------------------------------------------------------
 	-- Asset("SOUNDPACKAGE", "sound/dontstarve_DLC002.fev"),	--- 单机声音集
 	---------------------------------------------------------------------------
 

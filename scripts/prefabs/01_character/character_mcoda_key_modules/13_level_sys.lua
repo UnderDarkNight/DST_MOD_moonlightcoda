@@ -160,6 +160,9 @@ return function(inst)
             if fns_by_level[current_level] then
                 fns_by_level[current_level](inst)
             end
+
+            inst:PushEvent("coda_level_widget_refresh_server_side",current_level)   --- UI界面刷新
+
         end)
     ----------------------------------------------------------------------------------------------------------------------
     ----- 重新加载的时候
@@ -172,6 +175,9 @@ return function(inst)
                     end
                 end
             end
+
+            inst:PushEvent("coda_level_widget_refresh_server_side",current_level)   --- UI界面刷新
+
         end)
     ----------------------------------------------------------------------------------------------------------------------
     ----- 穿越洞穴的 san 保留

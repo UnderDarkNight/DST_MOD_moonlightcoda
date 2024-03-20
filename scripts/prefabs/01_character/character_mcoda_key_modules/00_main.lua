@@ -33,6 +33,7 @@ return function(inst)
         "prefabs/01_character/character_mcoda_key_modules/15_animstate_hook",                       ---- 修改动画组件，屏蔽一些动画/装备
         "prefabs/01_character/character_mcoda_key_modules/16_sound_hook",                           ---- 修改声音播放组件
         "prefabs/01_character/character_mcoda_key_modules/17_heavylifting",                         ---- 搬重物减速处理
+        "prefabs/01_character/character_mcoda_key_modules/18_level_sys_widget",                     ---- 等级显示界面
 
 
     }
