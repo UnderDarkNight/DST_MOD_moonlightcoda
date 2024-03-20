@@ -84,7 +84,7 @@ return function(inst)
                         anim_name = ret
                     end
                 end
-                print("PushAnimation",anim_name)
+                -- print("PushAnimation",anim_name)
                 old_PushAnimation(self, anim_name,flag)
             end
         -------------------------------------------------------------------------

@@ -190,7 +190,37 @@ local function fn()
 	SetIsBroken(inst, false)
 
 	inst.entity:SetPristine()
-
+	----------------------------------------------------------------------------------------------------------
+	--
+		inst:ListenForEvent("moonlightcoda.OnEntityReplicated.mcoda_com_acceptable",function(inst,replica_com)
+			replica_com:SetSGAction("dolongaction")
+			replica_com:SetText("moonlightcoda_equipment_liturgy",STRINGS.ACTIONS.OCEAN_TRAWLER_FIX)
+			replica_com:SetTestFn(function(inst,item)
+				if item and item.prefab == "purebrilliance" then
+					return true
+				end
+				return false
+			end)
+		end)
+		if TheWorld.ismastersim then
+			inst:AddComponent("mcoda_com_acceptable")
+			inst.components.mcoda_com_acceptable:SetOnAcceptFn(function(inst,item)
+				if item.components.stackable then
+					item.components.stackable:Get():Remove()
+				end
+				if inst:HasTag("broken") then
+					OnRepaired(inst)
+					inst.components.finiteuses:SetPercent(0.35)
+				else
+					inst.components.finiteuses:Use(-0.35*TUNING.STAFF_LUNARPLANT_USES)
+				end
+				if inst.components.finiteuses:GetPercent() > 1 then
+					inst.components.finiteuses:SetPercent(1)
+				end
+				return true
+			end)
+		end
+	----------------------------------------------------------------------------------------------------------
 	if not TheWorld.ismastersim then
 		inst:ListenForEvent("isbrokendirty", OnIsBrokenDirty)
 
@@ -208,6 +238,7 @@ local function fn()
 	inst:AddComponent("finiteuses")
 	inst.components.finiteuses:SetMaxUses(TUNING.STAFF_LUNARPLANT_USES)
 	inst.components.finiteuses:SetUses(TUNING.STAFF_LUNARPLANT_USES)
+	inst.components.finiteuses:SetOnFinished(OnBroken)
 
 	inst:AddComponent("planardamage")
 	-- inst.components.planardamage:SetBaseDamage(TUNING.STAFF_LUNARPLANT_PLANAR_DAMAGE)
@@ -224,7 +255,7 @@ local function fn()
 	local setbonus = inst:AddComponent("setbonus")
 	setbonus:SetSetName(EQUIPMENTSETNAMES.LUNARPLANT)
 
-	MakeForgeRepairable(inst, FORGEMATERIALS.LUNARPLANT, OnBroken, OnRepaired)
+	-- MakeForgeRepairable(inst, FORGEMATERIALS.LUNARPLANT, OnBroken, OnRepaired)
 	MakeHauntableLaunch(inst)
 
 	inst.noplanarhitfx = true
