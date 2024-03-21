@@ -77,26 +77,26 @@ local assets =
                     local x1, z1 = x, z
             
                     trigger_time = math.max(0, i - 1) * FRAMES
-            
-                    inst:DoTaskInTime(trigger_time, function(inst2)
-                        local fx = SpawnPrefab(prefab)
-                        fx.caster = inst2
-                        fx.Transform:SetPosition(x1, 0, z1)
-                        fx:Trigger(0, targets, skiptoss)
-                        -- if first then
-                        --     ShakeAllCameras(CAMERASHAKE.FULL, .7, .02, .2, target_pos or fx, 30)
-                        -- end
-                    end)
-            
-                    inst:DoTaskInTime(trigger_time + SECOND_BLAST_TIME, function(inst2)
-                        local fx = SpawnPrefab(prefab)
-                        fx.caster = inst2
-                        fx.Transform:SetPosition(x1, 0, z1)
-                        fx:Trigger(0, sbtargets, sbskiptoss, true)
-                        -- if first then
-                        --     ShakeAllCameras(CAMERASHAKE.FULL, .7, .02, .2, target_pos or fx, 30)
-                        -- end
-                    end)
+                    ---- 第一次激光            
+                        inst:DoTaskInTime(trigger_time, function(inst2)
+                            local fx = SpawnPrefab(prefab)
+                            fx.caster = inst2
+                            fx.Transform:SetPosition(x1, 0, z1)
+                            fx:Trigger(0, targets, skiptoss)
+                            -- if first then
+                            --     ShakeAllCameras(CAMERASHAKE.FULL, .7, .02, .2, target_pos or fx, 30)
+                            -- end
+                        end)
+                    ---- 第二次激光
+                        -- inst:DoTaskInTime(trigger_time + SECOND_BLAST_TIME, function(inst2)
+                        --     local fx = SpawnPrefab(prefab)
+                        --     fx.caster = inst2
+                        --     fx.Transform:SetPosition(x1, 0, z1)
+                        --     fx:Trigger(0, sbtargets, sbskiptoss, true)
+                        --     -- if first then
+                        --     --     ShakeAllCameras(CAMERASHAKE.FULL, .7, .02, .2, target_pos or fx, 30)
+                        --     -- end
+                        -- end)
                 end
             
                 inst:DoTaskInTime(i*FRAMES, function(inst2)
@@ -228,13 +228,16 @@ local function fn()
                     doer.SoundEmitter:PlaySound("moonstorm/creatures/boss/alterguardian3/atk_beam",sound_index)
                     doer:DoTaskInTime(.7,function()
                         doer.SoundEmitter:KillSound(sound_index)
-                        doer:DoTaskInTime(0,function()
-                            doer.SoundEmitter:PlaySound("moonstorm/creatures/boss/alterguardian3/atk_beam",sound_index)
-                            doer:DoTaskInTime(1,function()
-                                doer.SoundEmitter:KillSound(sound_index)
-                            end)
-                        end)
                     end)
+                    -- doer:DoTaskInTime(.7,function()
+                    --     doer.SoundEmitter:KillSound(sound_index)
+                    --     doer:DoTaskInTime(0,function()
+                    --         doer.SoundEmitter:PlaySound("moonstorm/creatures/boss/alterguardian3/atk_beam",sound_index)
+                    --         doer:DoTaskInTime(1,function()
+                    --             doer.SoundEmitter:KillSound(sound_index)
+                    --         end)
+                    --     end)
+                    -- end)
                 ------------------------------------------------------------------------------------------------------------------------
                 
                 return true
@@ -259,7 +262,7 @@ local function fn()
                 ret_damage = 80
             end
         end
-        return ret_damage/2
+        return ret_damage
     end)
 
     inst:AddComponent("inspectable")

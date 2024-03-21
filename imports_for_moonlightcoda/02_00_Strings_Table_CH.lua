@@ -133,8 +133,8 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
             },
             ["moonlightcoda_equipment_hole_shovel"] = {
                 ["name"] = "月能铲",
-                ["inspect_str"] = "弄出或者填平一个洞洞",
-                ["recipe_desc"] = "弄出或者填平一个洞洞",
+                ["inspect_str"] = "制造或复原天体裂隙",
+                ["recipe_desc"] = "制造或复原天体裂隙",
             },
             ["moonlightcoda_equipment_guard_from_moon"] = {
                 ["name"] = "月之加护",
