@@ -34,31 +34,48 @@ return function(inst)
 
     ---------------------------------------------------------------------
     -- ---- 创建个临时 inst
-    --     local speed_mult_inst = CreateEntity()
-    --     speed_mult_inst:ListenForEvent("onremove",function()
-    --         speed_mult_inst:Remove()
-    --     end,inst)
+        local speed_mult_inst = CreateEntity()
+        speed_mult_inst:ListenForEvent("onremove",function()
+            speed_mult_inst:Remove()
+        end,inst)
     ---------------------------------------------------------------------
 
+    local function add_speed_mult()
+        inst:DoTaskInTime(0,function()            
+            if inst.components.mcoda_com_tag_sys:HasTag("level_2") then
+                if ThePlayer then   --- 没洞穴的时候，直接上加速器
+                    inst.components.locomotor:SetExternalSpeedMultiplier(speed_mult_inst, "coda_heavy_run", 1/TUNING.HEAVY_SPEED_MULT)
+                else    -- 有洞穴就上tag
+                    inst:AddTag("mightiness_mighty")    --- client 端 走路动画需要
+                end
+            end
+        end)
+
+    end
+    local function remove_speed_mult()
+        inst:DoTaskInTime(0,function()
+            if inst.components.mcoda_com_tag_sys:HasTag("level_2") then
+                if ThePlayer then
+                    inst.components.locomotor:RemoveExternalSpeedMultiplier(speed_mult_inst, "coda_heavy_run")
+                else
+                    inst:RemoveTag("mightiness_mighty")  --- client 端 走路动画需要
+                end
+            end
+        end)
+    end
     inst:ListenForEvent("equip",function(inst,_table)
         if _table and _table.item and _table.item:HasTag("heavy") then
-            if inst.components.mcoda_com_tag_sys:HasTag("level_2") then
-                -- inst.components.locomotor:SetExternalSpeedMultiplier(speed_mult_inst, "coda_heavy_run", 1/TUNING.HEAVY_SPEED_MULT)
-                inst:AddTag("mightiness_mighty")    --- client 端 走路动画需要
-            end
+            add_speed_mult()
         end
     end)
     inst:ListenForEvent("unequip",function(inst,_table)
         if _table and _table.item and _table.item:HasTag("heavy") then
-            if inst.components.mcoda_com_tag_sys:HasTag("level_2") then
-                -- inst.components.locomotor:RemoveExternalSpeedMultiplier(speed_mult_inst, "coda_heavy_run")
-                inst:RemoveTag("mightiness_mighty")  --- client 端 走路动画需要
-            end
+            remove_speed_mult()
         end
     end)
     inst:DoTaskInTime(0,function()
         if inst.replica.inventory:EquipHasTag("heavy") and inst.components.mcoda_com_tag_sys:HasTag("level_2") then
-            inst:AddTag("mightiness_mighty")
+            add_speed_mult()
         end
     end)
 
