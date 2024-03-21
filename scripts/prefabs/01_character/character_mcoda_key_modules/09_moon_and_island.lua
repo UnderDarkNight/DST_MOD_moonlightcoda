@@ -125,14 +125,16 @@ return function(inst)
                 inst:ListenForEvent("ms_respawnedfromghost",event_check_fn)
         ------------------------------------------------------------------------------
         --- 启蒙状态监听
-                inst:ListenForEvent("sanitymodechanged",function()
+                local function sanitymodechanged_fn()
                     if inst.components.sanity:IsLunacyMode() then
                         need_2_turn_off_by_outside_island = false
                     else
                         need_2_turn_off_by_outside_island = true
                     end
                     task_start_check()
-                end)
+                end
+                inst:ListenForEvent("sanitymodechanged",sanitymodechanged_fn)
+                inst:DoTaskInTime(1,sanitymodechanged_fn)   --- 玩家登录的时候检查
         ------------------------------------------------------------------------------
 
     ----------------------------------------------------------------------------------------------------------------------------------------------------------
