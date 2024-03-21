@@ -15,3 +15,4 @@ modimport("key_modules_for_moonlightcoda/04_origin_prefab_upgrade/03_reviver.lua
 modimport("key_modules_for_moonlightcoda/04_origin_prefab_upgrade/04_lunar_aligned_animals.lua")  --- 月亮阵营的生物hook
 
 modimport("key_modules_for_moonlightcoda/04_origin_prefab_upgrade/05_cursed_monkey_token.lua")  --- 猴子诅咒饰品
+

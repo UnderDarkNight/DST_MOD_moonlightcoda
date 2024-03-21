@@ -247,7 +247,7 @@
     AddRecipeToFilter("moonlightcoda_equipment_laser_staff","CHARACTER")     ---- 添加物品到目标标签
     AddRecipe2(
         "moonlightcoda_equipment_laser_staff",            --  --  inst.prefab  实体名字
-        { Ingredient("moonglass", 1),Ingredient(CHARACTER_INGREDIENT.HEALTH, 35), }, 
+        { Ingredient("moonglass", 3), Ingredient("purebrilliance", 1),Ingredient(CHARACTER_INGREDIENT.HEALTH, 35), }, 
         TECH.NONE, 
         {
             no_deconstruction=true,
@@ -287,7 +287,7 @@
     AddRecipeToFilter("moonlightcoda_equipment_debate","CHARACTER")     ---- 添加物品到目标标签
     AddRecipe2(
         "moonlightcoda_equipment_debate",            --  --  inst.prefab  实体名字
-        { Ingredient("moonglass", 1),Ingredient("purebrilliance", 1), }, 
+        { Ingredient("moonglass", 1),Ingredient("purebrilliance", 3),Ingredient(CHARACTER_INGREDIENT.HEALTH, 35) }, 
         TECH.NONE, 
         {
             no_deconstruction=true,
@@ -307,7 +307,7 @@
     AddRecipeToFilter("moonlightcoda_equipment_guard_from_moon","CHARACTER")     ---- 添加物品到目标标签
     AddRecipe2(
         "moonlightcoda_equipment_guard_from_moon",            --  --  inst.prefab  实体名字
-        { Ingredient("moonglass", 3),Ingredient(CHARACTER_INGREDIENT.HEALTH, 15), }, 
+        { Ingredient("moonglass", 6),Ingredient(CHARACTER_INGREDIENT.HEALTH, 15), }, 
         TECH.NONE, 
         {
             no_deconstruction=true,
@@ -327,7 +327,7 @@
     AddRecipeToFilter("moonlightcoda_equipment_guidance_from_moon","CHARACTER")     ---- 添加物品到目标标签
     AddRecipe2(
         "moonlightcoda_equipment_guidance_from_moon",            --  --  inst.prefab  实体名字
-        { Ingredient("purebrilliance", 2),Ingredient(CHARACTER_INGREDIENT.HEALTH, 35), }, 
+        { Ingredient("purebrilliance", 6),Ingredient(CHARACTER_INGREDIENT.HEALTH, 35), }, 
         TECH.NONE, 
         {
             no_deconstruction=true,

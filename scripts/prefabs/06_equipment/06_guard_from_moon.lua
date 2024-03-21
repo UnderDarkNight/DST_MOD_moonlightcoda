@@ -96,7 +96,12 @@ local function fn()
             inst:AddComponent("mcoda_com_acceptable")
             inst.components.mcoda_com_acceptable:SetOnAcceptFn(function(inst,item,doer)
                 item.components.stackable:Get():Remove()
-                inst.components.finiteuses:SetPercent(1)
+                local old_percent = inst.components.finiteuses:GetPercent()
+                local new_percent = old_percent + 0.35
+                if new_percent > 1 then
+                    new_percent = 1 
+                end
+                inst.components.finiteuses:SetPercent(new_percent)
                 return true
             end)
         end
