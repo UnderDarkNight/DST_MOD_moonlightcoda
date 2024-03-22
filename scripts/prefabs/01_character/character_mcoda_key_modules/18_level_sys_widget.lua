@@ -83,7 +83,7 @@
             data_table = temp_table
         end
 
-        local x,y = data_table.x or 0.5,data_table.y or 0.5
+        local x,y = data_table.x or 0.05,data_table.y or 0.93
         return x,y
     end
     local function save_xy_percent(x,y)
