@@ -216,7 +216,7 @@ local function fn()
 
                 ------------------------------------------------------------------------------------------------------------------------
                     CreateLaser(doer,ret_pt)
-                    if doer.replica.mcoda_com_tag_sys and doer.replica.mcoda_com_tag_sys:HasTag("level_1") then
+                    if doer.replica.mcoda_com_tag_sys and doer.replica.mcoda_com_tag_sys:HasTag("laser_staff_cost_buff") then
                         ---------
                     else                            
                         doer.components.health:DoDelta(-3,true)

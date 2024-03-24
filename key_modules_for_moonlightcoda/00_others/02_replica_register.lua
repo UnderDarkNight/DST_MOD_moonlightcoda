@@ -29,6 +29,8 @@ AddReplicableComponent("mcoda_com_tag_sys")  --- 独立的tag 系统
 
 AddReplicableComponent("mcoda_com_point_and_target_spell_caster")  --- 目标/点 技能施放器
 
+AddReplicableComponent("mcoda_com_level_sys")  --- 独立的等级系统
+
 
 
 

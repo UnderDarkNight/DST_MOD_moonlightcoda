@@ -179,30 +179,31 @@
             level_text:SetString("Level.0")
         ---------------------------------------------------------------------------------------------
         --- 添加监听 event
-            -- local level_num = 0
-            -- inst:ListenForEvent("coda_level_widget_refresh",function(_,num)
-            --     if type(num) == "number" then
-            --         if num > level_num then
-            --             level_num = num
-            --         end
-            --         level_text:SetString("Level."..tostring(level_num))
-            --     end
-            -- end)
-            local level_num = ThePlayer.replica.mcoda_com_level_sys:GetLevel()
-            level_text:SetString("Level."..tostring(level_num))
-            ThePlayer.replica.mcoda_com_level_sys:SetLevelUpdateFn(function(inst,level_num)
-                level_text:SetString("Level."..tostring(level_num))
+            local level_num = 0
+            inst:ListenForEvent("coda_level_widget_refresh",function(_,num)
+                if type(num) == "number" then
+                    if num > level_num then
+                        level_num = num
+                    end
+                    level_text:SetString("Level."..tostring(level_num))
+                end
             end)
-
         ---------------------------------------------------------------------------------------------
 
     end
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+----- 刷新事件
+    local function Level_Widget_Hud_Refresh_Event_Setup(inst)
+        inst:ListenForEvent("coda_level_widget_refresh_server_side",function(_,num)
+            inst:DoTaskInTime(1,function()
+                inst.components.mcoda_com_rpc_event:PushEvent("coda_level_widget_refresh",num)                
+            end)
+        end)
+    end
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 return function(inst)
-    inst:DoTaskInTime(1,function()
+    inst:DoTaskInTime(0,function()
         if ThePlayer and  inst ~= ThePlayer then
             return
         end
@@ -215,5 +216,7 @@ return function(inst)
         ---------------------------------------------------------------------------------------------        
     end)
 
-
+    if TheWorld.ismastersim then
+        Level_Widget_Hud_Refresh_Event_Setup(inst)
+    end
 end
