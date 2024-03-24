@@ -64,7 +64,7 @@ return function(inst)
                 --------------------------------------------------------------------------------------------------------------
                 ---- 公用参数表
                     local delta_speed = 0
-                    local delta_damage_mult = 0
+                    local delta_damage_taken_mult = 0
                     -- local max_sanity = TUNING[string.upper("moonlightcoda").."_SANITY"]
                     local max_sanity_delta = 0
                     -- local max_health = TUNING[string.upper("moonlightcoda").."_HEALTH"]
@@ -91,7 +91,7 @@ return function(inst)
                 --------------------------------------------------------------------------------------------------------------
                 ---- 10级，增加55%防御
                     if level >= 10 then
-                        delta_damage_mult = delta_damage_mult + 0.55
+                        delta_damage_taken_mult = delta_damage_taken_mult + 0.55
                     end
                 --------------------------------------------------------------------------------------------------------------
                 ---- 11-14级，每级增加3月能值上限
@@ -102,7 +102,7 @@ return function(inst)
                 --------------------------------------------------------------------------------------------------------------
                 ---- 15级，增加10%防御
                     if level >= 15 then
-                        delta_damage_mult = delta_damage_mult + 0.1
+                        delta_damage_taken_mult = delta_damage_taken_mult + 0.1
                     end
                 --------------------------------------------------------------------------------------------------------------
                 ---- 16-24级，每级增加1月能值上限，1启蒙上限
@@ -114,7 +114,7 @@ return function(inst)
                 --------------------------------------------------------------------------------------------------------------
                 ---- 25级，免疫所有寒冷和冰冻，增加5%防御
                     if level >= 25 then
-                        delta_damage_mult = delta_damage_mult + 0.05
+                        delta_damage_taken_mult = delta_damage_taken_mult + 0.05
                         ---- 增加耐寒
                         inst.components.health:mcoda_Add_DoDelta_Modifer_fn(level_modifer_inst_cold,function(health,num,overtime,cause,...)
                             if num < 0 and cause == "cold" then
@@ -129,12 +129,12 @@ return function(inst)
                 ---- 26-29级，每级增加1.5%速度
                     if level >= 26 then
                         local temp__speed__level = math.clamp(level,26,29) - 25
-                        delta_damage_mult = delta_damage_mult + 0.015 * temp__speed__level
+                        delta_damage_taken_mult = delta_damage_taken_mult + 0.015 * temp__speed__level
                     end
                 --------------------------------------------------------------------------------------------------------------
                 ---- 30级，免疫所有炎热和火烧，增加5%防御
                     if level >= 30 then
-                        delta_damage_mult = delta_damage_mult + 0.05
+                        delta_damage_taken_mult = delta_damage_taken_mult + 0.05
                         ---- 增加耐热
                             inst.components.health.externalfiredamagemultipliers:SetModifier(level_modifer_inst_hot,0) -- 被火焰直接烧掉血
                             inst.components.health:mcoda_Add_DoDelta_Modifer_fn(level_modifer_inst_hot,function(health,num,overtime,cause,...)
@@ -152,7 +152,7 @@ return function(inst)
                 ---- 31-34，每级增加1.5%速度
                     if level >= 31 then
                         local temp___speed_level = math.clamp(level,31,34) - 30
-                        delta_damage_mult = delta_damage_mult + temp___speed_level * 0.015
+                        delta_damage_taken_mult = delta_damage_taken_mult + temp___speed_level * 0.015
                     end
                 --------------------------------------------------------------------------------------------------------------
                 ---- 35级，夜晚不再扣理智，落水不再扣血上限
@@ -178,12 +178,12 @@ return function(inst)
                 ---- 36-39级，每级增加1%防御
                     if level >= 36 then
                         local temp___defense_level = math.clamp(level,36,39) - 35
-                        delta_damage_mult = delta_damage_mult + temp___defense_level * 0.01
+                        delta_damage_taken_mult = delta_damage_taken_mult + temp___defense_level * 0.01
                     end
                 --------------------------------------------------------------------------------------------------------------
                 ---- 40级，增加1%防御，建造东西消耗材料为一半
                     if level >= 40 then
-                        delta_damage_mult = delta_damage_mult + 0.01
+                        delta_damage_taken_mult = delta_damage_taken_mult + 0.01
                         inst.components.builder.ingredientmod = 0.5
                     else
                         inst.components.builder.ingredientmod = 1
@@ -200,7 +200,11 @@ return function(inst)
                 --------------------------------------------------------------------------------------------------------------
                 ---- 把参数应用到角色
                     inst.components.locomotor:SetExternalSpeedMultiplier(level_modifier_inst, "moonlightcoda_speed_by_level", 1+delta_speed)
-                    inst.components.combat.externaldamagemultipliers:SetModifier(level_modifier_inst,1+delta_damage_mult)
+                    -- inst.components.combat.externaldamagemultipliers:SetModifier(level_modifier_inst,1+delta_damage_taken_mult)  -- 造成伤害倍增
+                    
+                    delta_damage_taken_mult = math.clamp(delta_damage_taken_mult,0,1)
+                    inst.components.combat.externaldamagetakenmultipliers:SetModifier(level_modifier_inst,1-delta_damage_taken_mult)
+
                     inst.components.sanity.max = max_sanity_delta + TUNING[string.upper("moonlightcoda").."_SANITY"]
                     inst.components.health.maxhealth = max_health_delta + TUNING[string.upper("moonlightcoda").."_HEALTH"]
                 --------------------------------------------------------------------------------------------------------------
