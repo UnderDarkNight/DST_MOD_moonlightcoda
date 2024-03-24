@@ -382,5 +382,47 @@
         {"CHARACTER","LIGHT","STRUCTURES","MAGIC"}
     )
     RemoveRecipeFromFilter("moonlightcoda_building_light_the_way","MODS")                       -- -- 在【模组物品】标签里移除这个。
+--------------------------------------------------------------------------------------------------------------------------------------------
+---- 标点
+--------------------------------------------------------------------------------------------------------------------------------------------
+    AddRecipeToFilter("moonlightcoda_building_coord","CHARACTER")     ---- 添加物品到目标标签
+    AddRecipe2(
+        "moonlightcoda_building_coord",            --  --  inst.prefab  实体名字
+        { Ingredient("moonglass", 3),Ingredient("moonrocknugget", 1),Ingredient(CHARACTER_INGREDIENT.HEALTH, 35) }, 
+        TECH.NONE, 
+        {
+            no_deconstruction=true,
+            -- numtogive = 3,
+            -- sg_state="moonlightcoda_sg_form_log",
+            builder_tag = "moonlightcoda",
+            placer = "moonlightcoda_building_coord_placer",
+            atlas = "images/map_icons/moonlightcoda_building_coord.xml",
+            -- atlas = GetInventoryItemAtlas("opalstaff.tex"),
+            image = "moonlightcoda_building_coord.tex",
+            build_distance = 2,
+        },
+        {"CHARACTER","STRUCTURES","MAGIC"}
+    )
+    RemoveRecipeFromFilter("moonlightcoda_building_coord","MODS")                       -- -- 在【模组物品】标签里移除这个。
+--------------------------------------------------------------------------------------------------------------------------------------------
+---- 唱片
+--------------------------------------------------------------------------------------------------------------------------------------------
+    AddRecipeToFilter("moonlightcoda_item_record","CHARACTER")     ---- 添加物品到目标标签
+    AddRecipe2(
+        "moonlightcoda_item_record",            --  --  inst.prefab  实体名字
+        { Ingredient("purebrilliance", 6) }, 
+        TECH.NONE, 
+        {
+            no_deconstruction=true,
+            -- numtogive = 3,
+            -- sg_state="moonlightcoda_sg_form_log",
+            builder_tag = "moonlightcoda",
+            atlas = "images/inventoryimages/moonlightcoda_item_record.xml",
+            -- atlas = GetInventoryItemAtlas("opalstaff.tex"),
+            image = "moonlightcoda_item_record.tex",
+        },
+        {"CHARACTER","MAGIC"}
+    )
+    RemoveRecipeFromFilter("moonlightcoda_item_record","MODS")                       -- -- 在【模组物品】标签里移除这个。
 
 --------------------------------------------------------------------------------------------------------------------------------------------

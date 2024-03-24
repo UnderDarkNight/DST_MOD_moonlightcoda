@@ -62,6 +62,11 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
                 ["recipe_desc"] = "通往重要之地",
                 ["action"] = "启动探测",
             },
+            ["moonlightcoda_item_record"] = {
+                ["name"] = "唱片",
+                ["inspect_str"] = "有益心灵",
+                ["recipe_desc"] = "有益心灵",
+            },
         --------------------------------------------------------------------
         --- 05_spells
             ["moonlightcoda_spell_dock_kit_maker"] = {
@@ -157,6 +162,16 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
                 ["name"] = "前路",
                 ["inspect_str"] = "照亮前路",
                 ["recipe_desc"] = "照亮前路",
+            },
+            ["moonlightcoda_building_coord"] = {
+                ["name"] = "标点",
+                ["inspect_str"] = "万事俱备",
+                ["recipe_desc"] = "万事俱备",
+            },
+            ["moonlightcoda_building_once_again"] = {
+                ["name"] = "再生",
+                ["inspect_str"] = "再来一次",
+                ["recipe_desc"] = "再来一次",
             },
         --------------------------------------------------------------------
 }

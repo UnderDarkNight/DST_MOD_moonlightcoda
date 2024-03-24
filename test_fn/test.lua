@@ -230,7 +230,8 @@ local flg,error_code = pcall(function()
 
     ----------------------------------------------------------------------------------------------------------------
     ----
-                ThePlayer.components.mcoda_com_level_sys:DoDelta(-37)
+                -- ThePlayer.components.mcoda_com_level_sys:DoDelta(-37)
+                ThePlayer.AnimState:SetClientSideBuildOverrideFlag("moonlightcoda_ghost", false)
     ----------------------------------------------------------------------------------------------------------------
 
 

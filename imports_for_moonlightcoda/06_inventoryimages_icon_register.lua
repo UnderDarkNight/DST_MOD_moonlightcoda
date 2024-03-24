@@ -20,6 +20,7 @@ local files_name = {
 	---------------------------------------------------------------------------------------
 	--- 02_items
 		"moonlightcoda_item_moon_island_detector",						--- 月岛探测器
+		"moonlightcoda_item_record",									--- 唱片
 	---------------------------------------------------------------------------------------
 	--- 06_equipment
 		"moonlightcoda_equipment_teleport_staff",						--- 传送法杖

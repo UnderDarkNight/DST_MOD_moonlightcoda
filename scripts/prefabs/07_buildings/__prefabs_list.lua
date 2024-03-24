@@ -29,6 +29,8 @@ local prefabs_name_list = {
 
 
     "01_light_the_way",                    --- 前路
+    "02_coord_and_once_again",                             --- 标点/再生
+    "03_moonlight_skeleton",                             --- 客制化死亡骷髅
 
 
 

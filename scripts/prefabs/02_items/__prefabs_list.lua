@@ -29,6 +29,7 @@ local prefabs_name_list = {
 
 
     "01_moon_island_detector",                           --- 月岛探测仪
+    "02_record",                                         --- 唱片
 
 }
 

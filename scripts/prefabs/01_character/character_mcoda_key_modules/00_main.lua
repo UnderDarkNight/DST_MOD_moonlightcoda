@@ -35,6 +35,8 @@ return function(inst)
         "prefabs/01_character/character_mcoda_key_modules/17_heavylifting",                         ---- 搬重物减速处理
         "prefabs/01_character/character_mcoda_key_modules/18_level_sys_widget",                     ---- 等级显示界面
         "prefabs/01_character/character_mcoda_key_modules/19_death_event",                          ---- 死亡触发月相变换
+        "prefabs/01_character/character_mcoda_key_modules/20_coord_and_once_again",                 ---- 【标点】【再生】相关的交互
+        "prefabs/01_character/character_mcoda_key_modules/21_custom_skeleton",                      --- 客制化 死亡骷髅 配置
 
 
     }

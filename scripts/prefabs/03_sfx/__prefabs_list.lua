@@ -31,6 +31,7 @@ local prefabs_name_list = {
     "01_moon_arrow",                           --- 月亮箭头
     "02_waterspout",                           --- 水花
     "03_fire",                           --- 火焰
+    "04_fx_collapse",                           --- 烟雾特效
 
 }
 

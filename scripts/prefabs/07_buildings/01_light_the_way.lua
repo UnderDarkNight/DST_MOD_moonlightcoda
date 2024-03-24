@@ -88,6 +88,8 @@ local function fn()
             light_inst.Follower:FollowSymbol(inst.GUID, "png",  0, -280, 0)
         end)
     -----------------------------
+        MakeHauntableWork(inst)
+    -----------------------------
 
     return inst
 end

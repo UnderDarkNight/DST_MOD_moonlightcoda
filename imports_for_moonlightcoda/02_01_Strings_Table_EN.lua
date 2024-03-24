@@ -57,6 +57,11 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
                 ["recipe_desc"] = "Pointing to important places",
                 ["action"] = "launch detection",
             },
+            ["moonlightcoda_item_record"] = {
+                ["name"] = "Record",
+                ["inspect_str"] = "Good for the soul",
+                ["recipe_desc"] = "Good for the soul",
+            },
         --------------------------------------------------------------------
         --- 05_spells
             ["moonlightcoda_spell_dock_kit_maker"] = {
@@ -152,6 +157,16 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
                 ["name"] = "Light The Way",
                 ["inspect_str"] = "Light The Way",
                 ["recipe_desc"] = "Light The Way",
+            },
+            ["moonlightcoda_building_coord"] = {
+                ["name"] = "Coord",
+                ["inspect_str"] = "everything is ready",
+                ["recipe_desc"] = "everything is ready",
+            },
+            ["moonlightcoda_building_once_again"] = {
+                ["name"] = "Once Again",
+                ["inspect_str"] = "Once Again",
+                ["recipe_desc"] = "Once Again",
             },
         --------------------------------------------------------------------
 
