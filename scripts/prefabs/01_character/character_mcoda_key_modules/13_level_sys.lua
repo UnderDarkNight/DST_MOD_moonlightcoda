@@ -122,8 +122,20 @@ return function(inst)
                             end
                             return num
                         end)
+                        
+                        if inst.components.freezable then
+                            inst.components.freezable.redirectfn = function()
+                                return true
+                            end
+                        end
+
                     else
                         inst.components.health:mcoda_Remove_DoDelta_Modifer_fn(level_modifer_inst_cold)
+
+                        if inst.components.freezable then
+                            inst.components.freezable.redirectfn = nil
+                        end
+
                     end
                 --------------------------------------------------------------------------------------------------------------
                 ---- 26-29级，每级增加1.5%速度
