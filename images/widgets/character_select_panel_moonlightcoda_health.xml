@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Atlas>
+	<Texture filename="character_select_panel_moonlightcoda_health.tex" />
+	<Elements>
+		<Element name="character_select_panel_moonlightcoda_health.tex" u1="0.001" u2="0.9599375" v2="0.999" v1="0.001" variant="" />
+	</Elements>
+</Atlas>

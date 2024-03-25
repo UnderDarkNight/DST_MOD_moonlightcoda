@@ -129,6 +129,32 @@ local assets =
             inst:AddComponent("lootdropper")
             -- inst.components.lootdropper:SetChanceLootTable('skeleton_player')
         ------------------------------------------------------------------------------------------
+        ----
+            local function aoe_damage(pt)
+                local range = 25
+                local musthavetags = { "_combat" }
+                local canthavetags = { "INLIMBO", "notarget", "noattack", "flight", "invisible", "wall", "player", "companion" }
+                local musthaveoneoftags = {}
+                local ents = TheSim:FindEntities(pt.x, 0, pt.z, range, musthavetags, canthavetags, musthaveoneoftags)
+                local ret_aoe_target = {}
+                for k, temp in pairs(ents) do
+                    if temp and temp:IsValid() and temp.components.combat and temp.components.health then
+                        table.insert(ret_aoe_target, temp)
+                    end
+                end
+                for i, temp_target in pairs(ret_aoe_target) do
+                    temp_target:DoTaskInTime(i*0.5,function()
+                        SpawnPrefab("moonlightcoda_fx_collapse"):PushEvent("Set",{
+                            target = temp_target,
+                            type = "small",
+                            color = Vector3(0,0,255),
+                            MultColour_Flag = true,
+                        })
+                        temp_target.components.combat:GetAttacked(temp_target:GetNearestPlayer(),900)
+                    end)
+                end
+            end
+        ------------------------------------------------------------------------------------------
         ---- 
             inst:AddComponent("workable")
             inst.components.workable:SetWorkAction(ACTIONS.HAMMER)
@@ -138,10 +164,86 @@ local assets =
                 local fx = SpawnPrefab("collapse_small")
                 fx.Transform:SetPosition(inst.Transform:GetWorldPosition())
                 fx:SetMaterial("rock")
+                aoe_damage(Vector3(inst.Transform:GetWorldPosition()))
                 inst:Remove()
             end)
         ------------------------------------------------------------------------------------------
+        ---- 
+            inst:AddComponent("mcoda_com_data")
+        ------------------------------------------------------------------------------------------
             inst:DoTaskInTime(0,inst.Remove) --- 暂时删除
+        ------------------------------------------------------------------------------------------
+        ---- 刷月岛虚影
+            local function spawn_gestalt_guard(inst)
+                local pt = Vector3(inst.Transform:GetWorldPosition())
+                local ret_spawn_pt = Vector3(pt.x,0,pt.z)
+                local range = math.random(5)
+                local angle =  math.random() * TWOPI
+                local offset_pt = FindWalkableOffset(pt,angle,range)
+                if type(offset_pt) == "table" then
+                    ret_spawn_pt.x = ret_spawn_pt.x + offset_pt.x
+                    ret_spawn_pt.z = ret_spawn_pt.z + offset_pt.z
+                end
+                SpawnPrefab("gestalt_guard").Transform:SetPosition(ret_spawn_pt.x,0,ret_spawn_pt.z)
+            end
+            -- inst:DoTaskInTime(1,function()
+            --     if inst.components.mcoda_com_data:Get("spawn_flag_gestalt_guard") then
+            --        return 
+            --     end
+            --     inst.components.mcoda_com_data:Set("spawn_flag_gestalt_guard",true)
+            --     for i = 1, 10, 1 do
+            --         inst:DoTaskInTime(i*(math.random(3,5)),function()
+            --             spawn_gestalt_guard(inst)
+            --         end)
+            --     end
+            -- end)
+            inst:DoPeriodicTask(10,function()
+                local x,y,z = inst.Transform:GetWorldPosition()
+                local range = 50
+                local musthavetags = {"brightmare","brightmare_guard","lunar_aligned"}
+                local canthavetags = nil
+                local musthaveoneoftags = nil
+                local ents = TheSim:FindEntities(x, y, z, range, musthavetags, canthavetags, musthaveoneoftags)
+                local monster_num = 0
+                for k, temp in pairs(ents) do
+                    if temp and temp:IsValid() and temp.prefab == "gestalt_guard" then
+                        monster_num = monster_num + 1
+                    end
+                end
+                if monster_num < 10 then
+                    spawn_gestalt_guard(inst)
+                end
+            end,math.random(10,20))
+        ------------------------------------------------------------------------------------------
+        ---- 每天刷 3 个亮茄虚影，连续3天   lunarthrall_plant_gestalt 植物虚影  corpse_gestalt 尸体虚影
+            local function spawn_gestalt(inst)
+                local pt = Vector3(inst.Transform:GetWorldPosition())
+                local range = math.random(5)
+                local angle =  math.random() * TWOPI
+                local offset_pt = FindWalkableOffset(pt,angle,range)
+                if type(offset_pt) == "table" then
+                    pt.x = pt.x + offset_pt.x
+                    pt.z = pt.z + offset_pt.z
+                end
+                SpawnPrefab("lunarthrall_plant_gestalt").Transform:SetPosition(pt.x,0,pt.z)
+            end
+            inst:DoTaskInTime(1,function()
+                local gestalt_spawn_times = inst.components.mcoda_com_data:Add("gestalt_spawn_times",1)
+                if gestalt_spawn_times < 3 then
+                    spawn_gestalt(inst)
+                    spawn_gestalt(inst)
+                    spawn_gestalt(inst)
+                end
+            end)
+            inst:WatchWorldState("cycles",function()
+                local gestalt_spawn_times = inst.components.mcoda_com_data:Add("gestalt_spawn_times",0)
+                if gestalt_spawn_times < 3 then
+                    inst.components.mcoda_com_data:Add("gestalt_spawn_times",1)
+                    spawn_gestalt(inst)
+                    spawn_gestalt(inst)
+                    spawn_gestalt(inst)
+                end
+            end)
         ------------------------------------------------------------------------------------------
 
 

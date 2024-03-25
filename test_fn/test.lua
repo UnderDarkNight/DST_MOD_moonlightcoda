@@ -15,7 +15,7 @@
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 local flg,error_code = pcall(function()
     print("WARNING:PCALL START +++++++++++++++++++++++++++++++++++++++++++++++++")
-    local x,y,z =    ThePlayer.Transform:GetWorldPosition()  
+    -- local x,y,z =    ThePlayer.Transform:GetWorldPosition()  
     ----------------------------------------------------------------------------------------------------------------
     ---- HUD 血条 修改
         -- for k, v in pairs(ThePlayer.HUD.controls.status) do
@@ -230,8 +230,28 @@ local flg,error_code = pcall(function()
 
     ----------------------------------------------------------------------------------------------------------------
     ----
-                ThePlayer.components.mcoda_com_level_sys:DoDelta(50)
+                -- ThePlayer.components.mcoda_com_level_sys:DoDelta(50)
                 -- ThePlayer.AnimState:SetClientSideBuildOverrideFlag("moonlightcoda_ghost", false)
+    ----------------------------------------------------------------------------------------------------------------
+                -- TheWorld:DoStaticTaskInTime(1,function()
+                --     local crash_flag,crash_reason = pcall(function()
+                --                 print("kkkk")
+                --             -- print()
+                --                 local temp = TheInput:GetHUDEntityUnderMouse()
+                --                 for k, v in pairs(temp) do
+                --                     print(k,v)
+                --                 end
+                --                 print(temp.parent)
+                --                 -- parent
+                --             end)
+                --     if not crash_flag then
+                --         print("error",crash_reason)
+                --     end
+                -- end)
+                -- print("fffff")
+
+                TUNING.test_widget:Hide()
+                -- TUNING.test_widget.health_status:Show()
     ----------------------------------------------------------------------------------------------------------------
 
 

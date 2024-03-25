@@ -6,3 +6,5 @@
 
 modimport("key_modules_for_moonlightcoda/08_widget/01_recipe_widget_with_health.lua")  --- 制作栏图标
 
+modimport("key_modules_for_moonlightcoda/08_widget/02_character_select_panel_healthbadge_hook.lua")  --- 修改选角色的时候的 三维显示图标
+

@@ -29,6 +29,12 @@ local temp_assets = {
 	--- 等级相关界面素材
 		Asset("IMAGE", "images/widgets/moonlightcoda_level_widget.tex"),
 		Asset("ATLAS", "images/widgets/moonlightcoda_level_widget.xml"),
+
+		Asset("IMAGE", "images/widgets/character_select_panel_moonlightcoda_health.tex"),
+		Asset("ATLAS", "images/widgets/character_select_panel_moonlightcoda_health.xml"),
+
+		Asset("IMAGE", "images/widgets/character_select_panel_moonlightcoda_sanity.tex"),
+		Asset("ATLAS", "images/widgets/character_select_panel_moonlightcoda_sanity.xml"),
 	---------------------------------------------------------------------------
 	-- Asset("SOUNDPACKAGE", "sound/dontstarve_DLC002.fev"),	--- 单机声音集
 	---------------------------------------------------------------------------
