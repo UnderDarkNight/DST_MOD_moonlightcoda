@@ -173,6 +173,10 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
                 ["inspect_str"] = "再来一次",
                 ["recipe_desc"] = "再来一次",
             },
+            ["moonlightcoda_building_skeleton"] = {
+                ["name"] = "无光迹象",
+                ["inspect_str"] = "这是一个黯淡的标志",
+            },
         --------------------------------------------------------------------
 }
 

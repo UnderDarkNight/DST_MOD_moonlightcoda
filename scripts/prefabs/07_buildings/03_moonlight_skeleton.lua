@@ -5,7 +5,7 @@
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 local assets =
 {
-    Asset("ANIM", "anim/skeletons.zip"),
+    Asset("ANIM", "anim/moonlightcoda_building_skeleton.zip"),
 }
 ---------------------------------------------------------------------------------------------------------------------------------------------
     local function getdesc(inst, viewer)
@@ -105,9 +105,12 @@ local assets =
 
         MakeSmallObstaclePhysics(inst, 0.25)
 
-        inst.AnimState:SetBank("skeleton")
-        inst.AnimState:SetBuild("skeletons")
-        inst.AnimState:PlayAnimation("idle1", true)
+        -- inst.AnimState:SetBank("skeleton")
+        -- inst.AnimState:SetBuild("skeletons")
+        -- inst.AnimState:PlayAnimation("idle1", true)
+        inst.AnimState:SetBank("moonlightcoda_building_skeleton")
+        inst.AnimState:SetBuild("moonlightcoda_building_skeleton")
+        inst.AnimState:PlayAnimation("idle")
 
         inst:AddTag("playerskeleton")
         inst:AddComponent("playeravatardata")
@@ -171,7 +174,7 @@ local assets =
         ---- 
             inst:AddComponent("mcoda_com_data")
         ------------------------------------------------------------------------------------------
-            inst:DoTaskInTime(0,inst.Remove) --- 暂时删除
+            -- inst:DoTaskInTime(0,inst.Remove) --- 暂时删除
         ------------------------------------------------------------------------------------------
         ---- 刷月岛虚影
             local function spawn_gestalt_guard(inst)

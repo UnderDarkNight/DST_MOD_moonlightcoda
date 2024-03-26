@@ -224,11 +224,17 @@ return function(inst)
         ----------------------------------------------------------------------------------------------------------------------
         ---- 建造倍数 初始化检测
             local builder_ingredientmod_fn = function(inst)
-                if inst.components.mcoda_com_level_sys:GetLevel() >= 40 then
-                    inst.components.builder.ingredientmod = 0.5
-                else
-                    inst.components.builder.ingredientmod = 1
-                end
+                inst:DoTaskInTime(0,function()
+                    if inst.components.inventory:EquipHasTag("moonlightcoda_tag.greenamulet") then
+                        return
+                    end
+                    if inst.components.mcoda_com_level_sys:GetLevel() >= 40 then
+                        inst.components.builder.ingredientmod = 0.5
+                    else
+                        inst.components.builder.ingredientmod = 1
+                    end
+                end)
+                
             end
             inst:ListenForEvent("unequip",builder_ingredientmod_fn)
             inst:ListenForEvent("equip",builder_ingredientmod_fn)

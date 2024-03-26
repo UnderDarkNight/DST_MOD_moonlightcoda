@@ -168,6 +168,10 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
                 ["inspect_str"] = "Once Again",
                 ["recipe_desc"] = "Once Again",
             },
+            ["moonlightcoda_building_skeleton"] = {
+                ["name"] = "Unglazed Sign",
+                ["inspect_str"] = "It's a bleak sign",
+            },
         --------------------------------------------------------------------
 
 }

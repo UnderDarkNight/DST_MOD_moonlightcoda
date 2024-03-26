@@ -16,3 +16,5 @@ modimport("key_modules_for_moonlightcoda/04_origin_prefab_upgrade/04_lunar_align
 
 modimport("key_modules_for_moonlightcoda/04_origin_prefab_upgrade/05_cursed_monkey_token.lua")  --- 猴子诅咒饰品
 
+modimport("key_modules_for_moonlightcoda/04_origin_prefab_upgrade/06_greenamulet.lua")  --- 绿色项链
+
