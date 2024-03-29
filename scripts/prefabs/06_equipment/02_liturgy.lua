@@ -136,15 +136,15 @@ end
 
 local function OnBroken(inst)
 	if inst.components.equippable ~= nil then
-		if inst.components.equippable:IsEquipped() then
-			local owner = inst.components.inventoryitem.owner
-			if owner ~= nil and owner.components.inventory ~= nil then
-				local item = owner.components.inventory:Unequip(inst.components.equippable.equipslot)
-				if item ~= nil then
-					owner.components.inventory:GiveItem(item, nil, owner:GetPosition())
-				end
-			end
-		end
+		-- if inst.components.equippable:IsEquipped() then
+		-- 	local owner = inst.components.inventoryitem.owner
+		-- 	if owner ~= nil and owner.components.inventory ~= nil then
+		-- 		local item = owner.components.inventory:Unequip(inst.components.equippable.equipslot)
+		-- 		if item ~= nil then
+		-- 			owner.components.inventory:GiveItem(item, nil, owner:GetPosition())
+		-- 		end
+		-- 	end
+		-- end
 		DisableComponents(inst)
 		inst.AnimState:PlayAnimation("broken")
 		SetIsBroken(inst, true)
@@ -205,7 +205,7 @@ local function fn()
 			replica_com:SetSGAction("dolongaction")
 			replica_com:SetText("moonlightcoda_equipment_liturgy",STRINGS.ACTIONS.OCEAN_TRAWLER_FIX)
 			replica_com:SetTestFn(function(inst,item)
-				if item and item.prefab == "purebrilliance" then
+				if item and (item.prefab == "purebrilliance" or item.prefab == "lunarplant_kit") then
 					return true
 				end
 				return false
@@ -214,6 +214,9 @@ local function fn()
 		if TheWorld.ismastersim then
 			inst:AddComponent("mcoda_com_acceptable")
 			inst.components.mcoda_com_acceptable:SetOnAcceptFn(function(inst,item)
+				if item.prefab == "lunarplant_kit" then
+					return false
+				end
 				if item.components.stackable then
 					item.components.stackable:Get():Remove()
 				end
@@ -264,7 +267,7 @@ local function fn()
 	local setbonus = inst:AddComponent("setbonus")
 	setbonus:SetSetName(EQUIPMENTSETNAMES.LUNARPLANT)
 
-	-- MakeForgeRepairable(inst, FORGEMATERIALS.LUNARPLANT, OnBroken, OnRepaired)
+	MakeForgeRepairable(inst, FORGEMATERIALS.LUNARPLANT, OnBroken, OnRepaired)
 	MakeHauntableLaunch(inst)
 
 	inst.noplanarhitfx = true
