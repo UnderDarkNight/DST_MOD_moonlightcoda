@@ -141,7 +141,7 @@ return function(inst)
                 ---- 26-29级，每级增加1.5%速度
                     if level >= 26 then
                         local temp__speed__level = math.clamp(level,26,29) - 25
-                        delta_damage_taken_mult = delta_damage_taken_mult + 0.015 * temp__speed__level
+                        delta_speed = delta_speed + 0.015 * temp__speed__level
                     end
                 --------------------------------------------------------------------------------------------------------------
                 ---- 30级，免疫所有炎热和火烧，增加5%防御

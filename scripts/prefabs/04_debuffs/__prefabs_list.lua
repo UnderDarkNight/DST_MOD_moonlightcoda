@@ -29,6 +29,7 @@ local prefabs_name_list = {
 
 
     "01_moon_island_arrow",                           --- 月岛指示图标
+    "02_gestalt_guard_distance_limit",                --- 限制虚影范围的debuff
 
 }
 

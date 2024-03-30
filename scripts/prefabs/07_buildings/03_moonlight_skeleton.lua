@@ -116,6 +116,8 @@ local assets =
         inst:AddComponent("playeravatardata")
         inst.components.playeravatardata:AddPlayerData(true)
 
+        inst:AddTag("moonlightcoda_building_skeleton")
+        
         inst.entity:SetPristine()
 
         if not TheWorld.ismastersim then
@@ -187,7 +189,15 @@ local assets =
                     ret_spawn_pt.x = ret_spawn_pt.x + offset_pt.x
                     ret_spawn_pt.z = ret_spawn_pt.z + offset_pt.z
                 end
-                SpawnPrefab("gestalt_guard").Transform:SetPosition(ret_spawn_pt.x,0,ret_spawn_pt.z)
+                local monster = SpawnPrefab("gestalt_guard")
+                monster.Transform:SetPosition(ret_spawn_pt.x,0,ret_spawn_pt.z)
+                while true do
+                    local debuff = monster:GetDebuff("moonlightcoda_buff_gestalt_guard_distance_limit")
+                    if debuff then
+                        return
+                    end
+                    monster:AddDebuff("moonlightcoda_buff_gestalt_guard_distance_limit","moonlightcoda_buff_gestalt_guard_distance_limit")
+                end
             end
             -- inst:DoTaskInTime(1,function()
             --     if inst.components.mcoda_com_data:Get("spawn_flag_gestalt_guard") then
