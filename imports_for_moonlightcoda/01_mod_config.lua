@@ -7,6 +7,7 @@ TUNING["moonlightcoda.Config"].HIDE_CLOTHS = GetModConfigData("HIDE_CLOTHS")    
 
 
 
+TUNING["moonlightcoda.Config"].DEATH_PLANT_GESTALT = GetModConfigData("DEATH_PLANT_GESTALT")     --- 角色死亡的亮茄植物虚影
 TUNING["moonlightcoda.Config"].LEVEL_RETENTION = GetModConfigData("LEVEL_RETENTION")     --- 等级保留
 
 

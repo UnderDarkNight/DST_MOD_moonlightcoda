@@ -257,7 +257,7 @@ local flg,error_code = pcall(function()
         local monster = SpawnPrefab("lunarthrall_plant_gestalt")
         monster.Transform:SetPosition(x,0,z)
 
-        local plants = TheSim:FindEntities(x,y,z,30,{"plant"},{"burnt","INLIMBO","NOCLICK"})
+        local plants = TheSim:FindEntities(x,y,z,30,{"plant"},{"burnt","INLIMBO","NOCLICK","temp_gestalt_target"})
         if #plants > 0 then
             monster.plant_target = plants[1]
             print("plant_target",monster.plant_target)

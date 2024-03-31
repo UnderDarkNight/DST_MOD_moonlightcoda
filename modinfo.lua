@@ -108,8 +108,20 @@ configuration_options =
         default = false,
     },
 
-    { name = "FF",  label = "", hover = "", options = {{description = "", data = 0}},  default = 0, }, ---- 隔断
+    { name = "FF6",  label = "", hover = "", options = {{description = "", data = 0}},  default = 0, }, ---- 隔断
 
+    {
+        name = "DEATH_PLANT_GESTALT",
+        label = "死亡亮茄植物虚影 Death Gestal Spawn",
+        hover = "plant gestalt created when a player dies",
+        options =  {
+          {description = "OFF", data = false},
+          {description = "ON", data = true},
+        },
+        default = true,
+    },
+
+    { name = "FFFF",  label = "", hover = "", options = {{description = "", data = 0}},  default = 0, }, ---- 隔断
     {
         name = "LEVEL_RETENTION",
         label = "换角色等级保留 Reroll Level retention",

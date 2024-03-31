@@ -229,43 +229,62 @@ local assets =
             end,math.random(10,20))
         ------------------------------------------------------------------------------------------
         ---- 每天刷 3 个亮茄虚影，连续3天   lunarthrall_plant_gestalt 植物虚影  corpse_gestalt 尸体虚影
-
-            local function spawn_gestalt(inst)
-                local pt = Vector3(inst.Transform:GetWorldPosition())
-                local range = math.random(5)
-                local angle =  math.random() * TWOPI
-                local offset_pt = FindWalkableOffset(pt,angle,range)
-                if type(offset_pt) == "table" then
-                    pt.x = pt.x + offset_pt.x
-                    pt.z = pt.z + offset_pt.z
-                end
-                local monster = SpawnPrefab("lunarthrall_plant_gestalt")
-                monster.Transform:SetPosition(pt.x,0,pt.z)
-
-                ----- 寻找附近植物让虚影去附身
-                    local plants = TheSim:FindEntities(pt.x,0,pt.z,50,{"plant"},{"burnt","INLIMBO","NOCLICK","temp_gestalt_target"})
-                    if #plants > 0 then
-                        monster.plant_target = plants[math.random(#plants)]     
-                        monster.plant_target:AddTag("temp_gestalt_target")
+            if TUNING["moonlightcoda.Config"].DEATH_PLANT_GESTALT then
+                local function spawn_gestalt(inst)
+                    local pt = Vector3(inst.Transform:GetWorldPosition())
+                    local range = math.random(5)
+                    local angle =  math.random() * TWOPI
+                    local offset_pt = FindWalkableOffset(pt,angle,range)
+                    if type(offset_pt) == "table" then
+                        pt.x = pt.x + offset_pt.x
+                        pt.z = pt.z + offset_pt.z
                     end
+                    local monster = SpawnPrefab("lunarthrall_plant_gestalt")
+                    monster.Transform:SetPosition(pt.x,0,pt.z)
+
+                    ----- 寻找附近植物让虚影去附身
+                        local monster_find_target_fn = function(monster)
+                            if monster.plant_target == nil or not monster.plant_target:IsValid() then
+                                local x,y,z = monster.Transform:GetWorldPosition()
+                                local plants = TheSim:FindEntities(x,0,z,6,nil,{"burnt","INLIMBO","NOCLICK","temp_gestalt_target","lunarthrall_plant"},{"plant","structure"})
+                                if #plants > 0 then
+                                    local ret_target = plants[math.random(#plants)]
+                                    if ret_target and ret_target:IsValid() and not TheWorld.Map:IsOceanTileAtPoint(ret_target.Transform:GetWorldPosition())  then
+                                        monster.plant_target = plants[math.random(#plants)]     
+                                        monster.plant_target:AddTag("temp_gestalt_target")
+                                    end
+                                end
+                            end
+                        end
+                        monster:DoPeriodicTask(0.5,monster_find_target_fn)
+                        monster_find_target_fn(monster)
+                    ----- 上位置限制debuff
+                        while true do
+                            local debuff = monster:GetDebuff("moonlightcoda_buff_gestalt_guard_distance_limit")
+                            if debuff then
+                                return
+                            end
+                            monster:AddDebuff("moonlightcoda_buff_gestalt_guard_distance_limit","moonlightcoda_buff_gestalt_guard_distance_limit")
+                        end
+                end
+                inst:DoTaskInTime(1,function()
+                    local gestalt_spawn_times = inst.components.mcoda_com_data:Add("gestalt_spawn_times",1)
+                    if gestalt_spawn_times < 3 then
+                        spawn_gestalt(inst)
+                        spawn_gestalt(inst)
+                        spawn_gestalt(inst)
+                    end
+                end)
+                inst:WatchWorldState("cycles",function()
+                    local gestalt_spawn_times = inst.components.mcoda_com_data:Add("gestalt_spawn_times",0)
+                    if gestalt_spawn_times < 3 then
+                        inst.components.mcoda_com_data:Add("gestalt_spawn_times",1)
+                        spawn_gestalt(inst)
+                        spawn_gestalt(inst)
+                        spawn_gestalt(inst)
+                    end
+                end)
             end
-            inst:DoTaskInTime(1,function()
-                local gestalt_spawn_times = inst.components.mcoda_com_data:Add("gestalt_spawn_times",1)
-                if gestalt_spawn_times < 3 then
-                    spawn_gestalt(inst)
-                    spawn_gestalt(inst)
-                    spawn_gestalt(inst)
-                end
-            end)
-            inst:WatchWorldState("cycles",function()
-                local gestalt_spawn_times = inst.components.mcoda_com_data:Add("gestalt_spawn_times",0)
-                if gestalt_spawn_times < 3 then
-                    inst.components.mcoda_com_data:Add("gestalt_spawn_times",1)
-                    spawn_gestalt(inst)
-                    spawn_gestalt(inst)
-                    spawn_gestalt(inst)
-                end
-            end)
         ------------------------------------------------------------------------------------------
 
 
