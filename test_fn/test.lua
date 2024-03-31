@@ -15,7 +15,7 @@
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 local flg,error_code = pcall(function()
     print("WARNING:PCALL START +++++++++++++++++++++++++++++++++++++++++++++++++")
-    -- local x,y,z =    ThePlayer.Transform:GetWorldPosition()  
+    local x,y,z =    ThePlayer.Transform:GetWorldPosition()  
     ----------------------------------------------------------------------------------------------------------------
     ---- HUD 血条 修改
         -- for k, v in pairs(ThePlayer.HUD.controls.status) do
@@ -250,8 +250,18 @@ local flg,error_code = pcall(function()
                 -- end)
                 -- print("fffff")
 
-                TUNING.test_widget:Hide()
+                -- TUNING.test_widget:Hide()
                 -- TUNING.test_widget.health_status:Show()
+    ----------------------------------------------------------------------------------------------------------------
+    --- 测试虚影附身植物
+        local monster = SpawnPrefab("lunarthrall_plant_gestalt")
+        monster.Transform:SetPosition(x,0,z)
+
+        local plants = TheSim:FindEntities(x,y,z,30,{"plant"},{"burnt","INLIMBO","NOCLICK"})
+        if #plants > 0 then
+            monster.plant_target = plants[1]
+            print("plant_target",monster.plant_target)
+        end
     ----------------------------------------------------------------------------------------------------------------
 
 

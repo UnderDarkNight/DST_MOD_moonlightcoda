@@ -229,6 +229,7 @@ local assets =
             end,math.random(10,20))
         ------------------------------------------------------------------------------------------
         ---- 每天刷 3 个亮茄虚影，连续3天   lunarthrall_plant_gestalt 植物虚影  corpse_gestalt 尸体虚影
+
             local function spawn_gestalt(inst)
                 local pt = Vector3(inst.Transform:GetWorldPosition())
                 local range = math.random(5)
@@ -238,7 +239,15 @@ local assets =
                     pt.x = pt.x + offset_pt.x
                     pt.z = pt.z + offset_pt.z
                 end
-                SpawnPrefab("lunarthrall_plant_gestalt").Transform:SetPosition(pt.x,0,pt.z)
+                local monster = SpawnPrefab("lunarthrall_plant_gestalt")
+                monster.Transform:SetPosition(pt.x,0,pt.z)
+
+                ----- 寻找附近植物让虚影去附身
+                    local plants = TheSim:FindEntities(pt.x,0,pt.z,50,{"plant"},{"burnt","INLIMBO","NOCLICK","temp_gestalt_target"})
+                    if #plants > 0 then
+                        monster.plant_target = plants[math.random(#plants)]     
+                        monster.plant_target:AddTag("temp_gestalt_target")
+                    end
             end
             inst:DoTaskInTime(1,function()
                 local gestalt_spawn_times = inst.components.mcoda_com_data:Add("gestalt_spawn_times",1)
