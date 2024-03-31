@@ -424,5 +424,25 @@
         {"CHARACTER","MAGIC"}
     )
     RemoveRecipeFromFilter("moonlightcoda_item_record","MODS")                       -- -- 在【模组物品】标签里移除这个。
+--------------------------------------------------------------------------------------------------------------------------------------------
+---- 辉煌铁匠铺
+--------------------------------------------------------------------------------------------------------------------------------------------
+    AddRecipeToFilter("moonlightcoda_spell_lunar_forge_kit_maker","CHARACTER")     ---- 添加物品到目标标签
+    AddRecipe2(
+        "moonlightcoda_spell_lunar_forge_kit_maker",            --  --  inst.prefab  实体名字
+        { Ingredient("moonrocknugget", 3),Ingredient("moonglass", 3),Ingredient("purebrilliance", 1) }, 
+        TECH.NONE, 
+        {
+            no_deconstruction=true,
+            -- numtogive = 3,
+            -- sg_state="moonlightcoda_sg_form_log",
+            builder_tag = "moonlightcoda",
+            -- atlas = "images/inventoryimages/lunar_forge_kit.xml",
+            atlas = GetInventoryItemAtlas("lunar_forge_kit.tex"),
+            image = "lunar_forge_kit.tex",
+        },
+        {"CHARACTER"}
+    )
+    RemoveRecipeFromFilter("moonlightcoda_spell_lunar_forge_kit_maker","MODS")                       -- -- 在【模组物品】标签里移除这个。
 
 --------------------------------------------------------------------------------------------------------------------------------------------

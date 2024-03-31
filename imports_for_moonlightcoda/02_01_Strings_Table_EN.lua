@@ -109,6 +109,11 @@ TUNING["moonlightcoda.Strings"][this_language] = TUNING["moonlightcoda.Strings"]
                 ["inspect_str"] = STRINGS.RECIPE_DESC[string.upper("opalstaff")],
                 ["recipe_desc"] = STRINGS.RECIPE_DESC[string.upper("opalstaff")],
             },
+            ["moonlightcoda_spell_lunar_forge_kit_maker"] = {
+                ["name"] = STRINGS.NAMES[string.upper("lunar_forge_kit")],
+                ["inspect_str"] = STRINGS.RECIPE_DESC[string.upper("lunar_forge_kit")],
+                ["recipe_desc"] = STRINGS.RECIPE_DESC[string.upper("lunar_forge_kit")],
+            },
         --------------------------------------------------------------------
         --- 06_equipment
             ["moonlightcoda_equipment_teleport_staff"] = {
