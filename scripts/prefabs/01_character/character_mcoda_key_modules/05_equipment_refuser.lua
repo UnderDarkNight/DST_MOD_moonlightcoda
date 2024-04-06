@@ -21,7 +21,7 @@
         ["voidclothhat"] = GetStringsTable()["voidclothhat"] or GetStringsTable()["default_reason"],
         ["dreadstonehat"] = GetStringsTable()["dreadstonehat"] or GetStringsTable()["default_reason"],
         ["armordreadstone"] = GetStringsTable()["armordreadstone"] or GetStringsTable()["default_reason"],
-        ["purpleamulet"] = GetStringsTable()["purpleamulet"] or GetStringsTable()["default_reason"],
+        -- ["purpleamulet"] = GetStringsTable()["purpleamulet"] or GetStringsTable()["default_reason"],
     }
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
