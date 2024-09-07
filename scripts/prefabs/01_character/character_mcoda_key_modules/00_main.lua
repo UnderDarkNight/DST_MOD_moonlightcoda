@@ -37,6 +37,10 @@ return function(inst)
         "prefabs/01_character/character_mcoda_key_modules/19_death_event",                          ---- 死亡触发月相变换
         "prefabs/01_character/character_mcoda_key_modules/20_coord_and_once_again",                 ---- 【标点】【再生】相关的交互
         "prefabs/01_character/character_mcoda_key_modules/21_custom_skeleton",                      --- 客制化 死亡骷髅 配置
+        "prefabs/01_character/character_mcoda_key_modules/22_alterguardian_hat_maker_tag",          --- 启迪之冠 制作专属tag
+        "prefabs/01_character/character_mcoda_key_modules/23_tag_api_hook",                         --- Hook tag api
+        "prefabs/01_character/character_mcoda_key_modules/24_level_up_and_tile",                    --- 升级时，脚下地皮变月岛地皮
+        "prefabs/01_character/character_mcoda_key_modules/25_lunacy_tile_watcher",                  --- 月岛地皮切换 启蒙状态
 
 
     }

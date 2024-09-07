@@ -107,7 +107,7 @@
     AddRecipeToFilter("moonlightcoda_spell_purebrilliance_maker","CHARACTER")     ---- 添加物品到目标标签
     AddRecipe2(
         "moonlightcoda_spell_purebrilliance_maker",            --  --  inst.prefab  实体名字
-        { Ingredient(CHARACTER_INGREDIENT.HEALTH, 30)  }, 
+        { Ingredient(CHARACTER_INGREDIENT.HEALTH, 60)  }, 
         TECH.NONE, 
         {
             -- no_deconstruction=true,
@@ -127,7 +127,7 @@
     AddRecipeToFilter("moonlightcoda_spell_moonglass_trans_2_purebrilliance_maker","CHARACTER")     ---- 添加物品到目标标签
     AddRecipe2(
         "moonlightcoda_spell_moonglass_trans_2_purebrilliance_maker",            --  --  inst.prefab  实体名字
-        { Ingredient("moonglass", 1)  }, 
+        { Ingredient("moonglass", 2)  }, 
         TECH.NONE, 
         {
             -- no_deconstruction=true,
@@ -347,7 +347,7 @@
     AddRecipeToFilter("moonlightcoda_equipment_moonlightdedication","CHARACTER")     ---- 添加物品到目标标签
     AddRecipe2(
         "moonlightcoda_equipment_moonlightdedication",            --  --  inst.prefab  实体名字
-        { Ingredient("purebrilliance", 5),Ingredient("moonglass", 5),Ingredient("opalpreciousgem", 3) }, 
+        { Ingredient("purebrilliance", 3),Ingredient("moonglass", 3),Ingredient("opalpreciousgem", 1) }, 
         TECH.NONE, 
         {
             no_deconstruction=true,
@@ -444,5 +444,25 @@
         {"CHARACTER"}
     )
     RemoveRecipeFromFilter("moonlightcoda_spell_lunar_forge_kit_maker","MODS")                       -- -- 在【模组物品】标签里移除这个。
+--------------------------------------------------------------------------------------------------------------------------------------------
+---- 启迪之冠
+--------------------------------------------------------------------------------------------------------------------------------------------
+    AddRecipeToFilter("moonlightcoda_spell_alterguardianhat_maker","CHARACTER")     ---- 添加物品到目标标签
+    AddRecipe2(
+        "moonlightcoda_spell_alterguardianhat_maker",            --  --  inst.prefab  实体名字
+        { Ingredient("purebrilliance", 10),Ingredient("moonglass", 35),Ingredient(CHARACTER_INGREDIENT.HEALTH, 100) }, 
+        TECH.NONE, 
+        {
+            no_deconstruction=true,
+            -- numtogive = 3,
+            -- sg_state="moonlightcoda_sg_form_log",
+            builder_tag = "moonlightcoda_alterguardianhat_maker",
+            -- atlas = "images/inventoryimages/lunar_forge_kit.xml",
+            atlas = GetInventoryItemAtlas("alterguardianhat.tex"),
+            image = "alterguardianhat.tex",
+        },
+        {"CHARACTER"}
+    )
+    RemoveRecipeFromFilter("moonlightcoda_spell_alterguardianhat_maker","MODS")                       -- -- 在【模组物品】标签里移除这个。
 
 --------------------------------------------------------------------------------------------------------------------------------------------

@@ -84,8 +84,15 @@ nil,
         end
     end
     function mcoda_com_level_sys:DoDelta(num)
+        local old_level = self.level
         self.level = math.clamp(self.level + num, 0, self.max_level)
         self:ActiveLevelUpdate()
+        self.inst:PushEvent("mcoda_com_level_sys_level_update", {
+                                                                    old = old_level,
+                                                                    new = self.level,
+                                                                    level_up = self.level > old_level,
+                                                                    delta = num,
+                                                                })
     end
     function mcoda_com_level_sys:GetLevel()
         return self.level

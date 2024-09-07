@@ -254,14 +254,28 @@ local flg,error_code = pcall(function()
                 -- TUNING.test_widget.health_status:Show()
     ----------------------------------------------------------------------------------------------------------------
     --- 测试虚影附身植物
-        local monster = SpawnPrefab("lunarthrall_plant_gestalt")
-        monster.Transform:SetPosition(x,0,z)
+        -- local monster = SpawnPrefab("lunarthrall_plant_gestalt")
+        -- monster.Transform:SetPosition(x,0,z)
 
-        local plants = TheSim:FindEntities(x,y,z,30,{"plant"},{"burnt","INLIMBO","NOCLICK","temp_gestalt_target"})
-        if #plants > 0 then
-            monster.plant_target = plants[1]
-            print("plant_target",monster.plant_target)
-        end
+        -- local plants = TheSim:FindEntities(x,y,z,30,{"plant"},{"burnt","INLIMBO","NOCLICK","temp_gestalt_target"})
+        -- if #plants > 0 then
+        --     monster.plant_target = plants[1]
+        --     print("plant_target",monster.plant_target)
+        -- end
+    ----------------------------------------------------------------------------------------------------------------
+    -- 地皮切换测试
+        -- local tile_x,tile_y = TheWorld.Map:GetTileXYAtPoint(x,y,z) -- 获取当前坐标的地皮坐标
+        -- print(TheWorld.Map:GetTile(tile_x,tile_y))
+        -- print(TheWorld.Map:SetTile(tile_x,tile_y,43))
+
+            -- local node, node_index TheWorld.Map:FindVisualNodeAtPoint(x,y,z)
+            -- print(node,node_index)
+
+            -- local world_tile_map = GetWorldTileMap()
+            -- for k, v in pairs(world_tile_map) do
+            --     print(k,v)
+            -- end
+            print(WORLD_TILES.METEOR)
     ----------------------------------------------------------------------------------------------------------------
 
 

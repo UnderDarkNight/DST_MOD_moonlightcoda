@@ -123,6 +123,16 @@ configuration_options =
 
     { name = "FFFF",  label = "", hover = "", options = {{description = "", data = 0}},  default = 0, }, ---- 隔断
     {
+        name = "LEVEL_UP_AND_TILE_EXCHANGE",
+        label = "升级时更换脚下地皮 Level up and moon island tile",
+        hover = "change tile under player when level up",
+        options =  {
+          {description = "OFF", data = false},
+          {description = "ON", data = true},
+        },
+        default = true,
+    },
+    {
         name = "LEVEL_RETENTION",
         label = "换角色等级保留 Reroll Level retention",
         hover = "Saving character levels when reroll characters",

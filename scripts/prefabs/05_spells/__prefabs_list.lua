@@ -40,6 +40,7 @@ local prefabs_name_list = {
     "10_laser",                                     --- 激光
 
     "11_lunar_forge_kit_maker",                     --- 辉煌铁匠铺套装
+    "12_alterguardian_hat_maker",                   --- 启迪之冠 制作器
 
 }
 
